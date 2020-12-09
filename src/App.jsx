@@ -1,10 +1,18 @@
 import './App.css';
+import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
+import NavBar from './components/navbar/Navbar.jsx'
+
+
 
 function App() {
   return (
-    <div className="App">
-      <h1>Projet 3 : CJF Tennis</h1>
-    </div>
+    <Router>
+      <div className="container">
+        <NavBar />
+        <Switch>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
