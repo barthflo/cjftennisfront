@@ -1,20 +1,22 @@
 import './IconsInfo.css';
-import { AiOutlineClockCircle } from 'react-icons/ai';
+import { AiOutlineIdcard } from 'react-icons/ai';
+import { FiClock } from 'react-icons/fi';
+import { CgTennis } from 'react-icons/cg';
  
 export default function IconsInfo() {
     return(
         <section className="icons-info-container">
             <div className="icons-info-content">
                 <div className="icon-info">
-                    <AiOutlineClockCircle className="icon" />
+                    <FiClock className="icon" />
                     <p className="info">Depuis 1963</p>
                 </div>
                 <div className="icon-info">
-                    <AiOutlineClockCircle className="icon" />
+                    <AiOutlineIdcard className="icon" />
                     <p className="info">+ de 350 licenciés</p>
                 </div>
                 <div className="icon-info">
-                    <AiOutlineClockCircle className="icon" />
+                    <CgTennis className="icon" />
                     <p className="info">Des cours accessibles à tous</p>
                 </div>
             </div>
