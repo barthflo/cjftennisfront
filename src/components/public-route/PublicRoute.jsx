@@ -3,7 +3,7 @@ import {Route} from 'react-router-dom';
 import Footer from '../footer/Footer';
 import Navbar from '../navbar/Navbar';
 
-const ProtectedRoute = ({component : Component, ...rest}) => {
+const PublicRoute = ({component : Component, ...rest}) => {
     return (
         <Route
             {...rest}
@@ -19,4 +19,4 @@ const ProtectedRoute = ({component : Component, ...rest}) => {
     )
 }
 
-export default ProtectedRoute
+export default PublicRoute
