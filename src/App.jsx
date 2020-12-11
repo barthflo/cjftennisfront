@@ -6,6 +6,8 @@ import PublicRoute from './components/public-route/PublicRoute';
 import Home from './components/pages/home/Home';
 import Dashboard from './components/panel-admin/dashboard/Dashboard';
 
+export const HOST_URL = "http://localhost:3000";
+
 function App() {
   return (
     <div className="App">
