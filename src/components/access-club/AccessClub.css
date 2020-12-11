@@ -1,0 +1,118 @@
+.access-container {
+    background-color: var(--light-color);
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.access-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: -2%;
+}
+
+.access-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 400px;
+}
+
+.access-info p {
+    margin-bottom: var(--spacing-medium);
+    color: var(--dark-color);
+    font-family: var(--secondary-font);
+    font-size: 20px;
+}
+
+.access-info p:nth-of-type(1) {
+    margin-bottom: 0;
+}
+
+.map-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.map-card iframe {
+    border: 4px solid var(--main-color);
+    width: 480px;
+    height: 480px;
+}
+
+.map-card a {
+    text-decoration: none;
+    color: var(--dark-color);
+}
+
+.map-card a:hover {
+    color: var(--main-color);
+}
+
+.map-card small {
+    margin-top: var(--spacing);
+}
+
+@media screen and (min-width: 888px) and (max-width: 978px) {
+    .map-card {
+        margin: calc(var(--spacing-large) * 2) 0;
+    }
+    .map-card iframe {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 888px) {
+    .access-info p {
+        text-align: center;
+    }
+    .map-card {
+        margin: calc(var(--spacing-large) * 2) 0;
+    }
+    .map-card iframe {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+@media screen and (min-width: 415px) and (max-width: 768px) {
+    .access-info p {
+        text-align: center;
+        font-size: 18px;
+    }
+    .map-card {
+        margin: calc(var(--spacing-large) * 2) 0;
+    }
+    .map-card iframe {
+        width: 400px;
+        height: 400px;
+    }
+    .access-info {
+        height: 360px;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .access-info p {
+        text-align: center;
+        font-size: var(--spacing-medium);
+    }
+    .map-card {
+        margin: calc(var(--spacing-large) * 2) 0;
+    }
+    .map-card iframe {
+        width: 300px;
+        height: 300px;
+    }
+    .access-info {
+        height: 320px;
+    }
+}
