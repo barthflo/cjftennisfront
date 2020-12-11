@@ -1,20 +1,17 @@
 import Footer from './components/footer/Footer';
 import './App.css';
-import {Switch, BrowserRouter as Router } from 'react-router-dom';
-import ProtectedRoute from './components/protected-route/ProtectedRoute';
-import PublicRoute from './components/public-route/PublicRoute';
-import Dashboard from './components/panel-admin/dashboard/Dashboard';
-import Home from './components/pages/home/Home';
+import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
+import BannerVideo from './components/banner-video/BannerVideo';
 
 function App() {
   return (
     <div className="App">
       <Router>
-          <Switch>
-            <PublicRoute exact path="/" component={Home}/>
-            <ProtectedRoute path='/admin' component={Dashboard}/>
-          </Switch>
+          <Switch></Switch>
       </Router>
+
+      <BannerVideo source="http://localhost:3000/upload/tennis_intro.mp4" title="CJF Tennis" subtitle="Ici c'est Fleury" />
+      <Footer />
     </div>
   );
 }
