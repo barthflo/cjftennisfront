@@ -6,13 +6,13 @@ import NavBar from './components/navbar/Navbar.jsx'
 
 function App() {
   return (
+    <div className="App">
     <Router>
-      <div className="container">
         <NavBar />
         <Switch>
         </Switch>
-      </div>
     </Router>
+    </div>
   );
 }
 
