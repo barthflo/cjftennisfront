@@ -1,0 +1,109 @@
+.main-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 24vh;
+    min-width: 100%;
+    background-color: var(--secondary-color);
+    bottom: 0%;
+    font-size: var(--spacing-medium);
+    font-family: var(--secondary-font);
+    overflow: hidden;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    margin: var(--spacing-large) 0;
+}
+
+.footer-container div {
+    width: 256px;
+}
+
+.footer-container h4 {
+    font-size: 20px;
+    margin-bottom: var(--spacing-medium);
+    color: var(--dark-color);
+    text-align: center;
+}
+
+.footer-club p {
+    margin-bottom: var(--spacing);
+    text-align: center;
+    color: var(--dark-color);
+}
+
+.footer-contact .adress{
+   margin-top: -8px;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-links a {
+    color: var(--dark-color);
+    text-decoration: none;
+    margin-bottom: var(--spacing);
+}
+
+.footer-links a:hover, .logo-fb:hover {
+    color: var(--main-color);
+}
+
+.footer-social-media {
+    text-align: center;
+    align-self: center;
+}
+
+.logo-fb {
+    color: var(--dark-color);
+    font-size: 40px;
+}
+
+.footer-credits {
+    color: var(--main-color);
+    text-align: center;
+    margin: 0 auto;
+    margin: var(--spacing-medium);
+    display: flex;
+    justify-content: space-between;
+    width: 456px;
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {}
+
+@media screen and (min-width: 415px) and (max-width: 768px) {
+    .main-footer {
+        font-size: 14px;
+    }
+    .footer-container h4 {
+        font-size: var(--spacing-medium);
+    }
+    .footer-credits {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .main-footer {
+        font-size: 14px;
+    }
+    .footer-container h4 {
+        font-size: var(--spacing-medium);
+    }
+    .footer-club, .footer-links {
+        margin-bottom: calc(var(--spacing-large) * 1.2);
+    }
+    .footer-credits {
+        font-size: 12px;
+        flex-direction: column;
+    }
+}
