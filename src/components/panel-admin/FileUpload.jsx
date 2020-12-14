@@ -1,5 +1,6 @@
 import React, {Fragment, useState} from 'react';
 import Axios from 'axios';
+import {BACK_URL, DOMAIN_URL} from '../../http';
 
 const FileUpload = () => {
     const [file, setFile] = useState('');
@@ -17,7 +18,7 @@ const FileUpload = () => {
         formData.append('file', file);
 
         try {
-            const res = await Axios.post("http://localhost:8000/api/upload", formData, {
+            const res = await Axios.post(`${BACK_URL}/upload`, formData, {
                 headers: {
                 'Content-Type' : 'multipart/form-data'
                 }
@@ -33,7 +34,7 @@ const FileUpload = () => {
             }
         }
 
-        await Axios.put("http://localhost:8000/api/home/intro/1", {id:1, video_url : fileName});
+        await Axios.put(`${BACK_URL}/home/intro/1`, {id:1, video_url : fileName});
     }
     return (
         <Fragment>
@@ -48,7 +49,7 @@ const FileUpload = () => {
 
             {uploadedFile.fileName ? 
             <Fragment>
-            <img src={`http://localhost:3000/${uploadedFile.filePath}`} />
+            <img src={`${DOMAIN_URL}/${uploadedFile.filePath}`} />
             <h3>{uploadedFile.successMessage}</h3>
             </Fragment>
             :

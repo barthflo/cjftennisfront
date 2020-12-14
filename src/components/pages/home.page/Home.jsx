@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import BannerVideo from '../../banner-video/BannerVideo';
 import SectionTitle from '../../section-title/SectionTitle';
-import {DOMAIN_URL} from '../../../App';
+import {DOMAIN_URL} from '../../../http';
 
 
 const Home = () => {

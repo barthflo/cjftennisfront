@@ -1,16 +1,16 @@
 import React from 'react'
 import {Route, Redirect} from 'react-router-dom';
-import Auth from '../auth-provider/AuthProvider';
+import AuthService from '../../services/auth.service';
 
 const ProtectedRoute = ({component : Component, ...rest}) => {
     return (
         <Route
             {...rest}
             render = { props =>
-                Auth.getAuth() ?
+                AuthService.getUser() !== null ?
                  <Component {...props} /> 
                 :
-                <Redirect to='/' />
+                <Redirect to='/admin/login' />
             }
         >
         </Route>
