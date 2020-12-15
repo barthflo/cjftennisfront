@@ -1,5 +1,5 @@
 .access-container {
-    background-color: var(--light-color);
+    background-color: var(--secondary-color);
     min-height: 90vh;
     display: flex;
     flex-direction: column;
