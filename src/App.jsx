@@ -1,10 +1,10 @@
-import Footer from './components/footer/Footer';
 import './App.css';
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import BannerVideo from './components/banner-video/BannerVideo';
 import IconsInfo from './components/icons-info/IconsInfo';
 import AccessClub from './components/access-club/AccessClub';
 import ArticleCard from './components/articles/article/ArticleCard';
+import Footer from './components/footer/Footer';
 
 const article_example = {
   image: "https://s1.lprs1.fr/images/2020/03/18/8283240_44043684-6952-11ea-b604-93f43f7ff50b-1.jpg",
