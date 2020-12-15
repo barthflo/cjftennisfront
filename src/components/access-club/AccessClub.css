@@ -1,5 +1,5 @@
 .access-container {
-    background-color: var(--light-color);
+    background-color: var(--secondary-color);
     min-height: 90vh;
     display: flex;
     flex-direction: column;
@@ -24,14 +24,21 @@
 }
 
 .access-info p {
-    margin-bottom: var(--spacing-medium);
     color: var(--dark-color);
     font-family: var(--secondary-font);
     font-size: 20px;
 }
 
-.access-info p:nth-of-type(1) {
-    margin-bottom: 0;
+.bold-text {
+    font-weight: 600;
+}
+
+.address, .bus {
+    margin-bottom: var(--spacing);
+}
+
+.access-adress, .access-time {
+    margin-bottom: var(--spacing-large);
 }
 
 .map-card {
@@ -60,40 +67,53 @@
     margin-top: var(--spacing);
 }
 
-@media screen and (min-width: 888px) and (max-width: 978px) {
-    .map-card {
-        margin: calc(var(--spacing-large) * 2) 0;
+@media screen and (min-width: 1061px) and (max-width: 1300px) {
+    .access-info {
+        height: 360px;
+    }
+    .access-info p {
+        font-size: 16px;
     }
     .map-card iframe {
         width: 400px;
         height: 400px;
+    }
+    .access-adress, .access-time {
+        margin-bottom: 0;
     }
 }
 
-@media screen and (min-width: 769px) and (max-width: 888px) {
-    .access-info p {
+@media screen and (min-width: 769px) and (max-width: 1060px) {
+    .access-info {
         text-align: center;
+        margin-bottom: var(--spacing-large);
     }
-    .map-card {
-        margin: calc(var(--spacing-large) * 2) 0;
+    .access-info p {
+        font-size: 18px;
     }
     .map-card iframe {
         width: 400px;
         height: 400px;
+    }
+    .map-card {
+        margin-bottom: calc(var(--spacing-large) * 2);
     }
 }
 
 @media screen and (min-width: 415px) and (max-width: 768px) {
-    .access-info p {
+    .access-info {
         text-align: center;
-        font-size: 18px;
+        margin-top: var(--spacing-large);
+    }
+    .access-info p {
+        font-size: 16px;
     }
     .map-card {
         margin: calc(var(--spacing-large) * 2) 0;
     }
     .map-card iframe {
-        width: 400px;
-        height: 400px;
+        width: 360px;
+        height: 360px;
     }
     .access-info {
         height: 360px;
@@ -101,6 +121,9 @@
 }
 
 @media screen and (max-width: 414px) {
+    .access-info {
+        margin-top: var(--spacing-large);
+    }
     .access-info p {
         text-align: center;
         font-size: var(--spacing-medium);

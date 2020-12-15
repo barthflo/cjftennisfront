@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import Home from "./pages/home/Home";
 import './App.css';
 import { Switch, Route, BrowserRouter as Router, Link } from 'react-router-dom';
@@ -19,6 +20,7 @@ import TennisArmchair from "./pages/paratennis/tennis-armchair/TennisArmchair";
 import CompetitionClubLeagueAndStage from "./pages/paratennis/competition-club-league-and-stage/CompetitionClubLeagueAndStage";
 import Tournament from "./pages/paratennis/tournament/Tournament";
 import DeafAndHardOfHearingTennis from "./pages/paratennis/deaf-and-hard-of-hearing-tennis/DeafAndHardOfHearingTennis";
+
 function App() {
   return (
     <div className="App">
@@ -49,6 +51,8 @@ function App() {
         </Switch>
         <Footer/>
       </Router>
+
+    
     </div>
   );
 }
