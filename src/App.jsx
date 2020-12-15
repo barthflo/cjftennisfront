@@ -1,9 +1,9 @@
-import Footer from './components/footer/Footer';
 import './App.css';
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import BannerVideo from './components/banner-video/BannerVideo';
 import IconsInfo from './components/icons-info/IconsInfo';
 import AccessClub from './components/access-club/AccessClub';
+import Footer from './components/footer/Footer';
 
 function App() {
   return (
