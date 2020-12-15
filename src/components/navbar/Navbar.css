@@ -9,8 +9,8 @@
 }
 .Logo{
     position: fixed;
-    width: 150px;
-    height: 150px;
+    width: 170px;
+    height: 170px;
     border-radius: 50%;
     left: 5%;
 }
@@ -212,6 +212,7 @@
         box-shadow: black 1px 1px 10px;
         position: fixed;
         min-width: 100%;
+        background-color: white;
     }
     .LogoResp{
         position: fixed;
@@ -219,7 +220,6 @@
         height: 150px;
         border-radius: 50%;
         left: 40%;
-        right: 40%;
     }
     .NavbarMenu-Burger{
         display: flex;
@@ -240,7 +240,7 @@
         transition: all 0.5s ease-in-out;
     }
    .menu-open{
-        z-index: 10;
+        z-index: 200;
         display: flex;
         flex-direction: column;
         justify-content: top;
@@ -415,12 +415,13 @@
         display: none;
     }
     .NavbarResponsive{
-        z-index: -1;
+        z-index: 100;
         display: flex;
         justify-content: space-between;
         box-shadow: black 1px 1px 10px;
         position: fixed;
         min-width: 100%;
+        background-color: white;
     }
     .LogoResp{
         position: fixed;
@@ -428,7 +429,6 @@
         height: 100px;
         border-radius: 50%;
         left: 40%;
-        right: 40%;
     }
     .NavbarMenu-Burger{
         display: flex;
@@ -449,7 +449,7 @@
         transition: all 0.5s ease-in-out;
     }
    .menu-open{
-        z-index: 10;
+        z-index: 200;
         display: flex;
         flex-direction: column;
         justify-content: top;
