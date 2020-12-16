@@ -17,6 +17,8 @@ const Navbar = () => {
                     <Link className="NavbarTitle text-dark" to="/" >Accueil</Link>
                     <Link className="NavbarTitle text-dark" to="/club" >Le Club</Link>
                     <Link className="NavbarTitle text-dark" to="/enseignement" >Enseignement</Link>
+                    <Link className="NavbarTitle text-dark" to="/enseignement" >Competitions</Link>
+                    <Link className="NavbarTitle text-dark" to="/enseignement" >Paratennis</Link>
                     <Link className="NavbarTitle text-dark" to="/admin/login" target="_blank">Admin</Link>
                 </ul>
             </div>
