@@ -110,7 +110,7 @@ const changeOpenParaResp=() => setOpenParaResp(!openParaResp)
                             <Link className="HomeResponsive" to="/">Accueil</Link>
                             <div className="ClubResp" onClick={changeOpenClubResp} >Club
                                 <div className={openClubResp? "RespLinksClubContainerOpen" : "RespLinksClubContainerClose"}>
-                                    <Link className="RespLinksClub" to="/club/about-us">Qui sommes nous ?</Link>
+                                    <Link className="RespLinksClub" to="/club/about-us">Qui sommes-nous ?</Link>
                                     <Link className="RespLinksClub" to="/club/our-infrastructures">Nos Infrastructures</Link>
                                     <Link className="RespLinksClub" to ="/club/cotisation">Cotisations</Link>
                                     <Link className="RespLinksClub" to="/club/agenda">Agenda</Link>
