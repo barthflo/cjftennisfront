@@ -5,7 +5,7 @@ import axios from 'axios';
 import { FETCH } from './../Fetch';
 
  const Teaching_team = () => {
-     const [teamLists, setTeamLists] = ([]);
+     const [teamLists, setTeamLists] = useState([]);
 
      useEffect(() => {
          const fetchTeamLists = () => {
@@ -16,14 +16,31 @@ import { FETCH } from './../Fetch';
          fetchTeamLists();
      }, [])
     return (
-        <div>
-            <h2>L'équpe Enseignate</h2>
+        
+  <div>
+      <>        
+            <h2>L'éqipe de Formateur</h2>
             {teamLists.map((teamList) => (
+              
                 <div key={teamList.id}>
-                    {teamList.firstname} {teamList.lastname} 
+                    <ul>
+                        <li>{teamList.firstname}</li>
+                        <li>{teamList.lastname}</li>
+                        <li>{teamList.descriptor}</li>
+                    </ul>
+                    
                 </div>
+                
+                
             ))}
+            </>
+            <div>
+
+            </div>
         </div>
     )
-}
+ }
+    
+
 export default Teaching_team;
+
