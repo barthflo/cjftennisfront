@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import {Route} from 'react-router-dom';
 import Footer from '../footer/Footer';
 import Navbar from '../navbar/Navbar';
-import {DOMAIN_URL} from '../../http';
+import {DOMAIN_URL} from '../../http.js';
 
 const PublicRoute = ({component : Component, ...rest}) => {
     return (

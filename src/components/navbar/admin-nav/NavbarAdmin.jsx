@@ -3,7 +3,7 @@ import {useHistory} from 'react-router-dom';
 import {DOMAIN_URL} from '../../../http';
 import {TiUser} from 'react-icons/ti';
 import {AiOutlinePoweroff} from 'react-icons/ai';
-import {GiHamburgerMenu} from 'react-icons/gi';
+import {BiExit} from 'react-icons/bi';
 import AuthService from '../../../services/auth.service';
 import './NavbarAdmin.css';
 
@@ -32,7 +32,7 @@ const NavbarAdmin = () => {
                         <p className="mb-0 text-light mr-2">{AuthService.getUser().user.name}</p>
                     </div>
                     <div className="logout-icon d-flex justify-content-center">
-                        <AiOutlinePoweroff color={"white"} size={"1.3em"} className="logout mr-2" onClick={logout}/>
+                        <BiExit color={"white"} size={"1.5em"} className="logout mr-2" onClick={logout}/>
                     </div>
                 </div>
             </nav>

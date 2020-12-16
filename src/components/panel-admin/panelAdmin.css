@@ -5,3 +5,19 @@
 .home-admin{
     background: #e6e6e6;
 }
+
+.closed{
+    display: none;
+    width:0 !important;
+}
+.opened{
+    display: block;
+    width: 100%;
+}
+
+@media screen and (min-width : 576px){
+    .closed{
+        display: unset;
+        width:100% !important;
+    }
+}
