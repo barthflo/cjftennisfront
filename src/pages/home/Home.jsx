@@ -7,7 +7,7 @@ function Home() {
     <div className="Home">
         <BannerVideo />
         <IconsInfo />
-        <AccessClub />    
+        <AccessClub />
     </div>
   );
 }
