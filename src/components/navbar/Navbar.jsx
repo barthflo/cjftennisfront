@@ -45,7 +45,7 @@ const changeOpenParaResp=() => setOpenParaResp(!openParaResp)
                             <Link className="NavbarHome" to="/" >Accueil</Link>
                             <div className="NavbarClub"  onMouseEnter={changeOpenClub} onMouseLeave={changeCloseClub}>Club
                                 <div className={openClub? "club-open" : "club-close"}>
-                                    <Link className="NavLinks" to="/club/about-us">Qui sommes nous ?</Link>
+                                    <Link className="NavLinks" to="/club/about-us">Qui sommes-nous ?</Link>
                                     <hr/>
                                     <Link className="NavLinks" to ="/club/our-infrastructures">Nos infrastructures</Link>
                                     <hr/>
