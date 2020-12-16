@@ -22,6 +22,7 @@ body {
   --light-color: #FFFFFF;
   --dark-color: #001606;
   --spacing: 8px;
+  --spacing-little: calc(var(--spacing) *0.5);
   --spacing-medium: calc(var(--spacing) * 2);
   --spacing-large: calc(var(--spacing)* 4);
 }

@@ -8,6 +8,7 @@
     text-align: center;
     position: relative;
     color: var(--main-color);
+    z-index: 5;
 }
 
 .title-white::before, .title-gray::before {
