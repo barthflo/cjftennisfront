@@ -193,12 +193,203 @@
 }
 
 @media screen and (max-width: 1300px) {
+    .NavbarContainer {
+        background-color: var(--light-color);
+        box-shadow: black 1px 1px 10px;
+        position: fixed;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        z-index: 50;
+    }
     .Logo{
+        position: fixed;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        left: 5%;
+    }
+    .NavbarResponsive{
         display: none;
     }
+    .menu-close{
+        display: none;
+    }
+    .menu-open{
+        display: none;
+    }
+    
+    .NavbarRightBox {
+        display: flex;
+        justify-content: flex-end;
+        z-index: 100;
+    }
+    .NavbarLeftBox{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+    }
+    .NavbarHome{
+        text-decoration: none;
+        color: var(--light-color) ;
+        font-size: calc(var(--spacing) *2);
+        padding: var(--spacing-medium);
+        background-color: var(--main-color);
+        transform: skew( -10deg);
+    }
+    .NavbarHome:hover{
+        background-color: #497454;
+    }
+    .NavbarClub {
+        text-decoration: none;
+        color: var(--main-color) ;
+        font-size: calc(var(--spacing) *2);
+        padding: var(--spacing-medium);
+        margin-left: 2%;
+        display: flex;
+        justify-content: center;
+    }
+    .NavbarClub:hover{
+        color: #497454;
+    }
+    .NavbarLearn {
+        text-decoration: none;
+        color: var(--main-color) ;
+        font-size: calc(var(--spacing) *2);
+        padding: var(--spacing-medium);
+        display: flex;
+        justify-content: center;
+        margin-left: 2%;
+    }
+    .NavbarLearn:hover{
+        color: #497454;
+    }
+    .NavbarCompet{
+        text-decoration: none;
+        color: var(--main-color) ;
+        font-size: calc(var(--spacing) *2);
+        padding: var(--spacing-medium);
+        display: flex;
+        justify-content: center;
+        margin-left: 2%;
+    }
+    .NavbarCompet:hover{
+        color: #497454;
+    }
+    .NavbarPara {
+        text-decoration: none;
+        color: var(--main-color) ;
+        font-size: calc(var(--spacing) *2);
+        padding: var(--spacing-medium);
+        display: flex;
+        justify-content: center;
+        margin-left: 2%;
+    }
+    .NavbarPara:hover {
+        color: #497454;
+    }
+    .NavbarAdmin{
+        text-decoration: none;
+        color: var(--main-color) ;
+        font-size: calc(var(--spacing) *2);
+        padding: var(--spacing-medium); 
+        margin-right:3%;
+        margin-left: 2%;
+        
+    }
+    .NavbarAdmin:hover{
+        color: var(--light-color) ;
+        font-size: calc(var(--spacing) *2);
+        background-color: var(--main-color);
+        transform: skew( -10deg);
+    }
+    
+    
+    .club-open{
+        display: flex;
+        position: absolute;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 36px;
+        background-color: var(--main-color);
+        min-width: 150px;
+      }
+    .club-close {
+        display: none;
+    }
+    
+    .ens-open{
+        display: flex;
+        position: absolute;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 36px;
+        background-color: var(--main-color);
+        min-width: 150px;
+       
+        
+    }
+    
+    .ens-close {
+        display: none;
+    }
+    .comp-open{
+        display: flex;
+        position: absolute;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 36px;
+        background-color: var(--main-color);
+        min-width: 150px;
+    
+        
+    }
+    .comp-close{
+        display: none;
+    }
+    .para-open{
+        display: flex;
+        position: absolute;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 36px;
+        background-color: var(--main-color); 
+        min-width: 150px;
+        
+       
+        
+    }
+    .para-close{
+        display: none;
+    }
+    
+    
+    .NavLinks{
+        text-decoration: none;
+        color: var(--light-color);
+        background-color: var(--main-color);
+        padding: 15px;
+        font-size: calc(var(--spacing) *2); 
+        
+    }
+    .NavLinks:hover{
+        background-color: #497454;
+    }
+    .NavbarRightBox hr{
+        height: 2px;
+        color: white;
+        background-color: white;
+        width: 80%;
+        margin: 0 auto;
+    }
+    
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
     .Logo{
         display: none;
     }
