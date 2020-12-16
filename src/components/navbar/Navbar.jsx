@@ -140,13 +140,9 @@ const changeOpenParaResp=() => setOpenParaResp(!openParaResp)
                                     <Link className="RespLinksPara" to="/paratennis/deaf-and-hard-of-hearing-tennis">Tennis sourd et mal entendant</Link>
                                 </div>
                             </div>
-                            
                             <Link className="AdminResp">Administration</Link>
-                            
                         </div>
-
                 </div>
-                
             )
         }
    
