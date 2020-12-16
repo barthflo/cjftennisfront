@@ -7,6 +7,7 @@
     justify-content: space-between;
     z-index: 50;
 }
+
 .Logo{
     position: fixed;
     width: 170px;
@@ -14,12 +15,15 @@
     border-radius: 50%;
     left: 5%;
 }
+
 .NavbarResponsive{
     display: none;
 }
+
 .menu-close{
     display: none;
 }
+
 .menu-open{
     display: none;
 }
@@ -29,11 +33,13 @@
     justify-content: flex-end;
     z-index: 100;
 }
+
 .NavbarLeftBox{
    display: flex;
    justify-content: center;
    align-items: center;
 }
+
 .NavbarHome{
     text-decoration: none;
     color: var(--light-color) ;
@@ -42,9 +48,11 @@
     background-color: var(--main-color);
     transform: skew( -10deg);
 }
+
 .NavbarHome:hover{
     background-color: #497454;
 }
+
 .NavbarClub {
     text-decoration: none;
     color: var(--main-color) ;
@@ -54,9 +62,11 @@
     display: flex;
     justify-content: center;
 }
+
 .NavbarClub:hover{
     color: #497454;
 }
+
 .NavbarLearn {
     text-decoration: none;
     color: var(--main-color) ;
@@ -66,9 +76,11 @@
     justify-content: center;
     margin-left: 2%;
 }
+
 .NavbarLearn:hover{
     color: #497454;
 }
+
 .NavbarCompet{
     text-decoration: none;
     color: var(--main-color) ;
@@ -78,9 +90,11 @@
     justify-content: center;
     margin-left: 2%;
 }
+
 .NavbarCompet:hover{
     color: #497454;
 }
+
 .NavbarPara {
     text-decoration: none;
     color: var(--main-color) ;
@@ -90,9 +104,11 @@
     justify-content: center;
     margin-left: 2%;
 }
+
 .NavbarPara:hover {
     color: #497454;
 }
+
 .NavbarAdmin{
     text-decoration: none;
     color: var(--main-color) ;
@@ -102,13 +118,13 @@
     margin-left: 2%;
     
 }
+
 .NavbarAdmin:hover{
     color: var(--light-color) ;
     font-size: calc(var(--spacing) *3);
     background-color: var(--main-color);
     transform: skew( -10deg);
 }
-
 
 .club-open{
     display: flex;
@@ -119,7 +135,8 @@
     margin-top: 60px;
     background-color: var(--main-color);
     min-width: 250px;
-  }
+}
+
 .club-close {
     display: none;
 }
@@ -132,14 +149,13 @@
     text-align: center;
     margin-top: 60px;
     background-color: var(--main-color);
-    min-width: 250px;
-   
-    
+    min-width: 250px;   
 }
 
 .ens-close {
     display: none;
 }
+
 .comp-open{
     display: flex;
     position: absolute;
@@ -148,13 +164,13 @@
     text-align: center;
     margin-top: 60px;
     background-color: var(--main-color);
-    min-width: 250px;
-
-    
+    min-width: 250px;    
 }
+
 .comp-close{
     display: none;
 }
+
 .para-open{
     display: flex;
     position: absolute;
@@ -163,27 +179,25 @@
     text-align: center;
     margin-top: 60px;
     background-color: var(--main-color); 
-    min-width: 250px;
-    
-   
-    
+    min-width: 250px;    
 }
+
 .para-close{
     display: none;
 }
-
 
 .NavLinks{
     text-decoration: none;
     color: var(--light-color);
     background-color: var(--main-color);
     padding: 15px;
-    font-size: calc(var(--spacing) *2.4); 
-    
+    font-size: calc(var(--spacing) *2.4);    
 }
+
 .NavLinks:hover{
     background-color: #497454;
 }
+
 .NavbarRightBox hr{
     height: 2px;
     color: white;
@@ -193,18 +207,224 @@
 }
 
 @media screen and (max-width: 1300px) {
+    .NavbarContainer {
+        background-color: var(--light-color);
+        box-shadow: black 1px 1px 10px;
+        position: fixed;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        z-index: 50;
+    }
+    
     .Logo{
+        position: fixed;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        left: 5%;
+    }
+    
+    .NavbarResponsive{
         display: none;
+    }
+    
+    .menu-close{
+        display: none;
+    }
+    
+    .menu-open{
+        display: none;
+    }
+    
+    .NavbarRightBox {
+        display: flex;
+        justify-content: flex-end;
+        z-index: 100;
+    }
+    
+    .NavbarLeftBox{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+    }
+    
+    .NavbarHome{
+        text-decoration: none;
+        color: var(--light-color) ;
+        font-size: calc(var(--spacing) *2);
+        padding: var(--spacing-medium);
+        background-color: var(--main-color);
+        transform: skew( -10deg);
+    }
+    
+    .NavbarHome:hover{
+        background-color: #497454;
+    }
+    
+    .NavbarClub {
+        text-decoration: none;
+        color: var(--main-color) ;
+        font-size: calc(var(--spacing) *2);
+        padding: var(--spacing-medium);
+        margin-left: 2%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .NavbarClub:hover{
+        color: #497454;
+    }
+    
+    .NavbarLearn {
+        text-decoration: none;
+        color: var(--main-color) ;
+        font-size: calc(var(--spacing) *2);
+        padding: var(--spacing-medium);
+        display: flex;
+        justify-content: center;
+        margin-left: 2%;
+    }
+    
+    .NavbarLearn:hover{
+        color: #497454;
+    }
+    
+    .NavbarCompet{
+        text-decoration: none;
+        color: var(--main-color) ;
+        font-size: calc(var(--spacing) *2);
+        padding: var(--spacing-medium);
+        display: flex;
+        justify-content: center;
+        margin-left: 2%;
+    }
+    
+    .NavbarCompet:hover{
+        color: #497454;
+    }
+    
+    .NavbarPara {
+        text-decoration: none;
+        color: var(--main-color) ;
+        font-size: calc(var(--spacing) *2);
+        padding: var(--spacing-medium);
+        display: flex;
+        justify-content: center;
+        margin-left: 2%;
+    }
+    
+    .NavbarPara:hover {
+        color: #497454;
+    }
+    
+    .NavbarAdmin{
+        text-decoration: none;
+        color: var(--main-color) ;
+        font-size: calc(var(--spacing) *2);
+        padding: var(--spacing-medium); 
+        margin-right:3%;
+        margin-left: 2%;    
+    }
+    
+    .NavbarAdmin:hover{
+        color: var(--light-color) ;
+        font-size: calc(var(--spacing) *2);
+        background-color: var(--main-color);
+        transform: skew( -10deg);
+    }
+    
+    .club-open{
+        display: flex;
+        position: absolute;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 36px;
+        background-color: var(--main-color);
+        min-width: 150px;
+    }
+    
+    .club-close {
+        display: none;
+    }
+    
+    .ens-open{
+        display: flex;
+        position: absolute;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 36px;
+        background-color: var(--main-color);
+        min-width: 150px;   
+    }
+    
+    .ens-close {
+        display: none;
+    }
+    
+    .comp-open{
+        display: flex;
+        position: absolute;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 36px;
+        background-color: var(--main-color);
+        min-width: 150px;
+    }
+    
+    .comp-close{
+        display: none;
+    }
+    
+    .para-open{
+        display: flex;
+        position: absolute;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 36px;
+        background-color: var(--main-color); 
+        min-width: 150px;      
+    }
+    
+    .para-close{
+        display: none;
+    }
+    
+    .NavLinks{
+        text-decoration: none;
+        color: var(--light-color);
+        background-color: var(--main-color);
+        padding: 15px;
+        font-size: calc(var(--spacing) *2); 
+        
+    }
+    
+    .NavLinks:hover{
+        background-color: #497454;
+    }
+    
+    .NavbarRightBox hr{
+        height: 2px;
+        color: white;
+        background-color: white;
+        width: 80%;
+        margin: 0 auto;
     }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
     .Logo{
         display: none;
     }
+    
     .NavbarContainer{
         display: none;
     }
+    
     .NavbarResponsive{
         z-index: 100;
         display: flex;
@@ -214,22 +434,24 @@
         min-width: 100%;
         background-color: white;
     }
+    
     .LogoResp{
         position: fixed;
-        width: 150px;
-        height: 150px;
+        width: 140px;
+        height: 140px;
         border-radius: 50%;
         left: 40%;
     }
+    
     .NavbarMenu-Burger{
         display: flex;
         flex-direction: column;
         justify-content: center;
         margin-top: 3vh;
         margin-bottom: 2vh;
-        margin-right: 5vw;
-        
+        margin-right: 5vw;    
     }
+    
     .NavbarMenu-Burger span{
         display: flex;
         background-color: var(--main-color);
@@ -239,6 +461,7 @@
         cursor: pointer;
         transition: all 0.5s ease-in-out;
     }
+    
    .menu-open{
         z-index: 200;
         display: flex;
@@ -253,8 +476,7 @@
         height: 200vh;
         position: absolute;
         right: 0;
-        box-shadow:  black 1px 1px 10px; 
-        
+        box-shadow:  black 1px 1px 10px;   
         animation-name: transitionOpen;
         animation-duration: 1s;
         animation-iteration-count: inherit;
@@ -274,13 +496,13 @@
   }
 
    .menu-close{
-     
        animation-name: transitionClose;
         animation-duration: 0.5s;
         animation-iteration-count: inherit;
         animation-fill-mode: backwards;
         display: none;
    }
+    
    @keyframes transitionClose {
     0% {
       transform: translate(0%,0);
@@ -292,34 +514,41 @@
       transform: translate(0%,0%);
     }
   }
+    
    .HomeResponsive{
        text-decoration: none;
        color: var(--main-color);
        padding-bottom: 3vh ;
    }
+    
    .ClubResp{
        cursor: pointer;
        color: var(--main-color);
        padding-bottom: 3vh ;
    }
+    
    .EnsResp{
     cursor: pointer;
     color: var(--main-color); 
     padding-bottom: 3vh ;
    }
+    
    .CompResp{
     cursor: pointer;
     color:var(--main-color);
     padding-bottom: 3vh ;
    }
+    
    .ParaResp{
     cursor: pointer;
     color: var(--main-color);
     padding-bottom: 3vh ;
    }
+    
    .CrossContainer{
     padding-bottom: 6vh ;
    }
+    
    .Cross{
        color: var(--main-color);
        position: relative;
@@ -327,16 +556,18 @@
        cursor: pointer;
        font-size: 80%;
    }
+    
    .RespLinksClub{
        text-decoration: none;
        color: var(--main-color);
        font-size: 70%;
-       padding: 1vh;
-       
+       padding: 1vh;   
    }
+    
    .RespLinksClubContainerClose{
        display: none;
    }
+    
    .RespLinksClubContainerOpen{
        display: flex;
        flex-direction: column;
@@ -346,30 +577,34 @@
         animation-iteration-count: inherit;
         animation-fill-mode: backwards;
    }
+    
    .AdminResp{
        text-decoration: none;
        color: var(--main-color);
        padding-top: 20%;
    }
-   .RespLinksEns{
-    text-decoration: none;
-    color: var(--main-color);
-    font-size: 70%;
-    padding: 1vh;
     
+   .RespLinksEns{
+        text-decoration: none;
+        color: var(--main-color);
+        font-size: 70%;
+        padding: 1vh;
     }
+    
     .RespLinksEnsContainerClose{
-    display: none;
+        display: none;
     }
+    
     .RespLinksEnsContainerOpen{
-    display: flex;
-    flex-direction: column;
-    padding-top: 1vh;
-    animation-name: transitionOpen;
+        display: flex;
+        flex-direction: column;
+        padding-top: 1vh;
+        animation-name: transitionOpen;
         animation-duration: 1.5s;
         animation-iteration-count: inherit;
         animation-fill-mode: backwards;
     }
+    
     .RespLinksComp{
         text-decoration: none;
         color: var(--main-color);
@@ -377,18 +612,21 @@
         padding: 1vh;
         
     }
+    
     .RespLinksCompContainerClose{
-    display: none;
+        display: none;
     }
+    
     .RespLinksCompContainerOpen{
-    display: flex;
-    flex-direction: column;
-    padding-top: 0.5vh;
-    animation-name: transitionOpen;
+        display: flex;
+        flex-direction: column;
+        padding-top: 0.5vh;
+        animation-name: transitionOpen;
         animation-duration: 1.5s;
         animation-iteration-count: inherit;
         animation-fill-mode: backwards;
     }
+    
     .RespLinksPara{
         text-decoration: none;
         color: var(--main-color);
@@ -396,24 +634,27 @@
         padding: 1vh;
         
     }
+    
     .RespLinksParaContainerClose{
-    display: none;
+        display: none;
     }
+    
     .RespLinksParaContainerOpen{
-    display: flex;
-    flex-direction: column;
-    padding-top: 0.5vh;
-    animation-name: transitionOpen;
+        display: flex;
+        flex-direction: column;
+        padding-top: 0.5vh;
+        animation-name: transitionOpen;
         animation-duration: 1.5s;
         animation-iteration-count: inherit;
         animation-fill-mode: backwards;
     }
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 767px) {
     .NavbarContainer{
         display: none;
     }
+    
     .NavbarResponsive{
         z-index: 100;
         display: flex;
@@ -423,13 +664,15 @@
         min-width: 100%;
         background-color: white;
     }
+    
     .LogoResp{
         position: fixed;
         width: 100px;
         height: 100px;
         border-radius: 50%;
-        left: 40%;
+        left: 37%;
     }
+    
     .NavbarMenu-Burger{
         display: flex;
         flex-direction: column;
@@ -439,6 +682,7 @@
         margin-right: 5vw;
         
     }
+    
     .NavbarMenu-Burger span{
         display: flex;
         background-color: var(--main-color);
@@ -448,6 +692,7 @@
         cursor: pointer;
         transition: all 0.5s ease-in-out;
     }
+    
    .menu-open{
         z-index: 200;
         display: flex;
@@ -470,34 +715,41 @@
        display: none;
        transition: all 0.5s ease-in-out;
    }
+    
    .HomeResponsive{
        text-decoration: none;
        color: var(--main-color);
        padding-bottom: 3vh ;
    }
+    
    .ClubResp{
        cursor: pointer;
        color: var(--main-color);
        padding-bottom: 3vh ;
    }
+    
    .EnsResp{
-    cursor: pointer;
-    color: var(--main-color);
-    padding-bottom: 3vh ;
+        cursor: pointer;
+        color: var(--main-color);
+        padding-bottom: 3vh ;
    }
+    
    .CompResp{
-    cursor: pointer;
-    color: var(--main-color);
-    padding-bottom: 3vh ;
+        cursor: pointer;
+        color: var(--main-color);
+        padding-bottom: 3vh ;
    }
+    
    .ParaResp{
-    cursor: pointer;
-    color: var(--main-color);
-    padding-bottom: 3vh ;
+        cursor: pointer;
+        color: var(--main-color);
+        padding-bottom: 3vh ;
    }
+    
    .CrossContainer{
-    padding-bottom: 6vh ;
+        padding-bottom: 6vh ;
    }
+    
    .Cross{
        color: var(--main-color);
        position: relative;
@@ -505,75 +757,80 @@
        cursor: pointer;
        font-size: 80%;
    }
+    
    .RespLinksClub{
        text-decoration: none;
        color: var(--main-color);
        font-size: 70%;
        padding: 1vh;
-       
    }
+    
    .RespLinksClubContainerClose{
        display: none;
    }
+    
    .RespLinksClubContainerOpen{
        display: flex;
        flex-direction: column;
        padding-top: 1vh;
    }
+    
    .AdminResp{
        text-decoration: none;
        color: var(--main-color);
        padding-top: 20%;
    }
-   .RespLinksEns{
-    text-decoration: none;
-    color: var(--main-color);
-    font-size: 70%;
-    padding: 1vh;
     
+   .RespLinksEns{
+        text-decoration: none;
+        color: var(--main-color);
+        font-size: 70%;
+        padding: 1vh;
     }
+    
     .RespLinksEnsContainerClose{
-    display: none;
+        display: none;
     }
+    
     .RespLinksEnsContainerOpen{
-    display: flex;
-    flex-direction: column;
-    padding-top: 1vh;
+        display: flex;
+        flex-direction: column;
+        padding-top: 1vh;
     }
+    
     .RespLinksComp{
         text-decoration: none;
         color: var(--main-color);
         font-size: 70%;
         padding: 1vh;
-        
     }
+    
     .RespLinksCompContainerClose{
-    display: none;
+        display: none;
     }
+    
     .RespLinksCompContainerOpen{
-    display: flex;
-    flex-direction: column;
-    padding-top: 0.5vh;
+        display: flex;
+        flex-direction: column;
+        padding-top: 0.5vh;
     }
+    
     .RespLinksPara{
         text-decoration: none;
         color:var(--main-color);
         font-size: 70%;
-        padding: 1vh;
-        
+        padding: 1vh;  
     }
+    
     .RespLinksParaContainerClose{
-    display: none;
+        display: none;
     }
+    
     .RespLinksParaContainerOpen{
-    display: flex;
-    flex-direction: column;
-    padding-top: 0.5vh;
+        display: flex;
+        flex-direction: column;
+        padding-top: 0.5vh;
     }
    
 }
 
-@media screen and (max-width: 415px) {
-   
-   
-}
