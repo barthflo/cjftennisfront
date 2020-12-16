@@ -1,12 +1,10 @@
 import React, {Fragment} from 'react';
-import LoginForm from '../../login-form/LoginForm';
+import LoginForm from '../../components/login-form/LoginForm';
 import './LoginPage.css';
-import {DOMAIN_URL} from '../../../http';
-import AuthService from '../../../services/auth.service';
+import AuthService from '../../services/auth.service';
 import {Redirect} from 'react-router-dom';
 
 const LoginPage = (props) => {
-    console.log(props);
     return (
         <Fragment>
             {AuthService.getUser() ?

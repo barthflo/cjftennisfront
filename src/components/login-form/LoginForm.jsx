@@ -6,7 +6,6 @@ import './LoginForm.css';
 
 const LoginForm = (props) => {
     const history = useHistory()
-    console.log(history);
     const[inputs, setInputs] = useState({username : '', password : ''});
     const[error, setError] = useState(false);
 
@@ -20,7 +19,8 @@ const LoginForm = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         AuthService.login(inputs.username, inputs.password)
-        .then(res => res ? history.push('/admin') : setError(true))
+        .then(res => console.log(res.status));
+        // .then(res => res ? history.push('/admin') : setError(true))
     }
     return (
         <div className="LoginForm card d-flex justify-content-center align-items-center">

@@ -17,8 +17,8 @@ const NavbarAdmin = () => {
     }
 
     return (
-        <header className="NavbarAdmin">
-            <nav className="navbar fixed-top d-flex justify-content-between align-items-center py-0 pr-0" style={{background:"var(--main-color"}}>
+        <header className="NavAdmin">
+            <nav className="navbar fixed-top d-flex justify-content-between align-items-center py-0 pr-0 pl-2" style={{background:"var(--main-color"}}>
                 <figure style={{width:"50px", height:"50px", margin:"0"}}>
                     <img 
                         className="w-100 h-100"
