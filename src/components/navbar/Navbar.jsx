@@ -10,42 +10,24 @@ function Navbar () {
 
 const [openClub, setOpenClub]= useState(false) 
 const changeOpenClub=()=>setOpenClub(true)
-
 const changeCloseClub =() =>setOpenClub(false)
-
 const [openEns, setOpenEns]= useState(false) 
 const changeOpenEns=()=>setOpenEns(true)
-
 const changeCloseEns =() =>setOpenEns(false)
-
 const [openComp, setOpenComp]= useState(false) 
 const changeOpenComp=()=>setOpenComp(true)
-
 const changeCloseComp =() =>setOpenComp(false)
-
 const [openPara, setOpenPara]= useState(false) 
 const changeOpenPara=()=>setOpenPara(true)
-
 const changeClosePara =() =>setOpenPara(false)
-
-
-
-
-
 const [openMenu, setOpenMenu]= useState(false)
 const changeOpenMenu=() =>setOpenMenu(!openMenu)
-
 const [openClubResp, setOpenClubResp]=useState(false)
 const changeOpenClubResp=() => setOpenClubResp(!openClubResp)
-
-
 const [openEnsResp, setOpenEnsResp]=useState(false)
 const changeOpenEnsResp=() => setOpenEnsResp(!openEnsResp)
-
-
 const [openCompResp, setOpenCompResp]=useState(false)
 const changeOpenCompResp=() => setOpenCompResp(!openCompResp)
-
 const [openParaResp, setOpenParaResp]=useState(false)
 const changeOpenParaResp=() => setOpenParaResp(!openParaResp)
 
