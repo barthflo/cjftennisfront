@@ -14,7 +14,9 @@
     width: 100%;
     height: 60vh;
     z-index: -1;
-    object-fit: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .banner-photo .main-title {
