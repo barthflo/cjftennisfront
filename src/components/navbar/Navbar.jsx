@@ -3,7 +3,6 @@ import { Switch, Route, Link } from 'react-router-dom';
 import React, {useEffect, useState} from 'react';
 import { BsFillLockFill } from 'react-icons/bs';
 import { ImCross } from 'react-icons/im'
-// import {Logo} from '../../../public/upload/logo_cjf_tennis.jpg'
 
 
 function Navbar () {
@@ -38,7 +37,7 @@ const changeOpenParaResp=() => setOpenParaResp(!openParaResp)
             <div className="Navbar" id="Navbar">
                 <div className="NavbarContainer">
                     <div className="NavbarLeftbBox">
-                        <Link to="/"><img className="Logo" src="http://localhost:3000/upload/logo_cjf_tennis.jpg"/></Link>
+                        <Link to="/"><img className="Logo" src="http://localhost:3000/upload/logo-cjf.jpeg"/></Link>
                     </div>
                     <div className="NavbarRightBox">
                        
@@ -92,7 +91,7 @@ const changeOpenParaResp=() => setOpenParaResp(!openParaResp)
                     </div>
                     <div className="NavbarResponsive">
                     <div className="LogoContainer">
-                        <Link to="/"><img className="LogoResp" src="http://localhost:3000/upload/logo_cjf_tennis.jpg"/></Link>
+                        <Link to="/"><img className="LogoResp" src="http://localhost:3000/upload/logo-cjf.jpeg"/></Link>
                        
                     </div>      
 
@@ -110,34 +109,34 @@ const changeOpenParaResp=() => setOpenParaResp(!openParaResp)
                             <Link className="HomeResponsive" to="/">Accueil</Link>
                             <div className="ClubResp" onClick={changeOpenClubResp} >Club
                                 <div className={openClubResp? "RespLinksClubContainerOpen" : "RespLinksClubContainerClose"}>
-                                    <Link className="RespLinksClub" to="/club/about-us">Qui sommes-nous ?</Link>
-                                    <Link className="RespLinksClub" to="/club/our-infrastructures">Nos Infrastructures</Link>
-                                    <Link className="RespLinksClub" to ="/club/cotisation">Cotisations</Link>
-                                    <Link className="RespLinksClub" to="/club/agenda">Agenda</Link>
-                                    <Link className="RespLinksClub" to="/club/gallery">Galerie</Link>
+                                    <Link className="RespLinksClub" to="/club/about-us" onClick={changeOpenMenu}>Qui sommes-nous ?</Link>
+                                    <Link className="RespLinksClub" to="/club/our-infrastructures" onClick={changeOpenMenu}>Nos Infrastructures</Link>
+                                    <Link className="RespLinksClub" to ="/club/cotisation" onClick={changeOpenMenu}>Cotisations</Link>
+                                    <Link className="RespLinksClub" to="/club/agenda" onClick={changeOpenMenu}>Agenda</Link>
+                                    <Link className="RespLinksClub" to="/club/gallery" onClick={changeOpenMenu}>Galerie</Link>
                                 </div>
                             </div>
                             <div className="EnsResp" onClick={changeOpenEnsResp}>Enseignement
                                 <div className={openEnsResp? "RespLinksEnsContainerOpen" : "RespLinksEnsContainerClose"}>
-                                    <Link className="RespLinksEns" to="/enseignement/team-teaching">Équipe Enseignante</Link>
-                                    <Link className="RespLinksEns" to="/enseignement/lesson-for-children">Cours pour Enfants</Link>
-                                    <Link className="RespLinksEns" to="/enseignement/lesson-for-adult">Cours pour Adultes</Link>
+                                    <Link className="RespLinksEns" to="/enseignement/team-teaching" onClick={changeOpenMenu}>Équipe Enseignante</Link>
+                                    <Link className="RespLinksEns" to="/enseignement/lesson-for-children" onClick={changeOpenMenu}>Cours pour Enfants</Link>
+                                    <Link className="RespLinksEns" to="/enseignement/lesson-for-adult" onClick={changeOpenMenu}>Cours pour Adultes</Link>
                                 </div>
                             </div>
                             <div className="CompResp" onClick={changeOpenCompResp}>Competitions
                                 <div className={openCompResp? "RespLinksCompContainerOpen" : "RespLinksCompContainerClose"}>
-                                    <Link className="RespLinksComp" to="/competition/teams">Équipes</Link>
-                                    <Link className="RespLinksComp" to="/competition/tournaments">Tournois</Link>
-                                    <Link className="RespLinksComp" to="/competition/calendar">Calendrier</Link>
-                                    <Link className="RespLinksComp" to="/competition/results">Résultats</Link>
+                                    <Link className="RespLinksComp" to="/competition/teams" onClick={changeOpenMenu}>Équipes</Link>
+                                    <Link className="RespLinksComp" to="/competition/tournaments" onClick={changeOpenMenu}>Tournois</Link>
+                                    <Link className="RespLinksComp" to="/competition/calendar" onClick={changeOpenMenu}>Calendrier</Link>
+                                    <Link className="RespLinksComp" to="/competition/results" onClick={changeOpenMenu}>Résultats</Link>
                                 </div>
                             </div>
                             <div className="ParaResp" onClick={changeOpenParaResp}>ParaTennis
                                 <div className={openParaResp? "RespLinksParaContainerOpen" : "RespLinksParaContainerClose"}>
-                                    <Link className="RespLinksPara" to="/paratennis/tennis-armchair">Tennis Fauteuil</Link>
-                                    <Link className="RespLinksPara" to="/paratennis/competition-club-league-and-stage">Compétitions Club Ligue et Stages</Link>
-                                    <Link className="RespLinksPara" to="/paratennis/tournament">Tournois</Link>
-                                    <Link className="RespLinksPara" to="/paratennis/deaf-and-hard-of-hearing-tennis">Tennis Sourd et Malentendant</Link>
+                                    <Link className="RespLinksPara" to="/paratennis/tennis-armchair" onClick={changeOpenMenu}>Tennis Fauteuil</Link>
+                                    <Link className="RespLinksPara" to="/paratennis/competition-club-league-and-stage" onClick={changeOpenMenu}>Compétitions Club Ligue et Stages</Link>
+                                    <Link className="RespLinksPara" to="/paratennis/tournament" onClick={changeOpenMenu}>Tournois</Link>
+                                    <Link className="RespLinksPara" to="/paratennis/deaf-and-hard-of-hearing-tennis" onClick={changeOpenMenu}>Tennis Sourd et Malentendant</Link>
                                 </div>
                             </div>
                             <Link className="AdminResp">Administration</Link>
