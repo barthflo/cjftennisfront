@@ -50,9 +50,7 @@ function App() {
           <Route path="/paratennis/deaf-and-hard-of-hearing-tennis" component={DeafAndHardOfHearingTennis} />
         </Switch>
         <Footer/>
-      </Router>
-
-    
+      </Router>  
     </div>
   );
 }

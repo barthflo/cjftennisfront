@@ -4,7 +4,7 @@ import { AiOutlineIdcard } from 'react-icons/ai';
 import { FiClock } from 'react-icons/fi';
 import { CgTennis } from 'react-icons/cg';
 import { useEffect, useState } from 'react';
-// import { BACK_URL } from '../../http';
+import { BACK_URL } from '../../http';
  
 export default function IconsInfo() {
     const [iconInfo, setIconInfo] = useState([]);
@@ -12,7 +12,7 @@ export default function IconsInfo() {
 
     useEffect(() => {
         axios
-        .get("http://localhost:8000/api/home/icons")
+        .get(`${BACK_URL}/home/icons`)
         .then(res => {
             setIconInfo(res.data);
             setIsLoading(false);
