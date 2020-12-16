@@ -2,7 +2,7 @@ import './AccessClub.css';
 import SectionTitle from '../section-title/SectionTitle';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { BsUnion } from 'react-icons/bs';
+import { BACK_URL } from '../../http';
 
 export default function AccessClub(){
     const [infoAccess, setInfoAccess] = useState([]);
@@ -14,7 +14,7 @@ export default function AccessClub(){
     useEffect(() => {
         const fetchAccess = () => {
             axios
-            .get("http://localhost:8000/api/contact")
+            .get(`${BACK_URL}/contact`)
             .then(res => {
                 setInfoAccess(res.data[0]);
                 setIsLoadingAccess(false);
@@ -26,7 +26,7 @@ export default function AccessClub(){
     useEffect(() => {
         const fetchBus = () => {
             axios
-            .get("http://localhost:8000/api/home/bus_access")
+            .get(`${BACK_URL}/home/bus_access`)
             .then(res => {
             setBusAccess(res.data);
             setIsLoadingBus(false);
