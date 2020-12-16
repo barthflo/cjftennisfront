@@ -58,7 +58,7 @@ const changeOpenParaResp=() => setOpenParaResp(!openParaResp)
                             </div>
                             <div className="NavbarLearn"  onMouseEnter={changeOpenEns} onMouseLeave={changeCloseEns}  >Enseignement
                             <div className={openEns? "ens-open" : "ens-close"}>
-                                    <Link className="NavLinks" to="/enseignement/team-teaching">Equipe enseignante</Link>
+                                    <Link className="NavLinks" to="/enseignement/team-teaching">Équipe enseignante</Link>
                                     <hr/>
                                     <Link className="NavLinks" to="/enseignement/lesson-for-children">Cours pour enfants</Link>
                                     <hr/>
@@ -67,7 +67,7 @@ const changeOpenParaResp=() => setOpenParaResp(!openParaResp)
                             </div>
                             <div className="NavbarCompet" onMouseEnter={changeOpenComp} onMouseLeave={changeCloseComp}  >Compétition
                             <div className={openComp? "comp-open" : "comp-close"}>
-                                    <Link className="NavLinks" to="/competition/teams">Equipes</Link>
+                                    <Link className="NavLinks" to="/competition/teams">Équipes</Link>
                                     <hr/>
                                     <Link className="NavLinks" to="/competition/tournaments">Tournois</Link>
                                     <hr/>
@@ -119,14 +119,14 @@ const changeOpenParaResp=() => setOpenParaResp(!openParaResp)
                             </div>
                             <div className="EnsResp" onClick={changeOpenEnsResp}>Enseignement
                                 <div className={openEnsResp? "RespLinksEnsContainerOpen" : "RespLinksEnsContainerClose"}>
-                                    <Link className="RespLinksEns" to="/enseignement/team-teaching">Equipe enseignante</Link>
+                                    <Link className="RespLinksEns" to="/enseignement/team-teaching">Équipe enseignante</Link>
                                     <Link className="RespLinksEns" to="/enseignement/lesson-for-children">Cours pour enfants</Link>
                                     <Link className="RespLinksEns" to="/enseignement/lesson-for-adult">Cours pour Adultes</Link>
                                 </div>
                             </div>
                             <div className="CompResp" onClick={changeOpenCompResp}>Competitions
                                 <div className={openCompResp? "RespLinksCompContainerOpen" : "RespLinksCompContainerClose"}>
-                                    <Link className="RespLinksComp" to="/competition/teams">Equipes</Link>
+                                    <Link className="RespLinksComp" to="/competition/teams">Équipes</Link>
                                     <Link className="RespLinksComp" to="/competition/tournaments">Tournois</Link>
                                     <Link className="RespLinksComp" to="/competition/calendar">Calendrier</Link>
                                     <Link className="RespLinksComp" to="/competition/results">Résultats</Link>
