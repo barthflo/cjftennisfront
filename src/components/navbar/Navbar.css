@@ -216,8 +216,8 @@
     }
     .LogoResp{
         position: fixed;
-        width: 150px;
-        height: 150px;
+        width: 140px;
+        height: 140px;
         border-radius: 50%;
         left: 40%;
     }
@@ -410,7 +410,7 @@
     }
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 767px) {
     .NavbarContainer{
         display: none;
     }
@@ -428,7 +428,7 @@
         width: 100px;
         height: 100px;
         border-radius: 50%;
-        left: 40%;
+        left: 37%;
     }
     .NavbarMenu-Burger{
         display: flex;
