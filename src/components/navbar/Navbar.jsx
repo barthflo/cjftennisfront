@@ -106,7 +106,7 @@ const changeOpenParaResp=() => setOpenParaResp(!openParaResp)
                     </div>
                     <div className={openMenu? "menu-open" : "menu-close"}>
                             <div className="CrossContainer"  onClick={changeOpenMenu} to="/"><ImCross className="Cross"/></div>
-                            <Link className="HomeResponsive" to="/">Accueil</Link>
+                            <Link className="HomeResponsive" to="/" onClick={changeOpenMenu}>Accueil</Link>
                             <div className="ClubResp" onClick={changeOpenClubResp} >Club
                                 <div className={openClubResp? "RespLinksClubContainerOpen" : "RespLinksClubContainerClose"}>
                                     <Link className="RespLinksClub" to="/club/about-us" onClick={changeOpenMenu}>Qui sommes-nous ?</Link>
@@ -139,7 +139,7 @@ const changeOpenParaResp=() => setOpenParaResp(!openParaResp)
                                     <Link className="RespLinksPara" to="/paratennis/deaf-and-hard-of-hearing-tennis" onClick={changeOpenMenu}>Tennis Sourd et Malentendant</Link>
                                 </div>
                             </div>
-                            <Link className="AdminResp">Administration</Link>
+                            <Link className="AdminResp" onClick={changeOpenMenu}>Administration</Link>
                         </div>
                 </div>
             )
