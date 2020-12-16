@@ -130,7 +130,7 @@ function Navbar () {
                         <Link className="RespLinksPara" to="/paratennis/deaf-and-hard-of-hearing-tennis">Tennis Sourd et Malentendant</Link>
                     </div>
                 </div>
-                <Link className="AdminResp">Administration</Link>
+                <Link className="AdminResp" to='/admin' target='_blank'>Administration</Link>
             </div>
         </div>
     )

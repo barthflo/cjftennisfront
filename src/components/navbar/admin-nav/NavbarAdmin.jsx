@@ -1,5 +1,5 @@
 import React from 'react';
-import {useHistory} from 'react-router-dom';
+import {useHistory, Link} from 'react-router-dom';
 import {DOMAIN_URL} from '../../../http';
 import {TiUser} from 'react-icons/ti';
 import {AiOutlinePoweroff} from 'react-icons/ai';
@@ -20,11 +20,13 @@ const NavbarAdmin = () => {
         <header className="NavAdmin">
             <nav className="navbar fixed-top d-flex justify-content-between align-items-center py-0 pr-0 pl-2" style={{background:"var(--main-color"}}>
                 <figure style={{width:"50px", height:"50px", margin:"0"}}>
-                    <img 
+                    <Link to ='/'>
+                        <img 
                         className="w-100 h-100"
-                        src={`${DOMAIN_URL}/assets/logo_cjf_tennis.jpg`} 
+                        src={`${DOMAIN_URL}/upload/logo_cjf_tennis.jpg`} 
                         alt="logo"
-                    />
+                        />
+                    </Link>
                 </figure>
                 <div className="d-flex justify-content-around align-items-center m-0 nav-icons">
                     <div className="user-profile d-flex align-items-center pr-2 border-right">

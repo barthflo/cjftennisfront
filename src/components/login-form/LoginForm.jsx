@@ -1,5 +1,5 @@
-import {useState, useEffect} from 'react';
-import {useHistory} from 'react-router-dom';
+import {useState} from 'react';
+import {useHistory, Link} from 'react-router-dom';
 import AuthService from '../../services/auth.service';
 import {DOMAIN_URL} from '../../http';
 import './LoginForm.css';
@@ -19,8 +19,7 @@ const LoginForm = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         AuthService.login(inputs.username, inputs.password)
-        .then(res => console.log(res.status));
-        // .then(res => res ? history.push('/admin') : setError(true))
+        .then(res => res === AuthService.getUser().accessToken ? history.push('/admin'): setError(true))
     }
     return (
         <div className="LoginForm card d-flex justify-content-center align-items-center">
@@ -29,11 +28,13 @@ const LoginForm = (props) => {
                     style={{width:"75px", height:"75px"}}
                     className="mt-2"
                 >
-                    <img
-                        className = "w-100 h-100"
-                        src={`${DOMAIN_URL}/assets/logo_cjf_tennis.jpg`} 
-                        alt="logo"
-                    />
+                    <Link to='/'>
+                        <img
+                            className = "w-100 h-100"
+                            src={`${DOMAIN_URL}/upload/logo_cjf_tennis.jpg`} 
+                            alt="logo"
+                        />
+                    </Link>
                 </figure>
                 <h1>Bienvenue!</h1>
             </div>
