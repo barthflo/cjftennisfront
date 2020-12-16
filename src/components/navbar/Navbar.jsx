@@ -84,7 +84,7 @@ const changeOpenParaResp=() => setOpenParaResp(!openParaResp)
                                     <hr/>
                                     <Link className="NavLinks" to="/paratennis/tournament">Tournois</Link>
                                     <hr/>
-                                    <Link className="NavLinks" to="/paratennis/deaf-and-hard-of-hearing-tennis">Tennis Sourd et Mal-Entendant</Link>
+                                    <Link className="NavLinks" to="/paratennis/deaf-and-hard-of-hearing-tennis">Tennis Sourd et Malentendant</Link>
                                 </div>
                             </div>
                             <Link className="NavbarAdmin" to="/admin" ><BsFillLockFill className="LockIcon"/></Link>
@@ -137,7 +137,7 @@ const changeOpenParaResp=() => setOpenParaResp(!openParaResp)
                                     <Link className="RespLinksPara" to="/paratennis/tennis-armchair">Tennis Fauteuil</Link>
                                     <Link className="RespLinksPara" to="/paratennis/competition-club-league-and-stage">Compétitions Club Ligue et Stages</Link>
                                     <Link className="RespLinksPara" to="/paratennis/tournament">Tournois</Link>
-                                    <Link className="RespLinksPara" to="/paratennis/deaf-and-hard-of-hearing-tennis">Tennis Sourd et Mal-Entendant</Link>
+                                    <Link className="RespLinksPara" to="/paratennis/deaf-and-hard-of-hearing-tennis">Tennis Sourd et Malentendant</Link>
                                 </div>
                             </div>
                             <Link className="AdminResp">Administration</Link>
