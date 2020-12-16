@@ -1,8 +1,5 @@
-1) Chargement des fichiers image
-Veuillez charger tous les fichiers image dans le répertoire racine de votre domaine.
 
-2) Insertion du code HTML
-Veuillez ajouter le code HTML suivant entre les 2 balises <head> </head> :
+
 <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
 <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
