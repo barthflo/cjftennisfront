@@ -1,3 +1,10 @@
 .NavbarContainer {
     background-color: aquamarine;
 }
+
+.nav.ul {
+    position: fixed;
+    padding: 0;
+    left: 0;
+    bottom: 94px;
+}

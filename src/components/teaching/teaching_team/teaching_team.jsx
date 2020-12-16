@@ -1,10 +1,10 @@
 import React from 'react';
-import './Teaching_team.css';
+import './Teaching_Team.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { FETCH } from './../Fetch';
+import { FETCH } from '../Fetch';
 
- const Teaching_team = () => {
+ const Teaching_Team = () => {
      const [teamLists, setTeamLists] = useState([]);
 
      useEffect(() => {
@@ -23,6 +23,7 @@ import { FETCH } from './../Fetch';
             {teamLists.map((teamList) => (
               
                 <div key={teamList.id}>
+                  
                     <ul>
                         <li>{teamList.firstname}</li>
                         <li>{teamList.lastname}</li>
@@ -42,5 +43,5 @@ import { FETCH } from './../Fetch';
  }
     
 
-export default Teaching_team;
+export default Teaching_Team;
 
