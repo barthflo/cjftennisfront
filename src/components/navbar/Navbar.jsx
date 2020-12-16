@@ -47,7 +47,7 @@ const changeOpenParaResp=() => setOpenParaResp(!openParaResp)
                                 <div className={openClub? "club-open" : "club-close"}>
                                     <Link className="NavLinks" to="/club/about-us">Qui sommes-nous ?</Link>
                                     <hr/>
-                                    <Link className="NavLinks" to ="/club/our-infrastructures">Nos infrastructures</Link>
+                                    <Link className="NavLinks" to ="/club/our-infrastructures">Nos Infrastructures</Link>
                                     <hr/>
                                     <Link className="NavLinks" to ="/club/cotisation">Cotisations</Link>
                                     <hr/>
@@ -58,11 +58,11 @@ const changeOpenParaResp=() => setOpenParaResp(!openParaResp)
                             </div>
                             <div className="NavbarLearn"  onMouseEnter={changeOpenEns} onMouseLeave={changeCloseEns}  >Enseignement
                             <div className={openEns? "ens-open" : "ens-close"}>
-                                    <Link className="NavLinks" to="/enseignement/team-teaching">Équipe enseignante</Link>
+                                    <Link className="NavLinks" to="/enseignement/team-teaching">Équipe Enseignante</Link>
                                     <hr/>
-                                    <Link className="NavLinks" to="/enseignement/lesson-for-children">Cours pour enfants</Link>
+                                    <Link className="NavLinks" to="/enseignement/lesson-for-children">Cours pour Enfants</Link>
                                     <hr/>
-                                    <Link className="NavLinks" to="/enseignement/lesson-for-adult">Cours pour adultes</Link>
+                                    <Link className="NavLinks" to="/enseignement/lesson-for-adult">Cours pour Adultes</Link>
                                 </div>
                             </div>
                             <div className="NavbarCompet" onMouseEnter={changeOpenComp} onMouseLeave={changeCloseComp}  >Compétition
@@ -84,7 +84,7 @@ const changeOpenParaResp=() => setOpenParaResp(!openParaResp)
                                     <hr/>
                                     <Link className="NavLinks" to="/paratennis/tournament">Tournois</Link>
                                     <hr/>
-                                    <Link className="NavLinks" to="/paratennis/deaf-and-hard-of-hearing-tennis">Tennis sourd et mal entendant</Link>
+                                    <Link className="NavLinks" to="/paratennis/deaf-and-hard-of-hearing-tennis">Tennis Sourd et Mal-Entendant</Link>
                                 </div>
                             </div>
                             <Link className="NavbarAdmin" to="/admin" ><BsFillLockFill className="LockIcon"/></Link>
@@ -111,7 +111,7 @@ const changeOpenParaResp=() => setOpenParaResp(!openParaResp)
                             <div className="ClubResp" onClick={changeOpenClubResp} >Club
                                 <div className={openClubResp? "RespLinksClubContainerOpen" : "RespLinksClubContainerClose"}>
                                     <Link className="RespLinksClub" to="/club/about-us">Qui sommes nous ?</Link>
-                                    <Link className="RespLinksClub" to="/club/our-infrastructures">Nos infrastructures</Link>
+                                    <Link className="RespLinksClub" to="/club/our-infrastructures">Nos Infrastructures</Link>
                                     <Link className="RespLinksClub" to ="/club/cotisation">Cotisations</Link>
                                     <Link className="RespLinksClub" to="/club/agenda">Agenda</Link>
                                     <Link className="RespLinksClub" to="/club/gallery">Galerie</Link>
@@ -119,8 +119,8 @@ const changeOpenParaResp=() => setOpenParaResp(!openParaResp)
                             </div>
                             <div className="EnsResp" onClick={changeOpenEnsResp}>Enseignement
                                 <div className={openEnsResp? "RespLinksEnsContainerOpen" : "RespLinksEnsContainerClose"}>
-                                    <Link className="RespLinksEns" to="/enseignement/team-teaching">Équipe enseignante</Link>
-                                    <Link className="RespLinksEns" to="/enseignement/lesson-for-children">Cours pour enfants</Link>
+                                    <Link className="RespLinksEns" to="/enseignement/team-teaching">Équipe Enseignante</Link>
+                                    <Link className="RespLinksEns" to="/enseignement/lesson-for-children">Cours pour Enfants</Link>
                                     <Link className="RespLinksEns" to="/enseignement/lesson-for-adult">Cours pour Adultes</Link>
                                 </div>
                             </div>
@@ -137,7 +137,7 @@ const changeOpenParaResp=() => setOpenParaResp(!openParaResp)
                                     <Link className="RespLinksPara" to="/paratennis/tennis-armchair">Tennis Fauteuil</Link>
                                     <Link className="RespLinksPara" to="/paratennis/competition-club-league-and-stage">Compétitions Club Ligue et Stages</Link>
                                     <Link className="RespLinksPara" to="/paratennis/tournament">Tournois</Link>
-                                    <Link className="RespLinksPara" to="/paratennis/deaf-and-hard-of-hearing-tennis">Tennis sourd et mal entendant</Link>
+                                    <Link className="RespLinksPara" to="/paratennis/deaf-and-hard-of-hearing-tennis">Tennis Sourd et Mal-Entendant</Link>
                                 </div>
                             </div>
                             <Link className="AdminResp">Administration</Link>
