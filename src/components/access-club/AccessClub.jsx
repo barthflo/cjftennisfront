@@ -53,12 +53,16 @@ export default function AccessClub(){
                         <p>Du Samedi au Dimanche : de {isLoadingAccess? "Is loading" : infoAccess.saturday_open_at} à {isLoadingAccess? "Is loading" : infoAccess.saturday_close_at}</p>
                     </div>
                     <div className="access-travel">
-                        {busAccess.map((bus) => (
-                            <div className="bus" key={bus.id}>
-                                <p><span className="bold-text">{bus.line}</span></p> 
-                                <p>{bus.info}</p>
-                            </div>
-                        ))}
+                        {isLoadingBus ?
+                            <p>Is loading</p> 
+                            :
+                            busAccess.map((bus) => (
+                                <div className="bus" key={bus.id}>
+                                    <p><span className="bold-text">{bus.line}</span></p> 
+                                    <p>{bus.info}</p>
+                                </div>
+                            ))
+                        }
                     </div>
                 </div>
 

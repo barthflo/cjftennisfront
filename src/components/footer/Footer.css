@@ -66,6 +66,7 @@
 .logo-fb {
     color: var(--dark-color);
     font-size: 40px;
+    transition: .2s linear;
 }
 
 .footer-credits {
