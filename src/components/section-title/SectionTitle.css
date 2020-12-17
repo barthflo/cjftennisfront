@@ -29,7 +29,7 @@
     background-color: var(--main-color);
     border-radius: 50%;
     left: calc(50% - 14px);
-    bottom: -26px;
+    bottom: -23px;
 }
 
 .title-white::after {

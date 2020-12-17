@@ -1,9 +1,11 @@
-
-import Home from "./pages/home/Home";
+import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
-import { Switch, Route, BrowserRouter as Router, Link } from 'react-router-dom';
-import Navbar from "./components/navbar/Navbar";
-import Footer from "./components/footer/Footer";
+import { Switch, BrowserRouter as Router } from 'react-router-dom';
+import ProtectedRoute from './components/protected-route/ProtectedRoute';
+import PublicRoute from './components/public-route/PublicRoute';
+import Dashboard from './components/panel-admin/dashboard/Dashboard';
+import LoginPage from './pages/login.page/LoginPage';
+import Home from "./pages/home/Home";
 import AboutUs from "./pages/club/about-us/AboutUs"
 import OurInfrastructures from "./pages/club/our-infrastructures/OurInfrastructures";
 import Cotisation from "./pages/club/cotisation/Cotisation";
@@ -25,31 +27,27 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Navbar/>
         <Switch>
-          <Route exact path="/" component={Home}/>
-
-          <Route path="/club/about-us" component={AboutUs} />
-          <Route path="/club/our-infrastructures" component={OurInfrastructures}/>
-          <Route path="/club/cotisation" component={Cotisation} />
-          <Route path="/club/agenda" component={Agenda} />
-          <Route path="/club/gallery" component={Gallery} />
-
-          <Route path="/enseignement/team-teaching" component={TeamTeaching} />
-          <Route path="/enseignement/lesson-for-children" component={LessonForChildren} />
-          <Route path="/enseignement/lesson-for-adult" component={LessonForAdult} />
-
-          <Route path="/competition/teams" component={Teams} />
-          <Route path="/competition/tournaments" component={Tournaments} />
-          <Route path="/competition/calendar" component={Calendar} />
-          <Route path="/competition/results" component={Results} />
-
-          <Route path="/paratennis/tennis-armchair" component={TennisArmchair} />
-          <Route path="/paratennis/competition-club-league-and-stage" component={CompetitionClubLeagueAndStage} />
-          <Route path="/paratennis/tournament" component={Tournament} />
-          <Route path="/paratennis/deaf-and-hard-of-hearing-tennis" component={DeafAndHardOfHearingTennis} />
+          <PublicRoute exact path="/" component={Home}/>
+          <PublicRoute path="/club/about-us" component={AboutUs} />
+          <PublicRoute path="/club/our-infrastructures" component={OurInfrastructures}/>
+          <PublicRoute path="/club/cotisation" component={Cotisation} />
+          <PublicRoute path="/club/agenda" component={Agenda} />
+          <PublicRoute path="/club/gallery" component={Gallery} />
+          <PublicRoute path="/enseignement/team-teaching" component={TeamTeaching} />
+          <PublicRoute path="/enseignement/lesson-for-children" component={LessonForChildren} />
+          <PublicRoute path="/enseignement/lesson-for-adult" component={LessonForAdult} />
+          <PublicRoute path="/competition/teams" component={Teams} />
+          <PublicRoute path="/competition/tournaments" component={Tournaments} />
+          <PublicRoute path="/competition/calendar" component={Calendar} />
+          <PublicRoute path="/competition/results" component={Results} />
+          <PublicRoute path="/paratennis/tennis-armchair" component={TennisArmchair} />
+          <PublicRoute path="/paratennis/competition-club-league-and-stage" component={CompetitionClubLeagueAndStage} />
+          <PublicRoute path="/paratennis/tournament" component={Tournament} />
+          <PublicRoute path="/paratennis/deaf-and-hard-of-hearing-tennis" component={DeafAndHardOfHearingTennis} />
+          <PublicRoute path='/admin/login' component={LoginPage} />
+          <ProtectedRoute path='/admin' component={Dashboard}/>
         </Switch>
-        <Footer/>
       </Router>  
     </div>
   );
