@@ -30,6 +30,7 @@
     margin-bottom: var(--spacing-medium);
     color: var(--dark-color);
     text-align: center;
+    font-weight: 600;
 }
 
 .footer-club p {
@@ -66,6 +67,7 @@
 .logo-fb {
     color: var(--dark-color);
     font-size: 40px;
+    transition: .2s linear;
 }
 
 .footer-credits {
@@ -80,7 +82,7 @@
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {}
 
-@media screen and (min-width: 415px) and (max-width: 768px) {
+@media screen and (min-width: 516px) and (max-width: 768px) {
     .main-footer {
         font-size: 14px;
     }
@@ -92,7 +94,7 @@
     }
 }
 
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 515px) {
     .main-footer {
         font-size: 14px;
     }
