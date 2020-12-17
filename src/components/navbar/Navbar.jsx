@@ -75,7 +75,7 @@ function Navbar () {
                         <div className={openPara? "para-open" : "para-close"}>
                             <Link className="NavLinks" to="/paratennis/tennis-armchair" >Tennis Fauteuil</Link>
                             <hr/>
-                            <Link className="NavLinks" to="/paratennis/competition-club-league-and-stage" >Competitions Club Ligue et Stages</Link>
+                            <Link className="NavLinks" to="/paratennis/competition-club-league-and-stage" >Compétitions Club Ligue et Stages</Link>
                             <hr/>
                             <Link className="NavLinks" to="/paratennis/tournament" >Tournois</Link>
                             <hr/>
@@ -114,7 +114,7 @@ function Navbar () {
                         <Link className="RespLinksEns" to="/enseignement/lesson-for-adult" onClick={changeOpenMenu}>Cours pour Adultes</Link>
                     </div>
                 </div>
-                <div className="CompResp" onClick={changeOpenCompResp}>Competitions
+                <div className="CompResp" onClick={changeOpenCompResp}>Compétitions
                     <div className={openCompResp? "RespLinksCompContainerOpen" : "RespLinksCompContainerClose"}>
                         <Link className="RespLinksComp" to="/competition/teams" onClick={changeOpenMenu}>Équipes</Link>
                         <Link className="RespLinksComp" to="/competition/tournaments" onClick={changeOpenMenu}>Tournois</Link>
