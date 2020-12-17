@@ -44,7 +44,7 @@
     }
 }
 
-@media screen and (min-width: 415px) and (max-width: 768px) {
+@media screen and (min-width: 521px) and (max-width: 768px) {
     .banner-photo .main-title {
         font-size: 72px;
     }
@@ -53,9 +53,11 @@
     }
 }
 
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 520px) {
     .banner-photo .main-title {
-        font-size: 64px;
+        margin-left: 12px;
+        margin-right: 12px;
+        font-size: 48px;
     }
     .banner-photo .desc {
         font-size: 32px;
