@@ -1,4 +1,5 @@
 .banner-video {
+    z-index: -1;
     min-height: 100vh;
     width: 100%;
     overflow: hidden;
@@ -35,6 +36,7 @@
     text-align: center;
     margin-bottom: calc(var(--spacing-large) * 2);
     position: relative;
+    z-index: -1;
 }
 
 .banner-video .main-title::after {
@@ -53,6 +55,7 @@
     color: var(--secondary-color);
     text-align: center;
     font-style: italic;
+    z-index: -1;
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
