@@ -53,6 +53,7 @@
 .NavbarHome:hover{
     background-color: #497454;
     color:var(--light-color);
+    text-decoration:none;
 }
 
 .NavbarClub, .NavbarLearn, .NavbarCompet, .NavbarPara{
@@ -68,6 +69,7 @@
 
 .NavbarClub:hover, .NavbarLearn:hover, .NavbarCompet:hover, .NavbarPara:hover{
     color: #497454;
+    text-decoration:none;
 }
 
 .NavbarAdmin{
@@ -157,6 +159,7 @@
 
 .NavLinks:hover{
     background-color: #497454;
+    text-decoration:none;
 }
 
 .NavbarRightBox hr{
@@ -485,7 +488,7 @@
    .HomeResponsive:hover{
        color: var(--main-color);
    }
-   
+
    .ClubResp{
        cursor: pointer;
        color: var(--main-color);
