@@ -1,6 +1,6 @@
 import{Switch, Route} from 'react-router-dom';
 import {Fragment, useState} from 'react';
-import HomeAdmin from '../pages-admin/home-admin.page/HomeAdminPage';
+import HomeAdmin from '../../../pages/pages-admin/home-admin.page/HomeAdminPage';
 import NavBarAdmin from '../../navbar/admin-nav/NavbarAdmin';
 import SidePanel from '../../navbar/admin-nav/SidebarAdmin';
 import '../panelAdmin.css';
