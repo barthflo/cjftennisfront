@@ -1,3 +1,4 @@
+
 .NavbarContainer {
     background-color: var(--light-color);
     box-shadow: black 1px 1px 10px;
@@ -51,9 +52,11 @@
 
 .NavbarHome:hover{
     background-color: #497454;
+    color:var(--light-color);
+    text-decoration:none;
 }
 
-.NavbarClub {
+.NavbarClub, .NavbarLearn, .NavbarCompet, .NavbarPara{
     text-decoration: none;
     color: var(--main-color) ;
     font-size: calc(var(--spacing) *3);
@@ -61,52 +64,12 @@
     margin-left: 2%;
     display: flex;
     justify-content: center;
+    cursor:pointer;
 }
 
-.NavbarClub:hover{
+.NavbarClub:hover, .NavbarLearn:hover, .NavbarCompet:hover, .NavbarPara:hover{
     color: #497454;
-}
-
-.NavbarLearn {
-    text-decoration: none;
-    color: var(--main-color) ;
-    font-size: calc(var(--spacing) *3);
-    padding: var(--spacing-large);
-    display: flex;
-    justify-content: center;
-    margin-left: 2%;
-}
-
-.NavbarLearn:hover{
-    color: #497454;
-}
-
-.NavbarCompet{
-    text-decoration: none;
-    color: var(--main-color) ;
-    font-size: calc(var(--spacing) *3);
-    padding: var(--spacing-large);
-    display: flex;
-    justify-content: center;
-    margin-left: 2%;
-}
-
-.NavbarCompet:hover{
-    color: #497454;
-}
-
-.NavbarPara {
-    text-decoration: none;
-    color: var(--main-color) ;
-    font-size: calc(var(--spacing) *3);
-    padding: var(--spacing-large);
-    display: flex;
-    justify-content: center;
-    margin-left: 2%;
-}
-
-.NavbarPara:hover {
-    color: #497454;
+    text-decoration:none;
 }
 
 .NavbarAdmin{
@@ -188,7 +151,7 @@
 
 .NavLinks{
     text-decoration: none;
-    color: var(--light-color);
+    color: var(--light-color)!important;
     background-color: var(--main-color);
     padding: 15px;
     font-size: calc(var(--spacing) *2.4);    
@@ -196,6 +159,7 @@
 
 .NavLinks:hover{
     background-color: #497454;
+    text-decoration:none;
 }
 
 .NavbarRightBox hr{
@@ -520,7 +484,11 @@
        color: var(--main-color);
        padding-bottom: 3vh ;
    }
-    
+
+   .HomeResponsive:hover{
+       color: var(--main-color);
+   }
+
    .ClubResp{
        cursor: pointer;
        color: var(--main-color);
@@ -562,6 +530,10 @@
        color: var(--main-color);
        font-size: 70%;
        padding: 1vh;   
+   }
+
+   .RespLinksClub:hover, .RespLinksEns:hover, .RespLinksComp:hover, .RespLinksPara:hover{
+       color:var(--main-color);
    }
     
    .RespLinksClubContainerClose{
@@ -831,3 +803,4 @@
         flex-direction: column;
         padding-top: 0.5vh;
     }
+}
