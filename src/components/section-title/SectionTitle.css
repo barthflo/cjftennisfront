@@ -24,12 +24,12 @@
 .title-white::after, .title-gray::after {
     content: '';
     position: absolute;
-    width: 16px;
-    height: 16px;
+    width: 24px;
+    height: 24px;
     background-color: var(--main-color);
     border-radius: 50%;
     left: calc(50% - 14px);
-    bottom: -23px;
+    bottom: -26px;
 }
 
 .title-white::after {

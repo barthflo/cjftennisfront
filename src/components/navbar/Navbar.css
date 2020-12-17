@@ -95,7 +95,7 @@
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    margin-top: 60px;
+    margin-top: 68px;
     background-color: var(--main-color);
     min-width: 250px;
 }
@@ -110,7 +110,7 @@
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    margin-top: 60px;
+    margin-top: 68px;
     background-color: var(--main-color);
     min-width: 250px;   
 }
@@ -125,7 +125,7 @@
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    margin-top: 60px;
+    margin-top: 68px;
     background-color: var(--main-color);
     min-width: 250px;    
 }
@@ -140,7 +140,7 @@
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    margin-top: 60px;
+    margin-top: 68px;
     background-color: var(--main-color); 
     min-width: 250px;    
 }
@@ -170,7 +170,7 @@
     margin: 0 auto;
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1320px) {
     .NavbarContainer {
         background-color: var(--light-color);
         box-shadow: black 1px 1px 10px;
@@ -380,7 +380,7 @@
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 830px) {
     .Logo{
         display: none;
     }

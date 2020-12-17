@@ -1,3 +1,7 @@
+.access-container p{
+    margin: 0;
+}
+
 .access-container {
     background-color: var(--secondary-color);
     min-height: 90vh;

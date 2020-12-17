@@ -30,6 +30,7 @@
     margin-bottom: var(--spacing-medium);
     color: var(--dark-color);
     text-align: center;
+    font-weight: 600;
 }
 
 .footer-club p {
