@@ -1,0 +1,122 @@
+
+.presidetWord-container{
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.president_image{
+    width: 300px;
+    height: 400px;
+}
+
+.president-name{
+    font-family: var(--main-font);
+}
+
+.president{
+    padding-top: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.president-word{
+    padding-top: 60px;
+    width: 60%;
+}
+
+
+.description{
+    padding-top: 30px;
+    text-align: justify;
+    color: var(--dark-color);
+    font-family: var(--secondary-font);
+    font-size: 20px;
+}
+
+
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+    .president{
+        padding: 0;
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+
+    .president-word{
+        width: 100%;
+    }
+    .description{
+        
+        text-align:left;
+        font-size: 25px;
+    }
+
+    .president-name{
+        font-size: 30px;
+    }
+
+
+}
+
+@media screen and (min-width: 415px) and (max-width: 768px) {
+    .presidetWord-container{
+        padding: 0;
+    }
+    .president{
+        padding: 0;
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+    .president-word{
+        width: 100%;
+        padding-top: 20px;
+    }
+    .description{
+        
+        text-align:left;
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 414px) {
+
+    .president{
+        padding-top: 0;
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+    .president_image{
+        width: 200px;
+        height: 200px;
+     }
+
+    .presidetWord-container{
+        padding: 0;
+    }
+
+    .president-word{
+        width: 100%;
+        padding-top: 10px;
+    }
+    .description{
+        
+        text-align:left;
+        font-size: 16px;
+    }
+    
+}
+
