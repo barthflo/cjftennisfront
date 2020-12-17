@@ -1,0 +1,17 @@
+.LoginForm h1{
+    font-family:var(--main-font);
+    font-size:1.5em;
+}
+.LoginForm.card{
+    border: var(--spacing) var(--main-color) solid;
+    box-shadow:1px 1px 20px var(--dark-color);
+}
+.LoginForm form label{
+    font-family:var(--secondary-font);
+}
+.LoginForm form button{
+    border-color: var(--main-color);
+}
+.LoginForm form button:hover{
+    background-color:var(--main-color);
+}

@@ -1,0 +1,12 @@
+.NavAdmin nav {
+    box-shadow: 1px 1px 5px black;
+}
+
+.NavAdmin .logout-icon{
+    min-width: 78px;
+}
+.NavAdmin .logout:hover, .NavAdmin .user-profile:hover, .NavAdmin .user-profile:hover p, .NavAdmin .user-profile:hover path {
+    color:lightgray !important;
+    cursor: pointer;
+    transition:.2s ease-in;
+}
