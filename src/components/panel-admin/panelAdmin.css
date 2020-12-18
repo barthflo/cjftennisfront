@@ -1,16 +1,23 @@
-.closed{
-    opacity:0;
-    transition: .5s ease-in-out;
-    width:calc(100vw - 300px) !important;
-    margin-right:300px !important;
+.page-container{
+    margin-top:50px;
 }
 
+.home-admin{
+    background: #e6e6e6;
+}
+
+.closed{
+    display: none;
+    width:0 !important;
+}
 .opened{
-    transition: .5s ease-in-out;
+    display: block;
+    width: 100%;
 }
 
 @media screen and (min-width : 576px){
     .closed{
-        opacity:1;
+        display: unset;
+        width:100% !important;
     }
 }
