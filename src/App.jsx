@@ -16,10 +16,10 @@ function App() {
       </Route>
       <Navbar/>
       <BannerVideo source="http://localhost:3000/upload/tennis_intro.mp4" title="CJF Tennis" subtitle="Ici c'est Fleury" />
-      <IconsInfo />
-      <AccessClub />
-      <Teaching_Team />
-      <Footer />
+      <IconsInfo/>
+      <AccessClub/>
+      <Teaching_Team/>
+      <Footer/>
     </div>
   );
 }
