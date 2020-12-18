@@ -13,7 +13,7 @@ const HomeAdminPage = (props) => {
             <h1>Général</h1>
             <ul className="list-group list-group-horizontal-md justify-content-center">
                 {components.map((component, index) => 
-                    <li className="card list-group-item m-1" key={index}>{component}</li>
+                    <li className="card list-group-item m-1 w-100" key={index}>{component}</li>
                 )}
             </ul>
         </main>
