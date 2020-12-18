@@ -1,7 +1,40 @@
 import './AccessClub.css';
 import SectionTitle from '../section-title/SectionTitle';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { BACK_URL } from '../../http';
 
 export default function AccessClub(){
+    const [infoAccess, setInfoAccess] = useState([]);
+    const [busAccess, setBusAccess] = useState([]);
+
+    const [isLoadingAccess, setIsLoadingAccess] = useState(true);
+    const [isLoadingBus, setIsLoadingBus] = useState(true);
+
+    useEffect(() => {
+        const fetchAccess = () => {
+            axios
+            .get(`${BACK_URL}/contact`)
+            .then(res => {
+                setInfoAccess(res.data[0]);
+                setIsLoadingAccess(false);
+            })
+        };
+        fetchAccess();
+    }, [])
+
+    useEffect(() => {
+        const fetchBus = () => {
+            axios
+            .get(`${BACK_URL}/home/bus_access`)
+            .then(res => {
+            setBusAccess(res.data);
+            setIsLoadingBus(false);
+        })
+        };
+        fetchBus();
+    }, [])
+
     return(
         <section className="access-container">
             <SectionTitle title="Nous rejoindre" color="white" />
@@ -9,25 +42,27 @@ export default function AccessClub(){
                 <div className="access-info">
                     <div className="access-adress">
                         <div className="address">
-                            <p><span className="bold-text">Complexe Sportif de la Forêt</span></p>
-                            <p><span className="bold-text">Rue de la Tuilerie 45770 SARAN</span></p>
+                            <p><span className="bold-text">{isLoadingAccess? "Is loading" : infoAccess.address_1}</span></p>
+                            <p><span className="bold-text">{isLoadingAccess? "Is loading" : `${infoAccess.address_2} ${infoAccess.post_code} ${infoAccess.city}`}</span></p>
                         </div>
-                        <p>02 38 73 62 61</p>
-                        <p>cjf.tennis@wanadoo.fr</p>
+                        <p>{isLoadingAccess? "Is loading" : infoAccess.phone}</p>
+                        <p>{isLoadingAccess? "Is loading" : infoAccess.email}</p>
                     </div>
                     <div className="access-time">
-                        <p>Du Lundi au Vendredi : de 9h00 à 22h00</p>
-                        <p>Du Samedi au Dimanche : de 9h00 à 20h00</p>
+                        <p>Du Lundi au Vendredi : de {isLoadingAccess? "Is loading" : infoAccess.week_open_at} à {isLoadingAccess? "Is loading" : infoAccess.week_close_at}</p>
+                        <p>Du Samedi au Dimanche : de {isLoadingAccess? "Is loading" : infoAccess.saturday_open_at} à {isLoadingAccess? "Is loading" : infoAccess.saturday_close_at}</p>
                     </div>
                     <div className="access-travel">
-                        <div className="bus">
-                            <p><span className="bold-text">Bus 6 : arrêt Debacq (Saran)</span></p> 
-                            <p>14 minutes à partir de l'arrêt Mairie de Fleury, direction Les Montaubans</p>
-                        </div>
-                        <div className="bus">
-                            <p><span className="bold-text">Bus 18 : arrêt Debacq (Saran)</span></p>
-                            <p>25 minutes à partir de l'arrêt Gare d'Orléans C, direction Cap Saran</p>
-                        </div>
+                        {isLoadingBus ?
+                            <p>Is loading</p> 
+                            :
+                            busAccess.map((bus) => (
+                                <div className="bus" key={bus.id}>
+                                    <p><span className="bold-text">{bus.line}</span></p> 
+                                    <p>{bus.info}</p>
+                                </div>
+                            ))
+                        }
                     </div>
                 </div>
 
