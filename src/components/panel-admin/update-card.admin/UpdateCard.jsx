@@ -1,14 +1,35 @@
-import React ,{Fragment, useState} from 'react';
+import React ,{Fragment, useState, useEffect} from 'react';
 import FileUpload from '../FileUpload';
 import './UpdateCard.css';
 import Axios from 'axios';
 import {BACK_URL} from '../../../http';
-import {useHistory} from 'react-router-dom';
+import {useHistory, useParams} from 'react-router-dom';
 
-const UpdateCard = ({data, url}) => {
+const UpdateCard = ({url}) => {
 
+    const { id } = useParams();
+    const [data, setData] = useState([]);
+    const [ isLoading, setIsLoading] = useState(true);
     const history = useHistory();
-    const [inputs, setInputs] = useState(data);
+    const [inputs, setInputs] = useState([]);
+
+    useEffect(() => {
+        const fetchData = () => {
+            Axios.get(`${BACK_URL}/home/intro/${id}`)
+                 .then(res => {
+                     if(data.length === 0){
+                        setData(res.data);
+                        setIsLoading(false);
+                     }
+                 });
+        }
+        fetchData();
+        setInputs(data);
+    }, [data]);
+    console.log(data);
+    
+    
+    
     const handleChange = (e) => {
         setInputs({...inputs, [e.target.name] : e.target.value});
     }
@@ -16,8 +37,9 @@ const UpdateCard = ({data, url}) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         Axios.put(`${BACK_URL}/home/intro/${data.id}`, inputs)
-             .then(res => {
+             .then((res, err) => {
                 console.log(res.status);
+                console.log(err);
                 if(res.status === 200){
                     history.push('/admin')
                 } 

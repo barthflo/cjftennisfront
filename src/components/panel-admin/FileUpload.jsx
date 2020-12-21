@@ -7,9 +7,9 @@ const FileUpload = () => {
     const [fileName, setFileName] = useState('Choose File');
     const [uploadedFile, setUploadedFile] = useState({});
 
-    useEffect (() => {
-        setUploadedFile(uploadedFile);
-    })
+    // useEffect (() => {
+    //     setUploadedFile(uploadedFile);
+    // })
     
     const handleChange = e => {
         setFile(e.target.files[0]);
@@ -38,7 +38,7 @@ const FileUpload = () => {
             }
         }
 
-        await Axios.put(`${BACK_URL}/home/intro/1`, {id:1, video_url : fileName});
+        await Axios.put(`${BACK_URL}/home/intro/1`, {id:1, video_url : fileName}).then(res => console.log(res));
     }
 
     return (
