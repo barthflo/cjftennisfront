@@ -34,7 +34,7 @@ function Navbar () {
         <div className="Navbar" id="Navbar">
             <div className="NavbarContainer">
                 <div className="NavbarLeftbBox">
-                    <Link to="/"><img className="Logo" src={`${DOMAIN_URL}/upload/logo_cjf_tennis.jpg`}/></Link>
+                    <Link to="/"><img className="Logo" src={`${DOMAIN_URL}/upload/logo_cjf_tennis.jpg`} alt="logo"/></Link>
                 </div>
                 <div className="NavbarRightBox">
                     <Link className="NavbarHome" to="/" >Accueil</Link>
@@ -87,7 +87,7 @@ function Navbar () {
             </div>
             <div className="NavbarResponsive">
                 <div className="LogoContainer">
-                    <Link to="/"><img className="LogoResp" src={`${DOMAIN_URL}/upload/logo_cjf_tennis.jpg`}/></Link>
+                    <Link to="/"><img className="LogoResp" src={`${DOMAIN_URL}/upload/logo_cjf_tennis.jpg`} alt="logo"/></Link>
                 </div>      
                 <a className="NavbarMenu-Burger" id="#Burger" href="#" onClick={changeOpenMenu} >
                     <span></span>

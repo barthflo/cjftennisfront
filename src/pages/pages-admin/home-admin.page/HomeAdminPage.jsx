@@ -4,6 +4,7 @@ import IconsInfosAdmin from '../../../components/panel-admin/icons-info.admin/Ic
 
 const components = [
     <BannerVideoAdmin />,
+    <IconsInfosAdmin />,
     <IconsInfosAdmin />
 ]
 
@@ -11,9 +12,9 @@ const HomeAdminPage = (props) => {
     return (
         <main className={"home-admin container-fluid" + (props.close ? " closed" : " opened")}>
             <h1>Général</h1>
-            <ul className="list-group list-group-horizontal-md justify-content-center">
+            <ul className="list-group d-flex flex-row flex-wrap justify-content-center">
                 {components.map((component, index) => 
-                    <li className="card list-group-item m-1 w-100" key={index}>{component}</li>
+                    <li className={"list-group-item m-1 w-100 home-admin" + index } key={index}>{component}</li>
                 )}
             </ul>
         </main>
