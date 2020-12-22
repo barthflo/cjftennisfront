@@ -8,7 +8,7 @@ const ButtonUpdate = (props) => {
     const redirect = () => history.push(`${props.url}`);
     return (
         <Fragment>
-            <button onClick={redirect}className="btn btn-primary d-flex align-items-center">
+            <button onClick={redirect}className={`btn btn-sm btn-primary d-flex align-items-center ${props.margin}`}>
                 <RiSettings4Line color={"white"} size={"1.3em"}/>
                 <p className=" ml-2 mb-0">Mettre à jour</p>
             </button>

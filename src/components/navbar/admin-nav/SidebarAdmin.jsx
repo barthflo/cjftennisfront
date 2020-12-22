@@ -14,7 +14,7 @@ const SidebarAdmin = (props) => {
     useEffect(() => {
         setActivePage(history.location.pathname);
     }, [history.location.pathname])
-    console.log(activePage);
+
     return (
         <aside className={"side-bar d-flex flex-row-reverse align-items-start px-2" + (props.open ? ' open' : '')}>
             <div className="side-icons d-flex flex-column align-items-center">

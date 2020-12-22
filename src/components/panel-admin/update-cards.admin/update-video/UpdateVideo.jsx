@@ -7,6 +7,7 @@ import {useHistory, useParams} from 'react-router-dom';
 import ButtonUpload from '../../buttons/ButtonUpload';
 import ButtonSave from '../../buttons/ButtonSave';
 import UploadService from '../../../../services/upload.service';
+import ButtonBack from '../../buttons/ButtonBack';
 
 const UpdateVideo = () => {
 
@@ -135,7 +136,8 @@ const UpdateVideo = () => {
                         </form>
                     </div>
                     <div className="card-footer d-flex justify-content-end">
-                        <ButtonSave form={"UpdateVideo"}/>
+                        <ButtonSave form={"UpdateVideo"} margin="mr-1"/>
+                        <ButtonBack margin="ml-1"/>
                     </div>
                 </div>
             </div>
