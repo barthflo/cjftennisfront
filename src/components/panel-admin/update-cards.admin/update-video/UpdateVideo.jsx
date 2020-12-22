@@ -69,7 +69,7 @@ const UpdateVideo = () => {
                 }
             })
     }
-
+    console.log(uploadedFile);
     return (
         
         <Fragment> 

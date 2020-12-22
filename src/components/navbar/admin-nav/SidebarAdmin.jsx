@@ -8,6 +8,7 @@ import {BiHandicap, BiNews} from 'react-icons/bi';
 import {IoMdPhotos} from 'react-icons/io';
 
 const SidebarAdmin = (props) => {
+
     const history = useHistory();
     const[activePage, setActivePage] = useState(history.location.pathname)
     useEffect(() => {

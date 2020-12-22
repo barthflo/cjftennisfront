@@ -2,6 +2,7 @@ import React from 'react';
 import {useHistory, Link} from 'react-router-dom';
 import {DOMAIN_URL} from '../../../http';
 import {TiUser} from 'react-icons/ti';
+import {AiOutlinePoweroff} from 'react-icons/ai';
 import {BiExit} from 'react-icons/bi';
 import AuthService from '../../../services/auth.service';
 import './NavbarAdmin.css';

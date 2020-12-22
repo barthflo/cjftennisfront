@@ -82,7 +82,7 @@ function Navbar () {
                             <Link className="NavLinks" to="/paratennis/deaf-and-hard-of-hearing-tennis">Tennis Sourd et Malentendant</Link>
                         </div>
                     </div>
-                    <Link className="NavbarAdmin" to="/admin" target="_blank" ><BsFillLockFill className="LockIcon"/></Link>
+                    <Link className="NavbarAdmin" to="/admin" ><BsFillLockFill className="LockIcon"/></Link>
                 </div>
             </div>
             <div className="NavbarResponsive">
