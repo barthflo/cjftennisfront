@@ -1,5 +1,4 @@
 import React from 'react';
-import UpdateVideo from '../../../components/panel-admin/update-cards.admin/update-video/UpdateVideo';
 
 const UpdatePage = ({component: Component,  ...props}) => {
     return (
