@@ -10,3 +10,4 @@ Emmanuel AKE - Theo ATLANI - Florent BARTH - Bilal CHERFA - Florent DESMARETS
 npm install
 npm install react-router-dom
 npm install react-icons
+npm install react-multi-carousel
