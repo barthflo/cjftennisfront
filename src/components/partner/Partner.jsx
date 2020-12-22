@@ -63,14 +63,14 @@ export default function Partner(){
                   tablet: {
                     breakpoint: {
                       max: 1024,
-                      min: 665
+                      min: 860
                     },
                     items: 2,
                     partialVisibilityGutter: 30
                   },
                   mobile: {
                     breakpoint: {
-                      max: 664,
+                      max: 859,
                       min: 0
                     },
                     items: 1,
