@@ -88,7 +88,8 @@ const UpdateVideo = () => {
                     <div className="video-upload d-flex flex-column justify-content-center align-items-center">
                         <div className="input-group align-items-center justify-content-center">
                             <input 
-                                className="custom-file-input w-0" 
+                                className="custom-file-input"
+                                style={{height:"0"}} 
                                 type="file" 
                                 name="file" 
                                 id="videoUpload"
@@ -101,9 +102,9 @@ const UpdateVideo = () => {
                             >
                                 {fileName}
                             </label>
-                            <ButtonUpload upload={upload}/>
+                            <ButtonUpload upload={upload} success={uploadedFile.successMessage}/>
                         </div>
-                        {uploadedFile.successMessage != null && <small className= "mt-4 text-light">{uploadedFile.successMessage}</small> }
+                        {/* {uploadedFile.successMessage != null && <small className= "mt-4 text-light">{uploadedFile.successMessage}</small> } */}
                     </div> 
                 </Fragment> 
             }

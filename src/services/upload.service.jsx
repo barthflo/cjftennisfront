@@ -22,4 +22,4 @@ const upload = async (files) => {
     }
 }
 
-export default upload
+export default {upload}
