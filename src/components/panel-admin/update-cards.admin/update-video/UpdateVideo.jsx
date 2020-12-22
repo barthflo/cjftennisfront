@@ -69,9 +69,8 @@ const UpdateVideo = () => {
                 }
             })
     }
-    console.log(uploadedFile);
-    return (
-        
+
+    return (    
         <Fragment> 
             {error && error.errorMessage }   
             <div className="video-update-container d-flex justify-content-center align-items-center">
@@ -104,7 +103,6 @@ const UpdateVideo = () => {
                             </label>
                             <ButtonUpload upload={upload} success={uploadedFile.successMessage}/>
                         </div>
-                        {/* {uploadedFile.successMessage != null && <small className= "mt-4 text-light">{uploadedFile.successMessage}</small> } */}
                     </div> 
                 </Fragment> 
             }

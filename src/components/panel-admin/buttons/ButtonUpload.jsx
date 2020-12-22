@@ -1,4 +1,4 @@
-import React ,{Fragment} from 'react'
+import React from 'react'
 import {FiUpload} from 'react-icons/fi';
 
 const ButtonUpload = (props) => {
