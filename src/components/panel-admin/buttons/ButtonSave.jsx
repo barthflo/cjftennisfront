@@ -1,7 +1,7 @@
 import React ,{Fragment} from 'react'
 import {AiOutlineSave} from 'react-icons/ai';
 
-const ButtonUpdate = (props) => {
+const ButtonSave = (props) => {
     return (
         <Fragment>
             <button form={props.form} className="btn btn-primary d-flex align-items-center">
@@ -12,4 +12,4 @@ const ButtonUpdate = (props) => {
     )
 }
 
-export default ButtonUpdate;
+export default ButtonSave;
