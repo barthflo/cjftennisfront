@@ -1,4 +1,4 @@
-import React, {Fragment, useState, useEffect} from 'react';
+import React, {Fragment, useState} from 'react';
 import Axios from 'axios';
 import {BACK_URL, DOMAIN_URL} from '../../http';
 
@@ -7,10 +7,6 @@ const FileUpload = () => {
     const [fileName, setFileName] = useState('Choose File');
     const [uploadedFile, setUploadedFile] = useState({});
 
-    useEffect (() => {
-        setUploadedFile(uploadedFile);
-    })
-    
     const handleChange = e => {
         setFile(e.target.files[0]);
         setFileName(e.target.files[0].name);
@@ -40,21 +36,20 @@ const FileUpload = () => {
 
         await Axios.put(`${BACK_URL}/home/intro/1`, {id:1, video_url : fileName});
     }
-
     return (
         <Fragment>
-            <form onSubmit={handleSubmit} >
+            <form className="mb-5" onSubmit={handleSubmit} >
                 <div className="custom-file">
-                    <input onChange={handleChange} type="file" className="custom-file-input d-none"  name="file" id="customFile"/>
-                    <label style={{ color:"white", cursor:"pointer"}} className="mr-3" htmlFor="customFile">{fileName}</label>
+                <input onChange={handleChange} type="file" className="custom-file-input" name="file" id="customFile"/>
+                <label htmlFor="customFile">{fileName}</label>
 
-                    <input type="submit" value="Upload" className="btn btn-primary btn-clock" />
+                <input type="submit" value="Upload" className="btn btn-primary btn-clock" />
                 </div>
             </form>
 
             {uploadedFile.fileName ? 
             <Fragment>
-            {/* <video src={`${DOMAIN_URL}/${uploadedFile.filePath}`} /> */}
+            <img src={`${DOMAIN_URL}/${uploadedFile.filePath}`} />
             <h3>{uploadedFile.successMessage}</h3>
             </Fragment>
             :
