@@ -27,10 +27,10 @@
 
 @media screen and (min-width : 768px){
     .home-admin0{
-        width:60% !important;
+        width:calc(60% - 8px) !important;
     }
     .home-admin1{
-        width:37% !important;
+        width:calc(40% - 8px) !important;
     }
 }
 

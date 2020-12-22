@@ -135,9 +135,9 @@ const UpdateVideo = () => {
                             </div>
                         </form>
                     </div>
-                    <div className="card-footer d-flex justify-content-end">
-                        <ButtonSave form={"UpdateVideo"} margin="mr-1"/>
-                        <ButtonBack margin="ml-1"/>
+                    <div className="card-footer d-flex flex-row-reverse justify-content-start">
+                        <ButtonSave form={"UpdateVideo"} margin="ml-1"/>
+                        <ButtonBack margin="mr-1"/>
                     </div>
                 </div>
             </div>
