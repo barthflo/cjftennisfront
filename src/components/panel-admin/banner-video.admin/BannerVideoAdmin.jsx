@@ -27,11 +27,11 @@ const BannerVideoAdmin = (props) => {
     return (
         <Fragment>
             {isLoading ? 
-            <div className="loader-container d-flex justify-content-center align-items-center" style={{minHeight:"100px"}}>
+            <section className="loader-container d-flex justify-content-center align-items-center" style={{minHeight:"100px"}}>
                 <RotateLoader size={10} color={"#345C3E"} /> 
-            </div>
+            </section>
             : 
-            <div className="card border-0 h-100" style={{width: props.width}}>
+            <section className="card border-0 h-100" style={{width: props.width}}>
                 <div className="card-header pb-0">
                     <h2>Vidéo Accueil</h2>
                 </div>
@@ -50,7 +50,7 @@ const BannerVideoAdmin = (props) => {
                 <div className="card-footer">
                     <ButtonUpdate url={`admin/edit/video/${datas.id}`}/>
                 </div>
-            </div>
+            </section>
             }
         </Fragment>
     )

@@ -74,7 +74,7 @@ const UpdateVideo = () => {
     return (    
         <Fragment> 
             {error && error.errorMessage }   
-            <div className="video-update-container d-flex justify-content-center align-items-center">
+            <section className="video-update-container d-flex justify-content-center align-items-center">
             {isLoading ? 
                 <RotateLoader size={10} color={"#345C3E"} /> 
             : 
@@ -107,8 +107,8 @@ const UpdateVideo = () => {
                     </div> 
                 </Fragment> 
             }
-            </div>
-            <div className="container mt-2">
+            </section>
+            <section className="container mt-2">
                 <div className="card">
                     <div className="card-body">
                         <form id="UpdateVideo" onSubmit={handleSubmit}>
@@ -140,7 +140,7 @@ const UpdateVideo = () => {
                         <ButtonBack margin="mr-1"/>
                     </div>
                 </div>
-            </div>
+            </section>
         </Fragment>
     )
 }
