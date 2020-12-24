@@ -15,7 +15,7 @@ const upload = async (files) => {
     catch(err){
         console.log(err);
         if(err.response.status === 500){
-            return {errorMessage : "Un problème est survenue avec le serveur. Veuilez réessayer plus tard"}
+            return {errorMessage : "Un problème est survenu avec le serveur. Veuillez réessayer plus tard."}
         }else{
             return {errorMessage : "Aucun fichier sélectionné"};
         }

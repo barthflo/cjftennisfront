@@ -13,7 +13,7 @@ const UpdateVideo = () => {
     const { id } = useParams();
     const history = useHistory();
     const [data, setData] = useState([]);
-    const [ isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState('');
     const [file, setFile] = useState('');
     const [fileName, setFileName] = useState('Choose File');
