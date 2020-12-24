@@ -13,8 +13,8 @@ const SidebarAdmin = (props) => {
     const[activePage, setActivePage] = useState(history.location.pathname)
     useEffect(() => {
         setActivePage(history.location.pathname);
-    })
-
+    }, [history.location.pathname])
+    console.log(activePage);
     return (
         <aside className={"side-bar d-flex flex-row-reverse align-items-start px-2" + (props.open ? ' open' : '')}>
             <div className="side-icons d-flex flex-column align-items-center">
@@ -22,8 +22,8 @@ const SidebarAdmin = (props) => {
                     <GiHamburgerMenu size={"1.7em"} onClick={props.toggleOpen}/>
                     <small>Menu</small>
                 </div>
-                <div className={"d-flex flex-column align-items-center mb-2" + (activePage === "/admin"  ? ' active' : '')}>
-                    <Link to='/admin'><FaHome size={"1.7em"} className={activePage === "/admin" && 'active'} /></Link>
+                <div className={"d-flex flex-column align-items-center mb-2" + (activePage === "/admin" || activePage.includes("admin/edit") ? ' active' : '')}>
+                    <Link to='/admin'><FaHome size={"1.7em"} className={(activePage === "/admin" || activePage.includes("admin/edit")) && 'active'} /></Link>
                     <small>Accueil</small>
                 </div>
                 <div className={"d-flex flex-column align-items-center mb-2" + (activePage.includes("paratennis") ? ' active' : '')}>

@@ -1,11 +1,11 @@
 import React from 'react'
 
-const BannerVideoAdmin = () => {
+const IconsInfosAdmin = (props) => {
     return (
-        <div>
+        <div style = {{ width:props.width}}>
             <h2>Hello icons</h2>
         </div>
     )
 }
 
-export default BannerVideoAdmin;
+export default IconsInfosAdmin;

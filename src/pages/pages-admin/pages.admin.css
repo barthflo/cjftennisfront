@@ -25,6 +25,14 @@
     min-height:calc(100vh - 50px);
 }
 
+@media screen and (min-width : 768px){
+    .home-admin0{
+        width:60% !important;
+    }
+    .home-admin1{
+        width:37% !important;
+    }
+}
 
 
 
