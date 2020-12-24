@@ -7,6 +7,7 @@ import {useHistory, useParams} from 'react-router-dom';
 import ButtonUpload from '../../buttons/ButtonUpload';
 import ButtonSave from '../../buttons/ButtonSave';
 import UploadService from '../../../../services/upload.service';
+import ButtonBack from '../../buttons/ButtonBack';
 
 const UpdateVideo = () => {
 
@@ -73,7 +74,7 @@ const UpdateVideo = () => {
     return (    
         <Fragment> 
             {error && error.errorMessage }   
-            <div className="video-update-container d-flex justify-content-center align-items-center">
+            <section className="video-update-container d-flex justify-content-center align-items-center">
             {isLoading ? 
                 <RotateLoader size={10} color={"#345C3E"} /> 
             : 
@@ -106,8 +107,8 @@ const UpdateVideo = () => {
                     </div> 
                 </Fragment> 
             }
-            </div>
-            <div className="container mt-2">
+            </section>
+            <section className="container mt-2">
                 <div className="card">
                     <div className="card-body">
                         <form id="UpdateVideo" onSubmit={handleSubmit}>
@@ -134,11 +135,12 @@ const UpdateVideo = () => {
                             </div>
                         </form>
                     </div>
-                    <div className="card-footer d-flex justify-content-end">
-                        <ButtonSave form={"UpdateVideo"}/>
+                    <div className="card-footer d-flex flex-row-reverse justify-content-start">
+                        <ButtonSave form={"UpdateVideo"} margin="ml-1"/>
+                        <ButtonBack margin="mr-1"/>
                     </div>
                 </div>
-            </div>
+            </section>
         </Fragment>
     )
 }

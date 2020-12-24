@@ -7,8 +7,9 @@ import UpdatePage from '../../../pages/pages-admin/update-admin.page/UpdatePage'
 import '../panelAdmin.css';
 import '../../../pages/pages-admin/pages.admin.css';
 import UpdateVideo from '../update-cards.admin/update-video/UpdateVideo';
+import UpdateIcons from '../update-cards.admin/update-icons.admin/UpdateIcons';
 
-const Dashboard = (props) => {
+const Dashboard = () => {
     const[isOpen, setIsOpen] = useState(false);
     const toggleOpen = () => {
         setIsOpen(!isOpen);
@@ -24,6 +25,9 @@ const Dashboard = (props) => {
                     </Route>
                     <Route path='/admin/edit/video/:id'>
                         <UpdatePage close={isOpen} component={UpdateVideo}/>
+                    </Route>
+                    <Route path='/admin/edit/icons'>
+                        <UpdatePage close={isOpen} component={UpdateIcons}/>
                     </Route>
                     <Route path='/admin/paratennis'>Paratennis</Route>
                 </Switch>
