@@ -6,6 +6,7 @@
     width: 90%;
     min-height: 35vh;
     margin: 0 auto;
+    margin-bottom: var(--spacing-large);
 }
 
 .article .image {
