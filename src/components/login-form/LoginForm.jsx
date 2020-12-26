@@ -27,9 +27,8 @@ const LoginForm = (props) => {
                 history.push('/admin');
             }
         })
-        // .then(res => res === AuthService.getUser().accessToken ? history.push('/admin'): console.log("no"))
-
     }
+    
     return (
         <div className="LoginForm card d-flex justify-content-center align-items-center">
             <div className="card-header d-flex flex-column align-items-center">
