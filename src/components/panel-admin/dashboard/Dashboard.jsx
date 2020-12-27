@@ -8,6 +8,9 @@ import '../panelAdmin.css';
 import '../../../pages/pages-admin/pages.admin.css';
 import UpdateVideo from '../update-cards.admin/update-video/UpdateVideo';
 import UpdateIcons from '../update-cards.admin/update-icons.admin/UpdateIcons';
+import GalleryAdminPage from '../../../pages/pages-admin/gallery-admin.page/GalleryAdminPage';
+import GalleryList from '../galleries.admin/GalleryList';
+import GalleryCreate from '../galleries.admin/GalleryCreate';
 
 const Dashboard = () => {
     const[isOpen, setIsOpen] = useState(false);
@@ -28,6 +31,12 @@ const Dashboard = () => {
                     </Route>
                     <Route path='/admin/edit/icons'>
                         <UpdatePage close={isOpen} component={UpdateIcons}/>
+                    </Route>
+                    <Route exact path='/admin/galleries'>
+                        <GalleryAdminPage close={isOpen} component={GalleryList}/>
+                    </Route>
+                    <Route path='/admin/galleries/create'>
+                        <GalleryAdminPage close={isOpen} component={GalleryCreate} />
                     </Route>
                     <Route path='/admin/paratennis'>Paratennis</Route>
                 </Switch>

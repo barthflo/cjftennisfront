@@ -30,8 +30,8 @@ const SidebarAdmin = (props) => {
                     <Link to='/admin/paratennis'><BiHandicap size={"1.7em"} className={activePage.includes("paratennis") && 'active'}/></Link>
                     <small>ParaTennis</small>
                 </div>
-                <div className={"d-flex flex-column align-items-center mb-2" + (activePage.includes("gallery") ? ' active' : '')}>
-                    <Link to='/admin/gallery'><IoMdPhotos size={"1.7em"} className={activePage.includes("gallery") && 'active'}/></Link>
+                <div className={"d-flex flex-column align-items-center mb-2" + (activePage.includes("galleries") ? ' active' : '')}>
+                    <Link to='/admin/galleries'><IoMdPhotos size={"1.7em"} className={activePage.includes("galleries") && 'active'}/></Link>
                     <small>Gallerie</small>
                 </div>
                 <div className="d-flex flex-column align-items-center mb-2">
