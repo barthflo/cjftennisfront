@@ -23,6 +23,7 @@
     width:calc(100vw - 78px);
     margin-right:78px;
     min-height:calc(100vh - 50px);
+    overflow-x: hidden;
 }
 
 .gallery-admin h2{

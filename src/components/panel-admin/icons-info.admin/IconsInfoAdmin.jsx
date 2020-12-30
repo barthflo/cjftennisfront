@@ -27,6 +27,7 @@ const IconsInfosAdmin = (props) => {
 
     return (
         <Fragment>
+        {errors && errors.errorMessage}
         {isLoading ? 
             <section className="loader-container d-flex justify-content-center align-items-center" style={{minHeight:"100px"}}>
                 <RotateLoader size={10} color={"#345C3E"} /> 
@@ -56,7 +57,7 @@ const IconsInfosAdmin = (props) => {
                         </tbody>
                     </table>
                 </div>
-                <div className="card-footer">
+                <div className="card-footer d-flex flex-column flex-sm-row">
                     <ButtonUpdate url="/admin/edit/icons"/>
                 </div>
             </section>

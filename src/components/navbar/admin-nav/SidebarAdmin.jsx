@@ -32,7 +32,7 @@ const SidebarAdmin = (props) => {
                 </div>
                 <div className={"d-flex flex-column align-items-center mb-2" + (activePage.includes("galleries") ? ' active' : '')}>
                     <Link to='/admin/galleries'><IoMdPhotos size={"1.7em"} className={activePage.includes("galleries") && 'active'}/></Link>
-                    <small>Gallerie</small>
+                    <small>Galleries</small>
                 </div>
                 <div className="d-flex flex-column align-items-center mb-2">
                     <Link to='/admin/paratennis'><BiNews size={"1.7em"} /></Link>

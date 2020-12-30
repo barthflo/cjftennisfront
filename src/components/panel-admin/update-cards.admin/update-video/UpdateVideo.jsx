@@ -17,9 +17,9 @@ const UpdateVideo = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState('');
     const [file, setFile] = useState('');
-    const [fileName, setFileName] = useState('Choose File');
+    const [fileName, setFileName] = useState('Choisissez une vidéo');
     const [uploadedFile, setUploadedFile] = useState({});
-    
+
     useEffect(() => {
         const fetchData = () => {
             Axios.get(`${BACK_URL}/home/intro/${id}`)
@@ -86,7 +86,7 @@ const UpdateVideo = () => {
                         muted 
                     />
                     <div className="video-upload d-flex flex-column justify-content-center align-items-center">
-                        <div className="input-group align-items-center justify-content-center">
+                        <div className="input-group flex-column flex-sm-row align-items-center justify-content-center">
                             <input 
                                 className="custom-file-input"
                                 style={{height:"0"}} 
@@ -97,7 +97,7 @@ const UpdateVideo = () => {
                             />
                             <label 
                                 style={{ color:"white", cursor:"pointer"}} 
-                                className="mr-3 mb-0 d-flex flex-column" 
+                                className="mr-sm-3 mb-2 mb-sm-0 d-flex flex-column" 
                                 htmlFor="videoUpload"
                             >
                                 {fileName}
@@ -108,7 +108,7 @@ const UpdateVideo = () => {
                 </Fragment> 
             }
             </section>
-            <section className="container mt-2">
+            <section className="container-fluid px-0 px-sm-2 mt-2">
                 <div className="card">
                     <div className="card-body">
                         <form id="UpdateVideo" onSubmit={handleSubmit}>
@@ -135,9 +135,9 @@ const UpdateVideo = () => {
                             </div>
                         </form>
                     </div>
-                    <div className="card-footer d-flex flex-row-reverse justify-content-start">
-                        <ButtonSave form={"UpdateVideo"} margin="ml-1"/>
-                        <ButtonBack margin="mr-1"/>
+                    <div className="card-footer d-flex flex-column flex-sm-row-reverse justify-content-start">
+                        <ButtonSave form={"UpdateVideo"} class="mb-1 mb-sm-0 ml-sm-1"/>
+                        <ButtonBack class="mr-sm-1"/>
                     </div>
                 </div>
             </section>

@@ -22,10 +22,10 @@ const GalleryList = () => {
                  setErrors(err);
              })
     }, [datas]);
-
+    datas.filter( data => data.modified_at).sort((a, b) => a-b).reverse();
     return (
         <Fragment>
-            <h1 className="ml-4 mt-2 mb-4 pl-3">Vos Galleries d'Images</h1>
+            <h1 className="ml-4 mt-2 mb-4 pl-sm-3">Vos Galleries d'Images</h1>
             {errors && <h2>There was an error with the server</h2>}
             {isLoading ? 
             <section className="loader-container d-flex justify-content-center align-items-center" style={{minHeight:"100px"}}>
@@ -34,24 +34,33 @@ const GalleryList = () => {
             :
             <Fragment>
                 {datas.length === 0 
-                && 
+                ?
                 <section className="card py-3 px-4">
                     <div className="card-header d-flex flex-column justify-content-center align-items-center">
-                        <h2>Vous n'avez pas encore d'album...</h2>
-                        <p className="font-italic mb-0">Créez un album maintenant!</p>
+                        <h2 className="text-center">Vous n'avez pas encore de galleries...</h2>
+                        <p className="font-italic mb-0 text-center">Créez une gallerie maintenant!</p>
                     </div>
                     <div className="card-body d-flex flex-column justify-content-center align-items-center">
-                        <ButtonCreate url={`/admin/galleries/create`} title="Nouvel Album"/>
+                        <ButtonCreate url={`/admin/galleries/create`} title="Nouvelle Gallerie"/>
                     </div>
                 </section>
-                }
+                :
                 <section>
+                    <div className="list-group m-1 p-3 bg-light d-flex flex-column justify-content-center align-items-center">
+                        <p className="font-italic mb-2 mb-sm-1 text-center">Ajoutez une nouvelle gallerie!</p>
+                        <ButtonCreate url={`/admin/galleries/create`} title="Nouvelle Gallerie" class="btn-sm"/>
+                    </div>
                     <ul className="list-group d-flex flex-row flex-wrap justify-content-center">
-                        {datas.length!== 0 && datas.map((data, index) => 
+                        {datas.length!== 0 && 
+                            datas.filter(data => data.modified_at)
+                                 .sort()
+                                 .reverse()
+                                 .map((data, index) => 
                             <li className={"list-group-item m-1 w-100 gallery-admin" + index } key={index}><GalleryItem datas={data}/></li>
                         )}
                     </ul>
                 </section>
+                }
             </Fragment>
             }
         </Fragment>

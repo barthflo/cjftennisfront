@@ -47,7 +47,7 @@ const BannerVideoAdmin = (props) => {
                     <p className = "mb-1 mt-4"><strong>Titre : </strong>{datas.title}</p>
                     <p className ="mb-0"><strong>Sous-Titre : </strong>{datas.body}</p>
                 </div>
-                <div className="card-footer">
+                <div className="card-footer d-flex flex-column flex-sm-row">
                     <ButtonUpdate url={`admin/edit/video/${datas.id}`}/>
                 </div>
             </section>
