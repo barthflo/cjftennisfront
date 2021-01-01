@@ -17,32 +17,39 @@ const Dashboard = () => {
     const toggleOpen = () => {
         setIsOpen(!isOpen);
     }
+
+    const enableOpen = () => {
+        if (window.innerWidth > 991){
+            return (isOpen ? " closed" : " opened")
+        }
+        return ' '
+    }
     return(
         <Fragment>
             <NavBarAdmin />
             <div className="page-container d-flex flex-row-reverse">
                 <SidePanel toggleOpen = {toggleOpen} open={isOpen}/>
                 <Switch>
-                    <Route exact path='/admin' children={<HomeAdmin />} />
+                    <Route exact path='/admin' children={<HomeAdmin className={ enableOpen()} />} />
                     <Route 
                         path='/admin/edit/video/:id' 
-                        children={<DefaultAdmin component={UpdateVideo} /> }
+                        children={<DefaultAdmin component={UpdateVideo} className={"update-admin" + enableOpen()} /> }
                     />
                     <Route 
                         path='/admin/edit/icons' 
-                        children={<DefaultAdmin component={UpdateIcons} className={"container-fluid px-0 px-2"}/> } 
+                        children={<DefaultAdmin component={UpdateIcons} className={"update-admin container-fluid px-0 px-sm-2" + enableOpen()}/> } 
                     />
                     <Route 
                         exact path='/admin/galleries'
-                        children = {<DefaultAdmin component={GalleryList} className={"gallery-admin container-fluid px-0 px-sm-2"}/> }
+                        children = {<DefaultAdmin component={GalleryList} className={"gallery-admin container-fluid px-0 px-sm-2" + enableOpen()}/> }
                     />
                     <Route 
                         path='/admin/galleries/create'
-                        children = {<DefaultAdmin component={GalleryCreate} className={"gallery-admin container-fluid px-0 px-sm-2"}/> } 
+                        children = {<DefaultAdmin component={GalleryCreate} className={"create-admin container-fluid px-0 px-sm-2" + enableOpen()}/> } 
                     />
                     <Route 
                         path='/admin/galleries/edit/:id'
-                        children = {<DefaultAdmin component={GalleryUpdate} className={"gallery-admin container-fluid px-0 px-sm-2"} />} 
+                        children = {<DefaultAdmin component={GalleryUpdate} className={"update-admin container-fluid px-0 px-sm-2" + enableOpen()} />} 
                     />
                     <Route path='/admin/paratennis'>Paratennis</Route>
                 </Switch>

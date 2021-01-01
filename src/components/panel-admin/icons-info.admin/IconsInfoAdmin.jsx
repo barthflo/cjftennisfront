@@ -34,11 +34,11 @@ const IconsInfosAdmin = (props) => {
             </section>
         : 
             <section className="card border-0 h-100" style = {{ width:props.width}}>
-                <div className="card-header pb-0">
+                <div className="card-header pb-0 px-0 px-sm-3">
                     <h2>Icônes Accueil</h2>
                 </div>
-                <div className="card-body table-responsive">
-                    <table className="table table-striped">
+                <div className="card-body table-responsive px-0 pb-2 px-sm-3">
+                    <table className="table table-striped mb-0">
                         <thead >
                             <tr style={{color:"var(--light-color)", background : "var(--main-color"}}>
                                 <th scope="col">#</th>
@@ -57,7 +57,7 @@ const IconsInfosAdmin = (props) => {
                         </tbody>
                     </table>
                 </div>
-                <div className="card-footer d-flex flex-column flex-sm-row">
+                <div className="card-footer d-flex flex-column flex-sm-row px-0 px-sm-3">
                     <ButtonUpdate url="/admin/edit/icons"/>
                 </div>
             </section>

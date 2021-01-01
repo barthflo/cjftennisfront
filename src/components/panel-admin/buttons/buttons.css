@@ -10,8 +10,6 @@
 
 .react-confirm-alert{
     max-width:calc(100vw - 78px);
-    position:absolute;
-    left:0;
 }
 
 .react-confirm-alert-overlay .custom-ui{
