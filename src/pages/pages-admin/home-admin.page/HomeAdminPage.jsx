@@ -9,6 +9,7 @@ const components = [
 ]
 
 const HomeAdminPage = (props) => {
+    console.log(props);
     return (
         <main className={"home-admin container-fluid px-0 px-sm-2" + (props.close ? " closed" : " opened")}>
             <h1 className="ml-5 mt-2 ml-sm-4 pl-sm-3">Général</h1>
