@@ -7,7 +7,7 @@ import UploadService from '../../../../services/upload.service'
 import Uploader from '../../uploader/Uploader'
 
 const UpdateGalleryForm = ({formId, datas}) => {
-
+    console.log(datas);
     const [files, setFiles] = useState([]);
     const [previewUrl, setPreviewUrl] = useState([]);
     const [uploaded, setUploaded] = useState([]);
@@ -49,6 +49,7 @@ const UpdateGalleryForm = ({formId, datas}) => {
     }
 
     const onSubmit = data => {
+        console.log(data);
         Axios.put(`${BACK_URL}/club/galleries/${datas.id}`, data)
              .then(res => console.log(res))
              .catch(err => {
@@ -110,8 +111,22 @@ const UpdateGalleryForm = ({formId, datas}) => {
                     className="form-control"
                     ref={register}
                     name="date"
+                    id="date"
                     defaultValue={datas.date}
                 />
+            </div>
+            <div className="form-group">
+                <label className="form-check-label font-italic">
+                    <input 
+                        type="checkbox" 
+                        className="form-check-iput mr-1"
+                        name="is_archived"
+                        id="is_archived"
+                        ref={register} 
+                        defaultChecked={datas.is_archived} 
+                    />  
+                    Archivée   
+                </label>
             </div>
             {error && error.errorMessage}
             <Uploader handleRemoveUploaded={handleRemoveUploaded} handleRemove={handleRemove} handleUpload={upload} handleChangeUpload={handleChangeUpload} uploaded={uploaded} previewUrl={previewUrl} photos={pictures} />

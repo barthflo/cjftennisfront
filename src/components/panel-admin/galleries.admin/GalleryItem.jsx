@@ -47,6 +47,7 @@ const GalleryItem = ({datas}) => {
                 <h2>{datas.name}</h2>
                 <p className="mb-0 font-italic">{datas.description}</p>
                 <p className="mb-0 font-italic"><small>{datas.date}</small></p>
+                {datas.is_archived ? <p className="mb-0 font-italic"><small>Archivée</small></p> : ''}
             </div>
             {datas.photos && 
             <div className="card-body px-0 d-flex flex-wrap">

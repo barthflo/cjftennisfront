@@ -5,7 +5,7 @@ import {GrFormClose} from 'react-icons/gr';
 import './Uploader.css';
 
 const Uploader = ({handleChangeUpload, handleUpload, uploaded, previewUrl, photos, handleRemove, handleRemoveUploaded}) => {
-    console.log(uploaded);
+    
     return (
         <div className="pictures-uploader d-flex flex-column align-items-center">
             <div className = "input-group align-items-center justify-content-center">
