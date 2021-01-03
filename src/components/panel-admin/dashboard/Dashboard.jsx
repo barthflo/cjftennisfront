@@ -9,6 +9,7 @@ import UpdateIcons from '../update-cards.admin/update-icons.admin/UpdateIcons';
 import GalleryList from '../galleries.admin/GalleryList';
 import GalleryCreate from '../galleries.admin/GalleryCreate';
 import GalleryUpdate from '../update-cards.admin/update-gallery/UpdateGallery';
+import UpdateUser from '../update-cards.admin/update-user/UpdateUser';
 import '../panelAdmin.css';
 import '../../../pages/pages-admin/pages.admin.css';
 
@@ -31,6 +32,7 @@ const Dashboard = () => {
                 <SidePanel toggleOpen = {toggleOpen} open={isOpen}/>
                 <Switch>
                     <Route exact path='/admin' children={<HomeAdmin className={ enableOpen()} />} />
+                    <Route path='/admin/user&id=:id' children={<DefaultAdmin component={UpdateUser} className={"update-admin container-fluid px-0 px-sm-2" + enableOpen()} /> } />
                     <Route 
                         path='/admin/edit/video/:id' 
                         children={<DefaultAdmin component={UpdateVideo} className={"update-admin" + enableOpen()} /> }
