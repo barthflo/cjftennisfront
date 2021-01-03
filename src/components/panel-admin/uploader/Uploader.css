@@ -26,18 +26,22 @@
 }
 
 .preview-container{
-    top:40%;
-    max-width:100%;
+    top:50%;
+    max-width:70%;
     transform: translate(0, -50%);
     border: var(--spacing) var(--main-color) solid;
     border-radius: 5px;
     box-shadow:1px 1px 5px;
 }
 
+.preview-container .card-body{
+    max-height:60vh;
+    overflow-x: scroll;
+}
+
 .preview-container img{
-    width:50px;
-    height:50px;
-    margin:var(--spacing);
+    height:60px;
+    width:60px;
     object-fit:cover;
 }
 

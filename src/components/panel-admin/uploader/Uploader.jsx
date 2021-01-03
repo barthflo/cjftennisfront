@@ -4,8 +4,8 @@ import {DOMAIN_URL} from '../../../http';
 import {GrFormClose} from 'react-icons/gr';
 import './Uploader.css';
 
-const Uploader = ({handleChangeUpload, handleUpload, uploaded, previewUrl, photos, handleRemove, handleRemoveUploaded}) => {
-    
+const Uploader = ({handleChangeUpload, handleUpload, uploaded, previewUrl, photos, handleRemove, handleRemovePreview, handleRemoveUploaded}) => {
+    console.log(previewUrl);
     return (
         <div className="pictures-uploader d-flex flex-column align-items-center">
             <div className = "input-group align-items-center justify-content-center">
@@ -58,12 +58,10 @@ const Uploader = ({handleChangeUpload, handleUpload, uploaded, previewUrl, photo
                 <div className="preview-container position-fixed">
                     <div className="card p3">
                         <div className="card-body d-flex flex-row flex-wrap justify-content-center">
-                            {previewUrl.map((preview, index) => 
-                                preview.length <=1 ? <img src={preview} alt={preview} key={index}/> : preview.map((image, index) => <img src={image} alt={image} key={index}/>)
-                            )}
+                            {previewUrl[0].map((preview, index) => <img src={preview} alt={preview} key={index} /> )}
                         </div>
-                        <div className="card-footer d-flex justify-content-center justify-content-sm-end">
-                            <ButtonUpload upload={handleUpload}/>
+                        <div className="card-footer d-flex flex-column flex-sm-row-reverse justify-content-center justify-content-sm-start">
+                            <ButtonUpload upload={handleUpload} class={"w-100 mb-1 mb-sm-0 ml-sm-1"}/>
                         </div>
                     </div>
                     

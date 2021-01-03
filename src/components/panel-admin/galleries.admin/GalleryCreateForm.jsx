@@ -12,7 +12,8 @@ const GalleryCreateForm = ({formId}) => {
     const [previewUrl, setPreviewUrl] = useState([]);
     const [uploaded, setUploaded] = useState([]);
     const history = useHistory();
-
+    const {register, errors, handleSubmit} = useForm();
+    
     const handleChangeUpload = (e) => {
         let newFiles = [...files];
         newFiles.push(e.target.files);
@@ -35,7 +36,6 @@ const GalleryCreateForm = ({formId}) => {
         setUploaded(uploaded.filter(pic => !pictureName.includes(pic.fileName)));
     }
 
-    const {register, errors, handleSubmit} = useForm();
     const onSubmit = data => {
         console.log(data);
         Axios.post(`${BACK_URL}/club/galleries`, data)
