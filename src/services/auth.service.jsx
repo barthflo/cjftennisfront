@@ -4,11 +4,12 @@ import {BACK_URL} from '../http';
 const login = (username, password) => {
     return Axios.post(`${BACK_URL}/admins/login`, {username, password})
                 .then(res => {
-                    if(res.status === 404){
-                        return res.data;
-                    }else{
-                        localStorage.setItem('user', JSON.stringify(res.data));
-                        return res.data.accessToken;
+                    localStorage.setItem('user', JSON.stringify(res.data));
+                    return res;
+                })
+                .catch(error => {
+                    if(error.response){
+                        return error.response;
                     }
                 })
 }

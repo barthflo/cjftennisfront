@@ -1,0 +1,3 @@
+.btn-back:hover>.btn-icon{
+    color:var(--light-color) !important;
+}
