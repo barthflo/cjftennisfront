@@ -22,7 +22,7 @@ const GalleryList = () => {
                  setErrors(err);
              })
     }, [datas]);
-    datas.filter( data => data.modified_at).sort((a, b) => a-b).reverse();
+    
     return (
         <Fragment>
             <h1 className="ml-4 mt-2 mb-4 pl-sm-3">Vos Galleries d'Images</h1>

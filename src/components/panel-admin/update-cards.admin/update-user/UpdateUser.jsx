@@ -12,12 +12,16 @@ const UpdateUser = () => {
     const [admin, setAdmin] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [errors, setErrors] = useState();
+    
+    const time = () => {
+        const d = new Date();
+        return d.getUTCHours() +1;
+    }
 
     useEffect(() => {
         const fetchUser = () => {
             Axios.get(`${BACK_URL}/admins/${params.id}`)
                  .then(res => {
-                    console.log(res.data);
                     setAdmin(res.data);
                     setIsLoading(false);
                  })
@@ -47,7 +51,7 @@ const UpdateUser = () => {
                 <Error status={errors.errorStatus}/>
             :
             <section>
-                <h1 className="ml-4 mt-2 mb-4 pl-sm-3 text-capitalize">Bonjour {admin.name}!</h1>
+                <h1 className="ml-4 mt-2 mb-4 pl-sm-3 text-capitalize">{time() < 16 ? "Bonjour" : "Bonsoir" } {admin.name}!</h1>
                 <div className="card py-3 px-sm-4">
                     <div className="card-body">
                     </div>
