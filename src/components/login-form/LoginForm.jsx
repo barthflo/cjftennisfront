@@ -19,8 +19,16 @@ const LoginForm = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         AuthService.login(inputs.username, inputs.password)
-        .then(res => res === AuthService.getUser().accessToken ? history.push('/admin'): setError(true))
+        .then(res => {
+            if(res.status != 200){
+                console.log(res);
+                setError(res.data.errorMessage);
+            } else{
+                history.push('/admin');
+            }
+        })
     }
+    
     return (
         <div className="LoginForm card d-flex justify-content-center align-items-center">
             <div className="card-header d-flex flex-column align-items-center">
@@ -61,7 +69,7 @@ const LoginForm = (props) => {
                     onChange={handleChange}
                 />
                 <button type="submit" className="btn btn-outline-dark">Se connecter</button>
-                {error && <small className="text-danger">Wrong credentials</small>}
+                {error && <small className="text-danger">{error}</small>}
             </form>
 
             </div>
