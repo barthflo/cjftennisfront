@@ -19,7 +19,7 @@ export default function PressArticle() {
             <SectionTitle title="Vie sportive" color="gray" />
             <div className="sport_article_content">
                 {sportArticles.map((article) => (
-                    <ArticleCard article={article} side="right" key={article.id} />
+                    <ArticleCard article={article} side="right" category="sport" key={article.id} />
                 ))}
             </div>
         </section>
