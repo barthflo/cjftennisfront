@@ -4,41 +4,35 @@ import './Teaching_Team.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { FETCH } from '../Fetch';
+import Teacher from './Teacher'
 
  const Teaching_Team = () => {
-     const [teamLists, setTeamLists] = useState([]);
+     const [teachers, setTeachers] = useState([]);
 
      useEffect(() => {
-         const fetchTeamLists = () => {
+         const fetchTeachers = () => {
              axios
              .get(`${FETCH}/teaching/team`)
-             .then(res => setTeamLists(res.data))
+             .then(res => setTeachers(res.data))
          }
-         fetchTeamLists();
+         fetchTeachers();
      }, [])
     return (
         
   <div>
-      <>        
+             
             <h2>L'éqipe de Formateur</h2>
-            {teamLists.map((teamList) => (
-              
-                <div key={teamList}>
+            {teachers
+                    .filter((teacher) => teacher.firsname.VALUES[0])
+                    .map((teacher) => (
+                       <div key={teacher.id}>
+                           <Teacher teacher={teacher} />
 
-                    <ul>
-                        <li>{teamList[1].firstname}</li>
-                        <li>{teamList.lastname}</li>
-                        <li>{teamList.descriptor}</li>
-                    </ul>
-                    
-                </div>
-                
-                
-            ))}
-            </>
-            <div>
-
-            </div>
+                       </div> 
+                    ) )}
+            
+            
+            
         </div>
     )
  }
