@@ -1,0 +1,50 @@
+.gallery-item h2{
+    font-size:1.5em;
+}
+.gallery-item .grid-container{
+    display:grid;
+    grid-template: 75px 75px/ 1fr 1fr;
+    grid-template-areas : 
+        "picture1 picture2"
+        "picture3 showmore";
+}
+
+.gallery-item .showmore{
+    grid-area : showmore;
+    background: #00000059;
+    color:var(--light-color);
+    cursor:pointer;
+}
+
+#image0{
+    grid-area : picture1
+}
+#image1{
+    grid-area : picture2
+}
+#image2{
+    grid-area : picture3
+}
+#image3{
+    grid-area : showmore
+}
+
+@media screen and (min-width: 576px){
+    .gallery-item .card-body{
+        height:300px;
+    }
+    .gallery-item .card-body div:first-child{
+        width:75% !important;
+    }
+    .gallery-item .grid-container{
+        width: 25% !important;
+        grid-template: 1fr 1fr / 1fr 1fr;
+        grid-template-areas: 
+            "picture1 picture2"
+            "picture3 showmore"
+        ;
+    }
+    .gallery-item .grid-container img{
+        height:100%;
+    }
+}

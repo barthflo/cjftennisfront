@@ -18,13 +18,18 @@
     font-weight: 400;
 }
 
-.home-admin, .update-admin {
+.home-admin, .update-admin, .create-admin, .gallery-admin {
     background: #e6e6e6;
     width:calc(100vw - 78px);
     margin-right:78px;
     min-height:calc(100vh - 50px);
+    overflow-x: hidden;
 }
 
+.gallery-admin h2{
+    font-weight:400;
+    font-size:1.6em;
+}
 @media screen and (min-width : 768px){
     .home-admin0{
         width:calc(60% - 8px) !important;
