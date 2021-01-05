@@ -78,7 +78,7 @@
     }
 }
 
-@media screen and (min-width: 1061px) and (max-width: 1285px) {
+@media screen and (min-width: 1070px) and (max-width: 1285px) {
     .article .article-info {
         height: 260px;
     }
@@ -92,7 +92,7 @@
     }
 }
 
-@media screen and (min-width: 769px) and (max-width: 1060px) {
+@media screen and (min-width: 769px) and (max-width: 1070px) {
     .article .article-info {
         min-width: 90%;
     }

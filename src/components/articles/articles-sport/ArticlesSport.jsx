@@ -1,7 +1,7 @@
 import "./ArticlesSport.css";
 import SectionTitle from '../../../components/section-title/SectionTitle';
 import axios from 'axios';
-import { BACK_URL, DOMAIN_URL } from '../../../http';
+import { BACK_URL } from '../../../http';
 import { useEffect, useState } from 'react';
 import ArticleCard from "../article/ArticleCard";
 
@@ -15,9 +15,9 @@ export default function PressArticle() {
     }, []);
 
     return(
-        <section className="sport-article">
+        <section className="sport-article" style={sportArticles.length === 0 && {display: "none"}}>
             <SectionTitle title="Vie sportive" color="gray" />
-            {sportArticles.length != 0?
+            {sportArticles.length !== 0?
                 <div className="sport_article_content">
                     {sportArticles.map((article) => (
                         <ArticleCard article={article} side="right" category="sport" key={article.id} />

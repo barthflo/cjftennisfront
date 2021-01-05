@@ -1,7 +1,7 @@
 import './ArticleDetailsSport.css';
 import { useParams } from "react-router-dom";
 import axios from 'axios';
-import { BACK_URL, DOMAIN_URL } from '../../http';
+import { BACK_URL } from '../../http';
 import { useEffect, useState } from 'react';
 import BannerPhoto from "../../components/banner-photo/BannerPhoto";
 import SectionTitle from "../../components/section-title/SectionTitle";
