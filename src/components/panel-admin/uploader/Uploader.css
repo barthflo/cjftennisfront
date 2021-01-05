@@ -1,0 +1,52 @@
+.pictures-uploader .input-group label:hover{
+    cursor:pointer;
+}
+
+.pictures-uploader .mask-delete-hover{
+    top:0;
+    left:0;
+    background:#0000007a;
+    opacity:0;
+    transition: .2s ease-in;
+}
+
+.pictures-uploader .delete-hover{
+    cursor:pointer;
+}
+
+.pictures-uploader .delete-hover path{
+    opacity:0;
+    stroke:white;
+    transition:.2s ease-in;
+}
+
+.pictures-uploader figure:hover .mask-delete-hover, .pictures-uploader figure:hover .delete-hover path{
+    opacity:1;
+    transition:.2s ease-in;
+}
+
+.preview-container{
+    top:50%;
+    max-width:70%;
+    transform: translate(0, -50%);
+    border: var(--spacing) var(--main-color) solid;
+    border-radius: 5px;
+    box-shadow:1px 1px 5px;
+}
+
+.preview-container .card-body{
+    max-height:60vh;
+    overflow-x: scroll;
+}
+
+.preview-container img{
+    height:60px;
+    width:60px;
+    object-fit:cover;
+}
+
+@media screen and (min-width: 426px){
+    .preview-container{
+        max-width:80%;
+    }
+}
