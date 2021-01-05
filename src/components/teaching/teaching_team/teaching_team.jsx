@@ -25,21 +25,21 @@ const Teaching_Team = () => {
 .filter((teacher) => teacher.picture_url === 'DESBROSSES_Gullaume.jpg')                         
 .map((teacher) => <div class="card-group">
 <div className="card">
-  <img src={teacher.picture_url} className="card-img-top" alt={teacher.firsname} />
+  <img src={teacher.picture_url === 'DESBROSSES_Gullaume.jpg'} className="card-img-top" alt={teacher.firsname} />
+  <div className="card-body">
+    <h5 className="card-title">Guillaume</h5>
+    <p className="card-text">commentaire</p>
+  </div>
+</div>
+<div className="card">
+  <img src={teacher.picture_url === 'FORHAN_Virginie.jpg'} className="card-img-top" alt={teacher.firsname}/>
   <div className="card-body">
     <h5 className="card-title">titre</h5>
     <p className="card-text">commentaire</p>
   </div>
 </div>
 <div className="card">
-  <img src={teacher.picture_url} className="card-img-top" alt={teacher.firsname}/>
-  <div className="card-body">
-    <h5 className="card-title">titre</h5>
-    <p className="card-text">commentaire</p>
-  </div>
-</div>
-<div className="card">
-  <img src={teacher.picture_url} className="card-img-top" alt={teacher.firsname}/>
+  <img src={teacher.picture_url === 'Julie_Billet.jpg'} className="card-img-top" alt={teacher.firsname}/>
   <div className="card-body">
     <h5 className="card-title">titre</h5>
     <p className="card-text">commentaire</p>

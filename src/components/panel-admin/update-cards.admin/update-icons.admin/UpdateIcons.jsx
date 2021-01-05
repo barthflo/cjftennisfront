@@ -47,7 +47,8 @@ const UpdateIcons = () => {
         );
     }
     return (
-        <section className="container mt-2">
+        <section className="mt-2">
+            <h1 className="text-center text-sm-left ml-sm-5 pl-sm-3 mb-3">Icônes Accueil</h1>
             <div className="card">
                 <div className="card-body">
                     <form id="UpdateIcons" className="d-flex flex-column justify-content-center align-items-center" onSubmit={handleSubmit}>
@@ -76,9 +77,9 @@ const UpdateIcons = () => {
                         </Fragment>
                     </form>
                 </div>
-                <div className="card-footer d-flex flex-row-reverse justify-content-start">
-                    <ButtonSave form={"UpdateIcons"} margin="ml-1"/>
-                    <ButtonBack margin="mr-1"/>
+                <div className="card-footer d-flex flex-column flex-sm-row-reverse justify-content-start">
+                    <ButtonSave form={"UpdateIcons"} class="mb-1 mb-sm-0 ml-sm-1 justify-content-center"/>
+                    <ButtonBack class="mr-sm-1 justify-content-center"/>
                 </div>
             </div>
         </section>
