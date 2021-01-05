@@ -32,7 +32,7 @@ const Dashboard = () => {
                 <SidePanel toggleOpen = {toggleOpen} open={isOpen}/>
                 <Switch>
                     <Route exact path='/admin' children={<HomeAdmin className={ enableOpen()} />} />
-                    <Route path='/admin/user&id=:id' children={<DefaultAdmin component={UpdateUser} className={"update-admin container-fluid px-0 px-sm-2" + enableOpen()} /> } />
+                    <Route path='/admin/id=:id' children={<DefaultAdmin component={UpdateUser} className={"update-admin container-fluid px-0 px-sm-2" + enableOpen()} /> } />
                     <Route 
                         path='/admin/edit/video/:id' 
                         children={<DefaultAdmin component={UpdateVideo} className={"update-admin" + enableOpen()} /> }
