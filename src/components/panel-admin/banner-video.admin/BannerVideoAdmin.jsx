@@ -32,10 +32,10 @@ const BannerVideoAdmin = (props) => {
             </section>
             : 
             <section className="card border-0 h-100" style={{width: props.width}}>
-                <div className="card-header pb-0">
+                <div className="card-header pb-0 px-0 px-sm-3">
                     <h2>Vidéo Accueil</h2>
                 </div>
-                <div className="card-body">
+                <div className="card-body px-0 px-sm-3">
                     <div className="video-container position-relative" style={{cursor:"pointer"}} onClick={(e)=> ref.current.paused ? ref.current.play() : ref.current.pause()}>
                         <FaPlay 
                             color={"white"} 
@@ -47,7 +47,7 @@ const BannerVideoAdmin = (props) => {
                     <p className = "mb-1 mt-4"><strong>Titre : </strong>{datas.title}</p>
                     <p className ="mb-0"><strong>Sous-Titre : </strong>{datas.body}</p>
                 </div>
-                <div className="card-footer">
+                <div className="card-footer d-flex flex-column flex-sm-row px-0 px-sm-3">
                     <ButtonUpdate url={`admin/edit/video/${datas.id}`}/>
                 </div>
             </section>

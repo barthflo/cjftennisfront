@@ -1,0 +1,126 @@
+.article-club-details {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--light-color);
+    padding-bottom: var(--spacing-large);
+    padding-top: var(--spacing-large);
+}
+
+.article-club-info {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.article-club-image {
+    width: 480px;
+    height: 320px;
+    object-fit: cover;
+}
+
+.article-club-desc {
+    width: 56%;
+    font-family: var(--secondary-font);
+    font-size: 20px;
+    color: var(--dark-color);
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.article-club-content {
+    width: 80%;
+    font-family: var(--secondary-font);
+    font-size: 16px;
+    color: var(--dark-color);
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+@media screen and (min-width: 1183px) and (max-width: 1430px) {
+    .article-club-info {
+        margin: 40px 0;
+    }
+    .article-club-image {
+        width: 440px;
+        height: 300px;
+        object-fit: cover;
+    }
+    .article-club-desc {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 1061px) and (max-width: 1182px) {
+    .article-club-info {
+        margin: 40px 0;
+    }
+    .article-club-image {
+        width: 400px;
+        height: 260px;
+        object-fit: cover;
+    }
+    .article-club-desc {
+        width: 50%;
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1060px) {
+    .article-club-info {
+        width: 90%;
+    }
+    .article-club-image {
+        width: 440px;
+        height: 300px;
+        object-fit: cover;
+    }
+    .article-club-desc {
+        width: 90%;
+        margin: 40px 0;
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 515px) and (max-width: 767px) {
+    .article-club-details {
+        padding-top: 0;
+    }
+    .article-club-info {
+        width: 90%;
+    }
+    .article-club-image {
+        width: 440px;
+        height: 300px;
+        object-fit: cover;
+    }
+    .article-club-desc {
+        width: 90%;
+        margin: 40px 0;
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 514px) {
+    .article-club-details {
+        padding-top: 0;
+    }
+    .article-club-info {
+        width: 90%;
+    }
+    .article-club-image {
+        width: 90%;
+        height: auto;
+        object-fit: cover;
+    }
+    .article-club-desc {
+        width: 90%;
+        margin: 40px 0;
+        font-size: 18px;
+    }
+}
