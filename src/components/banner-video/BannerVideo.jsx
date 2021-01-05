@@ -10,7 +10,7 @@ export default function BannerVideo(){
         axios
         .get(`${BACK_URL}/home/intro`)
         .then(res => setVideoIntro(res.data[0]))
-    })
+    }, [videoIntro])
 
     return(
         <section className="banner-video">
