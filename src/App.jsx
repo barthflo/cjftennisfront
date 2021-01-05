@@ -12,7 +12,8 @@ import Cotisation from "./pages/club/cotisation/Cotisation";
 import Agenda from "./pages/club/agenda/Agenda";
 import Gallery from "./pages/club/galerie/Gallery";
 import Articles from './pages/club/articles/Articles';
-import ArticleDetailsClub from './pages/article-details/ArticleDetailsClub';
+import ArticleDetailsClub from './pages/article-details-club/ArticleDetailsClub';
+import ArticleDetailsSport from './pages/article-deatils-sport/ArticleDetailsSport';
 import TeamTeaching from "./pages/enseignement/team-teaching/TeamTeaching";
 import LessonForChildren from "./pages/enseignement/lesson-for-children/LessonForChildren";
 import LessonForAdult from "./pages/enseignement/lesson-for-adult/LessonForAdult";
@@ -38,6 +39,7 @@ function App() {
           <PublicRoute path="/club/gallery" component={Gallery} />
           <PublicRoute exact path="/club/articles" component={Articles} />
           <PublicRoute path="/club/articles/article_club/id=:id" component={ArticleDetailsClub} />
+          <PublicRoute path="/club/articles/article_sport/id=:id" component={ArticleDetailsSport} />
           <PublicRoute path="/enseignement/team-teaching" component={TeamTeaching} />
           <PublicRoute path="/enseignement/lesson-for-children" component={LessonForChildren} />
           <PublicRoute path="/enseignement/lesson-for-adult" component={LessonForAdult} />

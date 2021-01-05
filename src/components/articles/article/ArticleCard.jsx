@@ -8,7 +8,7 @@ export default function ArticleCard(props) {
             <img src={article.image_url} alt={article.title} className={side === "left"? "image" : "image image-right"}/>
             <div className={side === "left"? "article-info" : "article-info info-right"}>
                 <h3>{article.title}</h3>
-                <p className="desc">{article.body}</p>
+                <p className="desc">{article.description}</p>
                 { article.link_url? 
                     <a href={article.link_url} className="link" target="blank">Voir l'article</a>
                     :

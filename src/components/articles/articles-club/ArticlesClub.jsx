@@ -17,11 +17,13 @@ export default function PressArticle() {
     return(
         <section className="club-article">
             <SectionTitle title="Vie du club" color="white" />
-            <div className="club_article_content">
-                {clubArticles.map((article) => (
-                    <ArticleCard article={article} side="left" category="club" key={article.id} />
-                ))}
-            </div>
+            {clubArticles.length != 0?
+                <div className="club_article_content">
+                    {clubArticles.map((article) => (
+                        <ArticleCard article={article} side="left" category="club" key={article.id} />
+                    ))}
+                </div> 
+                : <p className="no-article">Pas de nouveaux articles.</p>}
         </section>
     );
 }
