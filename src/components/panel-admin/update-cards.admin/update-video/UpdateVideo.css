@@ -1,0 +1,25 @@
+.video-update-container{
+    height:40vh;
+    max-height:40vh;
+    width:inherit;
+    position:relative;
+}
+
+.video-upload{
+    position: absolute;
+    top:0;
+    left:0;
+    width:inherit;
+    height:inherit;
+    max-height:inherit;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+    display:flex;
+    justify-content : center;
+    align-items:center;
+}
+
+.video-update{
+    object-fit:cover;
+    width:100%;
+    max-height:inherit;
+}

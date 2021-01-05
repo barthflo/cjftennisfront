@@ -6,10 +6,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    align-items: center;
+    align-items: baseline;
     min-height: 24vh;
     width: 90%;
     margin: 0 auto;
+    padding: 48px 0;
 }
 
 .icon-info {
@@ -18,12 +19,13 @@
     justify-content: space-around;
     align-items: center;
     height: 128px;
-    width: 256px;
+    width: 280px;
 }
 
 .icon-info .icon {
     color: var(--main-color);
-    font-size: calc(var(--spacing-large) * 2.4);
+    font-size: calc(var(--spacing-large) * 2);
+    min-height: 96px;
 }
 
 .icon-info .info {

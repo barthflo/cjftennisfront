@@ -1,26 +1,53 @@
 import "./Footer.css";
 import { SiFacebook } from 'react-icons/si';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { BACK_URL } from '../../http';
 
 export default function Footer() {
+    const [contact, setContact] = useState([]);
+    const [links, setLinks] = useState([]);
+
+    useEffect(() => {
+        const fetchContact = () => {
+            axios
+            .get(`${BACK_URL}/contact`)
+            .then(res => {
+                setContact(res.data[0]);
+            })
+        };
+        fetchContact();
+    }, [])
+
+    useEffect(() => {
+        const fetchLink = () => {
+            axios
+            .get(`${BACK_URL}/external_links`)
+            .then(res => {
+                setLinks(res.data);
+            })
+        };
+        fetchLink();
+    }, [])
+
     return(
         <footer className="main-footer">
             <div className="footer-container">
                 <div className="footer-club">
                     <h4>CJF Tennis</h4>
                     <div className="footer-contact">
-                        <p>Complexe Sportif de la Forêt</p>
-                        <p className="adress">Rue de la Tuilerie 45770 SARAN</p>
-                        <p>02 38 73 62 61</p>
-                        <p>cjf.tennis@wanadoo.fr</p>
+                        <p>{contact.address_1}</p>
+                        <p className="adress">{contact.address_2} {contact.post_code} {contact.city}</p>
+                        <p>{contact.phone}</p>
+                        <p>{contact.email}</p>
                     </div>
                 </div>
                 <div className="footer-links">
                     <h4>En savoir plus</h4>
                     <div className="links">
-                        <a href="https://comite.fft.fr/loiret/loiret_a/cms/index_public.php?us_action=show_note_site&login_off=1&ui_id_site=1" target="blank">Comité du Loiret</a>
-                        <a href="https://ligue.fft.fr/centre/" target="blank">Ligue Centre Val de Loire</a>
-                        <a href="http://openparatennisduloiret.fr/" target="blank">Open Paratennis du Loiret</a>
-                        <a href="https://tenup.fft.fr/user" target="blank">Tenup</a>
+                        {links.map((link) => (
+                            <a href={link.link_url} target="blank" key={link.name}>{link.name}</a>
+                        ))}
                     </div>
                 </div>
                 <div className="footer-social-media">

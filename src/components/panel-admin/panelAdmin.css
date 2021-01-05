@@ -1,0 +1,16 @@
+.closed{
+    opacity:0;
+    transition: .5s ease-in-out;
+    width:calc(100vw - 300px) !important;
+    margin-right:300px !important;
+}
+
+.opened{
+    transition: .5s ease-in-out;
+}
+
+@media screen and (min-width : 576px){
+    .closed{
+        opacity:1;
+    }
+}
