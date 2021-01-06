@@ -1,0 +1,25 @@
+.meteo {
+    background-color: var(--main-color);
+    min-height: 8vh;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f8f8f8;
+}
+
+.meteo-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.meteo-info .meteo-name, .meteo-info .meteo-temp {
+    margin-left: var(--spacing-medium);
+    margin-bottom: 0px !important;
+}
+
+.meteo-info img {
+    object-fit: cover;
+    height: 64px;
+}
