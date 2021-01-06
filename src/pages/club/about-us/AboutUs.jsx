@@ -1,5 +1,5 @@
 import BannerPhoto from "../../../components/banner-photo/BannerPhoto";
-import PresidentWord from '../../../components/president-word/PresidentWord'
+import PresidentWord from '../../../components/president-word/PresidentWord';
 
 function AboutUs() {
   return (
