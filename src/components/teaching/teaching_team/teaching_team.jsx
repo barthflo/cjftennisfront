@@ -39,7 +39,7 @@ const Teaching_Team = () => {
   </div>
 </div>
 <div className="card">
-  <img src={teacher.picture_url === 'Julie_Billet.jpg'} className="card-img-top" alt={teacher.firsname}/>
+  <img src={teacher.picture_url } className="card-img-top" alt={teacher.firsname}/>
   <div className="card-body">
     <h5 className="card-title">titre</h5>
     <p className="card-text">commentaire</p>
