@@ -1,4 +1,3 @@
-
 .presidetWord-container{
     padding-top: 50px;
     display: flex;
@@ -7,17 +6,14 @@
     justify-content: space-around;
     background-color: white;
 }
-
 .president_image{
     width: 300px;
     height: 400px;
     object-fit: cover;
 }
-
 .president-name{
     font-family: var(--main-font);
 }
-
 .president{
     margin: 40px;
     padding-top: 70px;
@@ -26,13 +22,10 @@
     justify-content: space-around;
 
 }
-
 .president-word{
     padding-top: 60px;
     width: 60%;
 }
-
-
 .description{
     padding-top: 30px;
     text-align: justify;
@@ -40,11 +33,7 @@
     font-family: var(--secondary-font);
     font-size: 20px;
 }
-
-
-
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-
     .president{
         padding: 0;
         margin: 10px;
@@ -53,7 +42,6 @@
         justify-content: space-around;
         align-items: center;
     }
-
     .president-word{
         padding-top: 30px;
         width: 100%;
@@ -64,15 +52,11 @@
         margin: 20px;
         text-align:justify;
     }
-
     .president-name{
         
         font-size: 30px;
     }
-
-
 }
-
 @media screen and (min-width: 415px) and (max-width: 768px) {
     .presidetWord-container{
         padding: 0;
@@ -95,9 +79,7 @@
         text-align:justify;
     }
 }
-
 @media screen and (max-width: 414px) {
-
     .president{
         padding-top: 0;
         margin: 10px;
@@ -110,19 +92,15 @@
         width: 200px;
         height: 250px;
         object-fit: cover;
-
      }
-
     .presidetWord-container{
         padding: 0;
     }
-
     .president-word{
         width: 100%;
         padding-top: 10px;
         text-align: center;
     }
-
     .president-name{
         
         font-size: 20px;
@@ -131,7 +109,6 @@
         margin: 20px;
         text-align:justify;
         font-size: 16px;
-    }
-    
+    }  
 }
 

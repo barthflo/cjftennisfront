@@ -4,10 +4,8 @@ import {BACK_URL, DOMAIN_URL} from './../../http';
 import "./PresidentWord.css";
 import SectionTitle from "../section-title/SectionTitle";
 
-
-
 export default function PresidentWord() {
-   
+    
    const [presidentWord, setPresidentWord] = useState([]);
     useEffect(() => {
         const fetchPresidentWord = () => {
@@ -18,13 +16,9 @@ export default function PresidentWord() {
         fetchPresidentWord()   
      }, []);
 
-   
-
     return (
         <div  className="presidetWord-container">
             <SectionTitle className="section-title" title = "Le mot de la présidente" />       
-           
-
                 <div className="president">
                         <img className="president_image" src={`${DOMAIN_URL}/upload/${presidentWord.picture_url}`} alt={presidentWord.lastname}/>
                         
@@ -33,8 +27,7 @@ export default function PresidentWord() {
                     
                             <p className="description"> "{presidentWord.description}." </p>
                         </div>
-               </div>
-                   
+               </div>              
         </div>
     );
 }
