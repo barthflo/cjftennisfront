@@ -49,6 +49,8 @@ function Navbar () {
                             <Link className="NavLinks" to="/club/agenda" >Agenda</Link>
                             <hr/>
                             <Link className="NavLinks" to="/club/gallery" >Galerie</Link>
+                            <hr/>
+                            <Link className="NavLinks" to="/club/articles" >Articles</Link>
                         </div>
                     </div>
                     <div className="NavbarLearn"  onMouseEnter={changeOpenEns} onMouseLeave={changeCloseEns}>Enseignement
