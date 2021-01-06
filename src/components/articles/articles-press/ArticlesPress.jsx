@@ -15,7 +15,7 @@ export default function PressArticle() {
     }, []);
 
     return(
-        <section className="press-article">
+        <section className={pressArticles.length === 0? "press-article-none" : "press-article"}>
             <SectionTitle title="Ils parlent de nous" color="white" />
             {pressArticles.length !== 0?
                 <div className="press_article_content">

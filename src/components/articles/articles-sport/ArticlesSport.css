@@ -7,6 +7,10 @@
     align-items: center;
 }
 
+.sport-article-none {
+    display: none;
+}
+
 .no-article{
     font-family: var(--secondary-font);
     font-size: 28px;

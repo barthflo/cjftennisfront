@@ -15,7 +15,7 @@ export default function PressArticle() {
     }, []);
 
     return(
-        <section className="club-article">
+        <section className={clubArticles.length === 0? "club-article-none" : "club-article"}>
             <SectionTitle title="Vie du club" color="white" />
             {clubArticles.length !== 0?
                 <div className="club_article_content">
