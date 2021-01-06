@@ -33,7 +33,7 @@ const NavbarAdmin = () => {
                 <div className="d-flex justify-content-around align-items-center m-0 nav-icons">
                     <div onClick = {e => setOpen(!open)} className="user-profile d-flex align-items-center pr-2 border-right">
                         <TiUser color={"white"} size={"1.6em"} className="mr-1"/>
-                        <p className="mb-0 text-light mr-2">{AuthService.getUser().user.name}</p>
+                        <p className="mb-0 text-light mr-2">{AuthService.getUser().name}</p>
                     </div>
                     <div className="logout-icon d-flex justify-content-center">
                         <BiExit color={"white"} size={"1.5em"} className="logout mr-2" onClick={logout}/>
@@ -43,12 +43,14 @@ const NavbarAdmin = () => {
             <div className={"user-profile-menu position-fixed py-2 py-sm-1 justify-content-around d-flex flex-wrap flex-sm-nowrap" + (open ? " " : " user-profile-close")}>
                 <div className="d-flex align-items-center justify-content-end w-100 px-3 mb-1 mb-sm-0">
                     <GoSettings size={"1.3em"} className="mr-2 user-menu-icons" />
-                    <Link to={`/admin/id=${AuthService.getUser().user.id}`} onClick={e => setOpen(false)}><p className="m-0">Modifier les paramètres du compte</p></Link>
+                    <Link to={`/admin/id=${AuthService.getUser().id}`} onClick={e => setOpen(false)}><p className="m-0">Modifier les paramètres du compte</p></Link>
                 </div>
+                {AuthService.getUser().role === "superadmin" &&
                 <div className="d-flex align-items-center justify-content-end w-100 px-3">
                     <HiOutlineUserAdd size={"1.3em"} className="mr-2 user-menu-icons" />
                     <Link to='/admin/user/new' onClick={e => setOpen(false)}><p className="m-0">Ajouter un nouvel utilisateur</p></Link>
                 </div>
+                }
             </div>
         </header>
         

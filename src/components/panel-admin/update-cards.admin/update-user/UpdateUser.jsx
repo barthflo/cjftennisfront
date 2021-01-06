@@ -18,7 +18,7 @@ const UpdateUser = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [errors, setErrors] = useState();
     const [readOnly, setReadOnly] = useState(true);
-    
+
     const time = () => {
         const d = new Date();
         return d.getUTCHours() +1;
@@ -36,7 +36,7 @@ const UpdateUser = () => {
                     setErrors(err);
                     })
             }
-        if(parseInt(params.id) === AuthService.getUser().user.id){
+        if(parseInt(params.id) === AuthService.getUser().id){
             fetchUser();
         } else{
             setErrors({errorStatus : 405});

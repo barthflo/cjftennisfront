@@ -2,28 +2,41 @@ import React , {useState, useEffect} from 'react';
 import {useForm} from 'react-hook-form';
 import {BACK_URL} from '../../../../http';
 import Axios from 'axios';
+import authService from '../../../../services/auth.service';
+import bcrypt from 'bcryptjs'
 
 
 const UpdateUserForm = ({className, datas, readOnlyToggle}) => {
 
-    
     const {register, errors, handleSubmit} = useForm();
     const [admins, setAdmins] = useState([]);
 
     useEffect(() => {
         Axios.get(`${BACK_URL}/admins`).then(res => setAdmins(res.data));
     }, []);
-
-    const onSubmit = (data) =>{
+    console.log(datas);
+    console.log(bcrypt.compareSync("password", datas.password));
+    const onSubmit = async (data) =>{
+        
         if(data.name === datas.name){
             delete data.name;
         }
         if(data.mail === datas.email){
             delete data.mail;
         }
-        Axios.put(`${BACK_URL}/admins/${datas.id}`, data)
-             .then(res =>console.log(res))
-             .catch(err => console.error(err));  
+        if(data.password === datas.password.substring(0,9)){
+            delete data.password
+        }
+        console.log(data)
+        // console.log(bcrypt.compareSync(data.password, datas.password));
+        // await Axios.put(`${BACK_URL}/admins/${datas.id}`, data)
+        //      .then(res =>{
+        //         console.log(res);
+        //         let user = authService.getUser().user;
+        //         localStorage.setItem(JSON.parse(localStorage.getItem['user'].user), JSON.stringify(res.data));
+
+        //      })
+        //      .catch(err => console.error(err));  
     } 
 
     return (
@@ -35,8 +48,8 @@ const UpdateUserForm = ({className, datas, readOnlyToggle}) => {
                         id="name"
                         name="name"
                         type="text" 
-                        // readOnly={readOnlyToggle && "readonly"} 
-                        className={"form-control" + (errors.name ? " is-invalid" : " ")} 
+                        // readOnly={readOnlyToggle && "form-control-plain-text"} 
+                        className={(readOnlyToggle ? "form-control-plaintext" : "form-control") + (errors.name ? " is-invalid" : " ")} 
                         defaultValue={datas.name}
                         ref={register({
                                 validate : value => {
@@ -64,12 +77,17 @@ const UpdateUserForm = ({className, datas, readOnlyToggle}) => {
                         defaultValue={datas.email}
                         ref={register({
                                 required : true,
-                                pattern : /^\w+[\w-\.]*\@\w+((-\w+)|(\w*))\.[a-z]{2,3}$/
+                                pattern : /^\w+[\w-\.]*\@\w+((-\w+)|(\w*))\.[a-z]{2,3}$/,
+                                validate : value => {
+                                    if(value !== datas.email){
+                                        return admins.filter(admin => admin.email === value).length === 0 
+                                    }
+                                }
                             })}
                     />
                     {errors.mail && errors.mail.type==="required" ? <div className="invalid-feedback">L'adresse email est obligatoire</div> : ''}
                     {errors.mail && errors.mail.type==="pattern" ? <div className="invalid-feedback">L'adresse email est invalide</div> : ''}
-
+                    {errors.mail && errors.mail.type==="validate" ? <div className="invalid-feedback">L'adresse email est déjà prise</div> : ''}
                 </div>
             </div>
             <div className="form-group row align-items-center justify-content-between">
@@ -81,7 +99,7 @@ const UpdateUserForm = ({className, datas, readOnlyToggle}) => {
                         type="password" 
                         // readOnly={readOnlyToggle && "readonly"} 
                         className={"form-control" + (errors.password ? " is-invalid" : " ")} 
-                        defaultValue={datas.password.substring(0,8)}
+                        defaultValue={datas.password.substring(0,9)}
                         ref={register({required:true})}
                     />
                     {errors.password && <small className="text-danger">Mot de passe requis</small>}
