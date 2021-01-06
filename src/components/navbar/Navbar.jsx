@@ -34,7 +34,7 @@ function Navbar () {
         <div className="Navbar" id="Navbar">
             <div className="NavbarContainer">
                 <div className="NavbarLeftbBox">
-                    <Link to="/"><img className="Logo" src={`${DOMAIN_URL}/upload/logo_cjf_tennis.jpg`}/></Link>
+                    <Link to="/"><img className="Logo" src={`${DOMAIN_URL}/upload/logo_cjf_tennis.jpg`} alt="logo"/></Link>
                 </div>
                 <div className="NavbarRightBox">
                     <Link className="NavbarHome" to="/" >Accueil</Link>
@@ -49,6 +49,8 @@ function Navbar () {
                             <Link className="NavLinks" to="/club/agenda" >Agenda</Link>
                             <hr/>
                             <Link className="NavLinks" to="/club/gallery" >Galerie</Link>
+                            <hr/>
+                            <Link className="NavLinks" to="/club/articles" >Articles</Link>
                         </div>
                     </div>
                     <div className="NavbarLearn"  onMouseEnter={changeOpenEns} onMouseLeave={changeCloseEns}>Enseignement
@@ -82,12 +84,12 @@ function Navbar () {
                             <Link className="NavLinks" to="/paratennis/deaf-and-hard-of-hearing-tennis">Tennis Sourd et Malentendant</Link>
                         </div>
                     </div>
-                    <Link className="NavbarAdmin" to="/admin" ><BsFillLockFill className="LockIcon"/></Link>
+                    <Link className="NavbarAdmin" to="/admin" target="_blank" ><BsFillLockFill className="LockIcon"/></Link>
                 </div>
             </div>
             <div className="NavbarResponsive">
                 <div className="LogoContainer">
-                    <Link to="/"><img className="LogoResp" src={`${DOMAIN_URL}/upload/logo_cjf_tennis.jpg`}/></Link>
+                    <Link to="/"><img className="LogoResp" src={`${DOMAIN_URL}/upload/logo_cjf_tennis.jpg`} alt="logo"/></Link>
                 </div>      
                 <a className="NavbarMenu-Burger" id="#Burger" href="#" onClick={changeOpenMenu} >
                     <span></span>

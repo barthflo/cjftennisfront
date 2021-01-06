@@ -13,7 +13,7 @@ const SidebarAdmin = (props) => {
     const[activePage, setActivePage] = useState(history.location.pathname)
     useEffect(() => {
         setActivePage(history.location.pathname);
-    })
+    }, [history.location.pathname])
 
     return (
         <aside className={"side-bar d-flex flex-row-reverse align-items-start px-2" + (props.open ? ' open' : '')}>
@@ -22,17 +22,17 @@ const SidebarAdmin = (props) => {
                     <GiHamburgerMenu size={"1.7em"} onClick={props.toggleOpen}/>
                     <small>Menu</small>
                 </div>
-                <div className={"d-flex flex-column align-items-center mb-2" + (activePage === "/admin"  ? ' active' : '')}>
-                    <Link to='/admin'><FaHome size={"1.7em"} className={activePage === "/admin" && 'active'} /></Link>
+                <div className={"d-flex flex-column align-items-center mb-2" + (activePage === "/admin" || activePage.includes("admin/edit") ? ' active' : '')}>
+                    <Link to='/admin'><FaHome size={"1.7em"} className={(activePage === "/admin" || activePage.includes("admin/edit")) && 'active'} /></Link>
                     <small>Accueil</small>
                 </div>
                 <div className={"d-flex flex-column align-items-center mb-2" + (activePage.includes("paratennis") ? ' active' : '')}>
                     <Link to='/admin/paratennis'><BiHandicap size={"1.7em"} className={activePage.includes("paratennis") && 'active'}/></Link>
                     <small>ParaTennis</small>
                 </div>
-                <div className={"d-flex flex-column align-items-center mb-2" + (activePage.includes("gallery") ? ' active' : '')}>
-                    <Link to='/admin/gallery'><IoMdPhotos size={"1.7em"} className={activePage.includes("gallery") && 'active'}/></Link>
-                    <small>Gallerie</small>
+                <div className={"d-flex flex-column align-items-center mb-2" + (activePage.includes("galleries") ? ' active' : '')}>
+                    <Link to='/admin/galleries'><IoMdPhotos size={"1.7em"} className={activePage.includes("galleries") && 'active'}/></Link>
+                    <small>Galleries</small>
                 </div>
                 <div className="d-flex flex-column align-items-center mb-2">
                     <Link to='/admin/paratennis'><BiNews size={"1.7em"} /></Link>
