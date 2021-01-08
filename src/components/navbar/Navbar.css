@@ -8,14 +8,23 @@
     justify-content: space-between;
     z-index: 50;
 }
-
 .Logo{
     position: fixed;
+    transition: ease-in-out 0.5s;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    left: 1%;
+}
+.Logo.active{
+    position: fixed;
+    transition: ease-in-out 0.5s;
     width: 170px;
     height: 170px;
     border-radius: 50%;
     left: 5%;
 }
+
 
 .NavbarResponsive{
     display: none;
@@ -41,22 +50,15 @@
    align-items: center;
 }
 
-.NavbarHome{
-    text-decoration: none;
-    color: var(--light-color) ;
-    font-size: calc(var(--spacing) *3);
-    padding: var(--spacing-large);
-    background-color: var(--main-color);
-    transform: skew( -10deg);
-}
-
-.NavbarHome:hover{
+.Nav-item-active{
     background-color: #497454;
-    color:var(--light-color);
-    text-decoration:none;
 }
 
-.NavbarClub, .NavbarLearn, .NavbarCompet, .NavbarPara{
+.Nav-item-text-active{
+    color: white !important;
+}
+
+.NavbarClub, .NavbarLearn, .NavbarCompet, .NavbarPara, .NavbarHome{
     text-decoration: none;
     color: var(--main-color) ;
     font-size: calc(var(--spacing) *3);
@@ -65,11 +67,14 @@
     display: flex;
     justify-content: center;
     cursor:pointer;
+  
 }
 
-.NavbarClub:hover, .NavbarLearn:hover, .NavbarCompet:hover, .NavbarPara:hover{
+
+.NavbarClub:hover, .NavbarLearn:hover, .NavbarCompet:hover, .NavbarPara:hover, .NavbarHome:hover{
     color: #497454;
     text-decoration:none;
+
 }
 
 .NavbarAdmin{
@@ -97,7 +102,7 @@
     text-align: center;
     margin-top: 68px;
     background-color: var(--main-color);
-    min-width: 250px;
+    min-width: 281px;
 }
 
 .club-close {
@@ -112,9 +117,8 @@
     text-align: center;
     margin-top: 68px;
     background-color: var(--main-color);
-    min-width: 250px;   
+    min-width: 281px;
 }
-
 .ens-close {
     display: none;
 }
@@ -127,7 +131,7 @@
     text-align: center;
     margin-top: 68px;
     background-color: var(--main-color);
-    min-width: 250px;    
+    min-width: 281px;
 }
 
 .comp-close{
@@ -142,7 +146,7 @@
     text-align: center;
     margin-top: 68px;
     background-color: var(--main-color); 
-    min-width: 250px;    
+    min-width: 281px;
 }
 
 .para-close{
@@ -183,6 +187,15 @@
     
     .Logo{
         position: fixed;
+        transition: ease-in-out 0.5s;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        left: 5%;
+    }
+    .Logo.active{
+        position: fixed;
+        transition: ease-in-out 0.5s;
         width: 100px;
         height: 100px;
         border-radius: 50%;
@@ -304,7 +317,7 @@
         justify-content: center;
         flex-direction: column;
         text-align: center;
-        margin-top: 36px;
+        margin-top: 40px;
         background-color: var(--main-color);
         min-width: 150px;
     }
@@ -319,7 +332,7 @@
         justify-content: center;
         flex-direction: column;
         text-align: center;
-        margin-top: 36px;
+        margin-top: 40px;
         background-color: var(--main-color);
         min-width: 150px;   
     }
@@ -334,7 +347,7 @@
         justify-content: center;
         flex-direction: column;
         text-align: center;
-        margin-top: 36px;
+        margin-top: 40px;
         background-color: var(--main-color);
         min-width: 150px;
     }
@@ -349,7 +362,7 @@
         justify-content: center;
         flex-direction: column;
         text-align: center;
-        margin-top: 36px;
+        margin-top: 40px;
         background-color: var(--main-color); 
         min-width: 150px;      
     }
@@ -401,10 +414,10 @@
     
     .LogoResp{
         position: fixed;
-        width: 140px;
-        height: 140px;
+        width: 74px;
+        height: 74px;
         border-radius: 50%;
-        left: 40%;
+        left: 44%;
     }
     
     .NavbarMenu-Burger{
@@ -639,10 +652,10 @@
     
     .LogoResp{
         position: fixed;
-        width: 100px;
-        height: 100px;
+        width: 52px;
+        height: 52px;
         border-radius: 50%;
-        left: 37%;
+        left: 42%;
     }
     
     .NavbarMenu-Burger{

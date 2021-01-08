@@ -1,9 +1,10 @@
 import './Navbar.css';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import {DOMAIN_URL} from '../../http';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import { BsFillLockFill } from 'react-icons/bs';
 import { ImCross } from 'react-icons/im'
+
 
 function Navbar () {
 
@@ -29,16 +30,32 @@ function Navbar () {
     const changeOpenCompResp=() => setOpenCompResp(!openCompResp)
     const [openParaResp, setOpenParaResp]=useState(false)
     const changeOpenParaResp=() => setOpenParaResp(!openParaResp)
+    const [logo, setLogo]=useState(false);
+    const changeLogo =() =>{
+        if(window.scrollY>= 50) {
+            setLogo(true)
+        }else{
+            setLogo(false)
+        }
+    }
+    window.addEventListener('scroll', changeLogo);
+    const history = useHistory()
+    const[activePage, setActivePage] = useState(history.location.pathname)
+    useEffect(() => {
+        setActivePage(history.location.pathname);
+    }, [history.location.pathname])
+
+
 
     return (
         <div className="Navbar" id="Navbar">
             <div className="NavbarContainer">
                 <div className="NavbarLeftbBox">
-                    <Link to="/"><img className="Logo" src={`${DOMAIN_URL}/upload/logo_cjf_tennis.jpg`} alt="logo"/></Link>
+                    <Link to="/"><img className={logo ?"Logo" : "Logo active"} src={`${DOMAIN_URL}/upload/logo_cjf_tennis.jpg`} alt="logo"/></Link>
                 </div>
                 <div className="NavbarRightBox">
-                    <Link className="NavbarHome" to="/" >Accueil</Link>
-                    <div className="NavbarClub"  onMouseEnter={changeOpenClub} onMouseLeave={changeCloseClub}>Club
+                    <Link className={"NavbarHome" + (activePage === '/' ? ' Nav-item-active Nav-item-text-active' : '' )}to="/" >Accueil</Link>
+                    <div className={"NavbarClub"+ (activePage.includes('club') ? ' Nav-item-active Nav-item-text-active' : '' )}  onMouseEnter={changeOpenClub} onMouseLeave={changeCloseClub}>Club
                         <div className={openClub? "club-open" : "club-close"}>
                             <Link className="NavLinks" to="/club/about-us" >Qui sommes-nous ?</Link>
                             <hr/>
@@ -53,7 +70,7 @@ function Navbar () {
                             <Link className="NavLinks" to="/club/articles" >Articles</Link>
                         </div>
                     </div>
-                    <div className="NavbarLearn"  onMouseEnter={changeOpenEns} onMouseLeave={changeCloseEns}>Enseignement
+                    <div className={"NavbarLearn"+ (activePage.includes('enseignement') ? ' Nav-item-active Nav-item-text-active' : '' )}  onMouseEnter={changeOpenEns} onMouseLeave={changeCloseEns}>Enseignement
                         <div className={openEns? "ens-open" : "ens-close"}>
                             <Link className="NavLinks" to="/enseignement/team-teaching" >Équipe Enseignante</Link>
                             <hr/>
@@ -62,7 +79,7 @@ function Navbar () {
                             <Link className="NavLinks" to="/enseignement/lesson-for-adult" >Cours pour Adultes</Link>
                         </div>
                     </div>
-                    <div className="NavbarCompet" onMouseEnter={changeOpenComp} onMouseLeave={changeCloseComp}  >Compétition
+                    <div className={"NavbarCompet"+ (activePage.includes('competition') ? ' Nav-item-active Nav-item-text-active' : '' )}  onMouseEnter={changeOpenComp} onMouseLeave={changeCloseComp}  >Compétition
                         <div className={openComp? "comp-open" : "comp-close"}>
                             <Link className="NavLinks" to="/competition/teams" >Équipes</Link>
                             <hr/>
@@ -73,11 +90,11 @@ function Navbar () {
                             <Link className="NavLinks" to="/competition/results" >Résultats</Link>
                         </div>
                     </div>
-                    <div className="NavbarPara" to="/paratennis"  onMouseEnter={changeOpenPara} onMouseLeave={changeClosePara} >Paratennis
+                    <div className={"NavbarPara" + (activePage.includes('paratennis') ? ' Nav-item-active Nav-item-text-active' : '' )}  to="/paratennis"  onMouseEnter={changeOpenPara} onMouseLeave={changeClosePara} >Paratennis
                         <div className={openPara? "para-open" : "para-close"}>
                             <Link className="NavLinks" to="/paratennis/tennis-armchair" >Tennis Fauteuil</Link>
                             <hr/>
-                            <Link className="NavLinks" to="/paratennis/competition-club-league-and-stage" >Compétitions Club Ligue et Stages</Link>
+                            <Link className="NavLinks" to="/paratennis/compet-league-and-stage" >Compétitions Club Ligue et Stages</Link>
                             <hr/>
                             <Link className="NavLinks" to="/paratennis/tournament" >Tournois</Link>
                             <hr/>
