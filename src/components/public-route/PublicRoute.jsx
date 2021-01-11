@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import {Route} from 'react-router-dom';
 import Footer from '../footer/Footer';
 import Navbar from '../navbar/Navbar';
+import Meteo from '../meteo-api/Meteo';
 import {DOMAIN_URL} from '../../http.js';
 
 const PublicRoute = ({component : Component, ...rest}) => {
@@ -18,6 +19,7 @@ const PublicRoute = ({component : Component, ...rest}) => {
                 <Fragment>
                     <Navbar />
                     <Component {...props} />
+                    <Meteo />
                     <Footer /> 
                 </Fragment>  
                 }
