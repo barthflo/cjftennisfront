@@ -2,45 +2,58 @@ import React , {useState, useEffect} from 'react';
 import {useForm} from 'react-hook-form';
 import {BACK_URL} from '../../../../http';
 import Axios from 'axios';
-import authService from '../../../../services/auth.service';
-import bcrypt from 'bcryptjs'
 
 
 const UpdateUserForm = ({className, datas, readOnlyToggle}) => {
 
     const {register, errors, handleSubmit} = useForm();
     const [admins, setAdmins] = useState([]);
+    const [message, setMessage] = useState();
 
     useEffect(() => {
         Axios.get(`${BACK_URL}/admins`).then(res => setAdmins(res.data));
-    }, []);
-    console.log(datas);
-    console.log(bcrypt.compareSync("password", datas.password));
+    }, [admins]);
+
     const onSubmit = async (data) =>{
         
         if(data.name === datas.name){
             delete data.name;
         }
-        if(data.mail === datas.email){
-            delete data.mail;
+        if(data.email === datas.email){
+            delete data.email;
         }
-        if(data.password === datas.password.substring(0,9)){
+        if(data.password.substring(0,9) === datas.password.substring(0,9)){
             delete data.password
         }
-        console.log(data)
-        // console.log(bcrypt.compareSync(data.password, datas.password));
-        // await Axios.put(`${BACK_URL}/admins/${datas.id}`, data)
-        //      .then(res =>{
-        //         console.log(res);
-        //         let user = authService.getUser().user;
-        //         localStorage.setItem(JSON.parse(localStorage.getItem['user'].user), JSON.stringify(res.data));
-
-        //      })
-        //      .catch(err => console.error(err));  
+        if(Object.entries(data).length !== 0){
+            await Axios.put(`${BACK_URL}/admins/${datas.id}`, data)
+                .then(res =>{
+                    if(res.status === 200){
+                        localStorage.setItem('user', JSON.stringify(res.data));
+                        setMessage(() => {
+                            return (
+                                <div className="d-flex justify-content-center">
+                                    <p className="text-success font-italic font-bold">L'utilisateur à été mis à jour avec succès!</p>
+                                </div>
+                            )
+                        });
+                        setTimeout(() => setMessage(), 5000);
+                    } 
+                })
+                .catch(err => console.error(err)); 
+        } else {
+            setMessage(() => {
+                return (
+                    <div className="d-flex justify-content-center">
+                        <p className="text-danger font-italic font-bold">Veuillez modifier au moins un champ!</p>
+                    </div>
+                    )
+                });
+        }  
     } 
-
+    
     return (
-        <form id="updateAdmin" className={className} onSubmit={handleSubmit(onSubmit)}>
+        <form id="updateAdmin" className={className} disabled={readOnlyToggle && "disabled"} onSubmit={handleSubmit(onSubmit)}>
             <div className="form-group row align-items-center justify-content-between">
                 <label htmlFor="name" className="col-form-label col-sm-2">Nom :</label>
                 <div className="col-sm-10">
@@ -48,8 +61,8 @@ const UpdateUserForm = ({className, datas, readOnlyToggle}) => {
                         id="name"
                         name="name"
                         type="text" 
-                        // readOnly={readOnlyToggle && "form-control-plain-text"} 
-                        className={(readOnlyToggle ? "form-control-plaintext" : "form-control") + (errors.name ? " is-invalid" : " ")} 
+                        readOnly={readOnlyToggle && "read-only"} 
+                        className={"form-control" + (errors.name ? " is-invalid" : " ")} 
                         defaultValue={datas.name}
                         ref={register({
                                 validate : value => {
@@ -66,14 +79,14 @@ const UpdateUserForm = ({className, datas, readOnlyToggle}) => {
                 </div>
             </div>
             <div className="form-group row align-items-center justify-content-between">
-                <label htmlFor="mail" className="col-form-label col-sm-2">Email :</label>
+                <label htmlFor="email" className="col-form-label col-sm-2">Email :</label>
                 <div className="col-sm-10">
                     <input 
-                        id="mail"
-                        name="mail"
+                        id="email"
+                        name="email"
                         type="text" 
-                        // readOnly={readOnlyToggle && "readonly"} 
-                        className={"form-control" + (errors.mail ? " is-invalid" : " ")} 
+                        readOnly={readOnlyToggle && "readonly"} 
+                        className={"form-control" + (errors.email ? " is-invalid" : " ")} 
                         defaultValue={datas.email}
                         ref={register({
                                 required : true,
@@ -85,9 +98,9 @@ const UpdateUserForm = ({className, datas, readOnlyToggle}) => {
                                 }
                             })}
                     />
-                    {errors.mail && errors.mail.type==="required" ? <div className="invalid-feedback">L'adresse email est obligatoire</div> : ''}
-                    {errors.mail && errors.mail.type==="pattern" ? <div className="invalid-feedback">L'adresse email est invalide</div> : ''}
-                    {errors.mail && errors.mail.type==="validate" ? <div className="invalid-feedback">L'adresse email est déjà prise</div> : ''}
+                    {errors.email && errors.email.type==="required" ? <div className="invalid-feedback">L'adresse email est obligatoire</div> : ''}
+                    {errors.email && errors.email.type==="pattern" ? <div className="invalid-feedback">L'adresse email est invalide</div> : ''}
+                    {errors.email && errors.email.type==="validate" ? <div className="invalid-feedback">L'adresse email est déjà prise</div> : ''}
                 </div>
             </div>
             <div className="form-group row align-items-center justify-content-between">
@@ -97,15 +110,15 @@ const UpdateUserForm = ({className, datas, readOnlyToggle}) => {
                         id="password"
                         name="password"
                         type="password" 
-                        // readOnly={readOnlyToggle && "readonly"} 
+                        readOnly={readOnlyToggle && "readonly"} 
                         className={"form-control" + (errors.password ? " is-invalid" : " ")} 
                         defaultValue={datas.password.substring(0,9)}
                         ref={register({required:true})}
                     />
                     {errors.password && <small className="text-danger">Mot de passe requis</small>}
-                </div>
-                
+                </div>    
             </div>
+            {message}
         </form>
     )
 }

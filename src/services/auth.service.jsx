@@ -8,7 +8,7 @@ const login = (username, password) => {
                         return res;
                     } else {
                         localStorage.setItem("token", res.data.accessToken);
-                        localStorage.setItem("user", JSON.stringify(res.data.user));
+                        localStorage.setItem("user", JSON.stringify({...res.data.user, password:'hidden'}));
                         return res;
                     }
                 })
@@ -25,8 +25,7 @@ const logout = () => {
 }
 
 const getUser = () => {
-    const user = JSON.parse(localStorage.getItem("user"));
-    return user;
+    return JSON.parse(localStorage.getItem("user"));
 };
 
 const userAuthenticated = () => {
@@ -36,11 +35,26 @@ const userAuthenticated = () => {
                 },
             })
             .then(res => {
-                    console.log(res);
-                    return res;
+                return res;
             })
-            .catch(err => console.log(err));
+            .catch(err => {
+                console.log(err);
+                logout();
+                return
+            });
 }
 
+const resetPwAuthenticated = async (token) => {
+    return await Axios.get(`${BACK_URL}/admins/authenticate`, {
+        headers : {
+            "x-access-token" : token
+        }
+    })
+    .then(res => res)
+    .catch(err => {
+        console.log(err);
+        return
+    })
+}
 
-export default { login, logout, getUser, userAuthenticated, getUser }
+export default { login, logout, getUser, userAuthenticated, resetPwAuthenticated}
