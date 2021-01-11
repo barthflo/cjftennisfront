@@ -1,9 +1,8 @@
 .meteo {
     background-color: var(--main-color);
-    min-height: 8vh;
-    font-size: 24px;
+    min-height: 10vh;
+    font-size: 30px;
     display: flex;
-    justify-content: center;
     align-items: center;
     color: #f8f8f8;
 }
@@ -11,15 +10,43 @@
 .meteo-info {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    width: 320px;
+    margin: 0 auto;
 }
 
 .meteo-info .meteo-name, .meteo-info .meteo-temp {
-    margin-left: var(--spacing-medium);
     margin-bottom: 0px !important;
+    text-align: center;
+    width: 80px;
 }
 
 .meteo-info img {
     object-fit: cover;
-    height: 64px;
+    height: 80px;
+}
+
+@media screen and (min-width: 516px) and (max-width: 768px) {
+    .meteo {
+        min-height: 9vh;
+        font-size: 28px;
+    }
+    .meteo-info img {
+        object-fit: cover;
+        height: 72px;
+    }
+}
+
+@media screen and (max-width: 515px) {
+    .meteo {
+        min-height: 8vh;
+        font-size: 24px;
+    }
+    .meteo-info img {
+        object-fit: cover;
+        height: 64px;
+    }
+    .meteo-info .meteo-name, .meteo-info .meteo-temp {
+        width: 64px;
+    }
 }
