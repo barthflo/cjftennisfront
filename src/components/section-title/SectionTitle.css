@@ -1,11 +1,4 @@
 .title-white, .title-gray {
-    /* font-family: var(--main-font);
-    font-size: 40px;
-    text-align: center;
-    position: relative;
-    color: var(--main-color);
-    z-index: 5;
-    margin: 0 var(--spacing-large); */
     text-align: center;
     margin-bottom: 80px;
     position: relative;
