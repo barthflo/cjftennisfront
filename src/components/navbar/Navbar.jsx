@@ -142,6 +142,7 @@ function Navbar () {
                         <hr/>
                         <Link className="RespLinksClub" to="/club/gallery" onClick={changeOpenMenu}>Galerie</Link>
                         <hr/>
+                        <Link className="RespLinksClub" to="/club/articles" onClick={changeOpenMenu}>Articles</Link>
                     </div>
                 </div>
                 <div className="EnsResp" onClick={changeOpenEnsResp}>Enseignement

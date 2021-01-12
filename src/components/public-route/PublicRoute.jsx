@@ -10,7 +10,7 @@ const PublicRoute = ({component : Component, ...rest}) => {
         <Route
             {...rest}
             render = { props =>
-                props.history.location.pathname === '/admin/login' 
+                props.history.location.pathname === '/admin/login' || props.history.location.pathname === '/admin/forgotten-password' 
                 ?
                 <Fragment>
                     <Component {...props} background={`${DOMAIN_URL}/assets/login-background3.jpg`}/>
