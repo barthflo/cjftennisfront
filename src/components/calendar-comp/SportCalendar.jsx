@@ -22,13 +22,15 @@ const SportCalendar = (props) => {
         }
         fetchData();
     }, [datas]);
-    console.log(datas)
+
     return (
-       <section>
+       <section style={{minHeight:"200px", backgroundColor:"white", display: "flex", alignItems:"center", justifyContent:"center"}}>
            {!isLoading && 
         <Fragment> 
             { datas.length === 0 ? 
-                <p className="calendar-unvalable">Calendrier indisponible</p>
+                
+                <p className="no-article">Calendrier indisponible.</p>
+                
             : 
             <Fragment>
                 <SectionTitle title={datas[0].title} color="white"/>
