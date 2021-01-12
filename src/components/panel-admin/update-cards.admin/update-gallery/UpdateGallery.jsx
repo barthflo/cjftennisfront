@@ -48,7 +48,7 @@ const UpdateGallery = () => {
                                 history.push('/admin/galleries');
                             }}
                         >
-                        Oui, je suis sûre!
+                        Oui, je suis sûr!
                         </button>
                     </div>
                   </div>

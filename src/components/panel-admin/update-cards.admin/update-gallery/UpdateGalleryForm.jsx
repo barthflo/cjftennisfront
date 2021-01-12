@@ -7,7 +7,7 @@ import UploadService from '../../../../services/upload.service'
 import Uploader from '../../uploader/Uploader'
 
 const UpdateGalleryForm = ({formId, datas}) => {
-    console.log(datas);
+    
     const [files, setFiles] = useState([]);
     const [previewUrl, setPreviewUrl] = useState([]);
     const [uploaded, setUploaded] = useState([]);

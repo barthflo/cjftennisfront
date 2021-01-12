@@ -15,7 +15,7 @@ export default function PressArticle() {
     }, []);
 
     return(
-        <section className="sport-article" style={sportArticles.length === 0 && {display: "none"}}>
+        <section className={sportArticles.length === 0? "sport-article-none" : "sport-article"}>
             <SectionTitle title="Vie sportive" color="gray" />
             {sportArticles.length !== 0?
                 <div className="sport_article_content">
