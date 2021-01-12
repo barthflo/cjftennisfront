@@ -45,6 +45,18 @@ function Navbar () {
         setActivePage(history.location.pathname);
     }, [history.location.pathname])
 
+    const[scroll, setScroll]= useState(false)
+    const changeScroll=() => setScroll(!scroll)
+    
+    if(openMenu === true){
+        window.addEventListener("scroll", function (e){
+	
+            window.scrollTo(0,0);
+            
+        });
+        
+    }
+    
 
 
     return (
@@ -119,34 +131,54 @@ function Navbar () {
                 <Link className="HomeResponsive" to="/" onClick={changeOpenMenu}>Accueil</Link>
                 <div className="ClubResp" onClick={changeOpenClubResp} >Club
                     <div className={openClubResp? "RespLinksClubContainerOpen" : "RespLinksClubContainerClose"}>
+                        <hr/>
                         <Link className="RespLinksClub" to="/club/about-us" onClick={changeOpenMenu}>Qui sommes-nous ?</Link>
+                        <hr/>
                         <Link className="RespLinksClub" to="/club/our-infrastructures" onClick={changeOpenMenu}>Nos Infrastructures</Link>
+                        <hr/>
                         <Link className="RespLinksClub" to ="/club/cotisation" onClick={changeOpenMenu}>Cotisations</Link>
+                        <hr/>
                         <Link className="RespLinksClub" to="/club/agenda" onClick={changeOpenMenu}>Agenda</Link>
+                        <hr/>
                         <Link className="RespLinksClub" to="/club/gallery" onClick={changeOpenMenu}>Galerie</Link>
+                        <hr/>
                     </div>
                 </div>
                 <div className="EnsResp" onClick={changeOpenEnsResp}>Enseignement
                     <div className={openEnsResp? "RespLinksEnsContainerOpen" : "RespLinksEnsContainerClose"}>
+                        <hr/>
                         <Link className="RespLinksEns" to="/enseignement/team-teaching" onClick={changeOpenMenu}>Équipe Enseignante</Link>
+                        <hr/>
                         <Link className="RespLinksEns" to="/enseignement/lesson-for-children" onClick={changeOpenMenu}>Cours pour Enfants</Link>
+                        <hr/>
                         <Link className="RespLinksEns" to="/enseignement/lesson-for-adult" onClick={changeOpenMenu}>Cours pour Adultes</Link>
+                        <hr/>
                     </div>
                 </div>
                 <div className="CompResp" onClick={changeOpenCompResp}>Compétitions
                     <div className={openCompResp? "RespLinksCompContainerOpen" : "RespLinksCompContainerClose"}>
+                        <hr/>
                         <Link className="RespLinksComp" to="/competition/teams" onClick={changeOpenMenu}>Équipes</Link>
+                        <hr/>
                         <Link className="RespLinksComp" to="/competition/tournaments" onClick={changeOpenMenu}>Tournois</Link>
+                        <hr/>
                         <Link className="RespLinksComp" to="/competition/calendar" onClick={changeOpenMenu}>Calendrier</Link>
+                        <hr/>
                         <Link className="RespLinksComp" to="/competition/results" onClick={changeOpenMenu}>Résultats</Link>
+                        <hr/>
                     </div>
                 </div>
                 <div className="ParaResp" onClick={changeOpenParaResp}>ParaTennis
                     <div className={openParaResp? "RespLinksParaContainerOpen" : "RespLinksParaContainerClose"}>
+                        <hr/>
                         <Link className="RespLinksPara" to="/paratennis/tennis-armchair" onClick={changeOpenMenu}>Tennis Fauteuil</Link>
+                        <hr/>
                         <Link className="RespLinksPara" to="/paratennis/competition-club-league-and-stage" onClick={changeOpenMenu}>Compétitions Club Ligue et Stages</Link>
+                        <hr/>
                         <Link className="RespLinksPara" to="/paratennis/tournament" onClick={changeOpenMenu}>Tournois</Link>
+                        <hr/>
                         <Link className="RespLinksPara" to="/paratennis/deaf-and-hard-of-hearing-tennis" onClick={changeOpenMenu}>Tennis Sourd et Malentendant</Link>
+                        <hr/>
                     </div>
                 </div>
                 <Link className="AdminResp" to='/admin' target='_blank' onClick={changeOpenMenu}>Administration</Link>
