@@ -37,7 +37,8 @@ export default function Footer() {
                     <h4>CJF Tennis</h4>
                     <div className="footer-contact">
                         <p>{contact.address_1}</p>
-                        <p className="adress">{contact.address_2} {contact.post_code} {contact.city}</p>
+                        <p className="adress">{contact.address_2}</p>
+                        <p className="adress">{contact.post_code} {contact.city}</p>
                         <p>{contact.phone}</p>
                         <p>{contact.email}</p>
                     </div>
