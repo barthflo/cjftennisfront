@@ -20,7 +20,7 @@
     transition:.2s ease-in;
 }
 
-.pictures-uploader figure:hover .mask-delete-hover, .pictures-uploader figure:hover .delete-hover path{
+.pictures-uploader figure:hover .mask-delete-hover, .pictures-uploader figure:hover .delete-hover path , .pictures-uploader .file-size-limit:hover .delete-hover path{
     opacity:1;
     transition:.2s ease-in;
 }
@@ -39,7 +39,7 @@
     overflow-x: scroll;
 }
 
-.preview-container img{
+.preview-container img, .preview-container .file-size-limit{
     height:60px;
     width:60px;
     object-fit:cover;
