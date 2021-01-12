@@ -2,8 +2,7 @@ import React, {Fragment, useState, useEffect, createRef} from 'react';
 import {BACK_URL, DOMAIN_URL} from '../../http';
 import Axios from 'axios';
 import SectionTitle from '../section-title/SectionTitle';
-
-
+import '../calendar-comp/SportCalendar.css'
 
 const SportCalendar = (props) => {
 
@@ -24,7 +23,7 @@ const SportCalendar = (props) => {
     }, [datas]);
 
     return (
-       <section style={{minHeight:"200px", backgroundColor:"white", display: "flex", alignItems:"center", justifyContent:"center"}}>
+       <section className="sportcalendar-container" >
            {!isLoading && 
         <Fragment> 
             { datas.length === 0 ? 
@@ -38,12 +37,13 @@ const SportCalendar = (props) => {
                         {datas.map((data, index) => {
                             return(
                                 <div key={index} className="calendar-image">
-                                    <img className="calendarComp" src={`${DOMAIN_URL}/upload/${data.picture_url}`}/>
-                                </div> 
+                                    <iframe title={data.file_url} className="calendarComp" src={`${DOMAIN_URL}/upload/${data.file_url}`}/>
+                                </div>                 
                             )
                         }
                                 
                         )}
+                    <a className="download-calendar" href={`${DOMAIN_URL}/upload/${datas[0].file_url}`} download>Télécharger le Calendrier</a>
                 </div>
           </Fragment>
         }
