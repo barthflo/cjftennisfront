@@ -1,0 +1,31 @@
+label{
+    font-family:var(--secondary-font);
+    font-weight:600;
+}
+
+.form-control:focus{
+    box-shadow: 0 0 0 0.2rem rgb(27 80 36 / 25%);
+    border-color: var(--main-color);
+}
+
+.form-control{
+    color: #3d3f42cc;
+    font-family:var(--secondary-font);
+    font-style:italic;
+}
+
+.form-control[readonly]{
+    background:#e9efec8f;
+}
+
+form .text-success{
+    color:var(--main-color) !important;
+    font-family:var(--main-font) !important;
+    font-style:italic;
+}
+
+form .text-danger{
+    color:rgb(177, 75, 50) !important;
+    font-family:var(--main-font) !important;
+    font-style:italic;
+}

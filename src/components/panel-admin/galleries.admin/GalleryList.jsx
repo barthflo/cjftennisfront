@@ -22,11 +22,11 @@ const GalleryList = () => {
                  setErrors(err);
              })
     }, [datas]);
-    datas.filter( data => data.modified_at).sort((a, b) => a-b).reverse();
+    
     return (
         <Fragment>
-            <h1 className="ml-4 mt-2 mb-4 pl-sm-3">Vos Galleries d'Images</h1>
-            {errors && <h2>There was an error with the server</h2>}
+            <h1 className="ml-4 mt-2 mb-4 pl-sm-3">Vos Galeries d'Images</h1>
+            {errors && <h2 className="text-center">Une erreur est survenue avec le serveur. Veuillez nous excuser pour la gêne occasionnée.</h2>}
             {isLoading ? 
             <section className="loader-container d-flex justify-content-center align-items-center" style={{minHeight:"100px"}}>
                 <RotateLoader size={10} color={"#345C3E"} /> 
@@ -37,18 +37,18 @@ const GalleryList = () => {
                 ?
                 <section className="card py-3 px-4">
                     <div className="card-header d-flex flex-column justify-content-center align-items-center">
-                        <h2 className="text-center">Vous n'avez pas encore de galleries...</h2>
-                        <p className="font-italic mb-0 text-center">Créez une gallerie maintenant!</p>
+                        <h2 className="text-center">Vous n'avez pas encore de galeries...</h2>
+                        <p className="font-italic mb-0 text-center">Créez une galerie maintenant!</p>
                     </div>
                     <div className="card-body d-flex flex-column justify-content-center align-items-center">
-                        <ButtonCreate url={`/admin/galleries/create`} title="Nouvelle Gallerie"/>
+                        <ButtonCreate url={`/admin/galleries/create`} title="Nouvelle Galerie"/>
                     </div>
                 </section>
                 :
                 <section>
                     <div className="list-group m-1 p-3 bg-light d-flex flex-column justify-content-center align-items-center">
-                        <p className="font-italic mb-2 mb-sm-1 text-center">Ajoutez une nouvelle gallerie!</p>
-                        <ButtonCreate url={`/admin/galleries/create`} title="Nouvelle Gallerie" class="btn-sm"/>
+                        <p className="font-italic mb-2 mb-sm-1 text-center">Ajoutez une nouvelle galerie!</p>
+                        <ButtonCreate url={`/admin/galleries/create`} title="Nouvelle Galerie" class="btn-sm"/>
                     </div>
                     <ul className="list-group d-flex flex-row flex-wrap justify-content-center">
                         {datas.length!== 0 && 

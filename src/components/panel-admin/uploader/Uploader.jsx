@@ -58,7 +58,7 @@ const Uploader = ({handleChangeUpload, handleUpload, uploaded, previewUrl, photo
                 <div className="preview-container position-fixed">
                     <div className="card p3">
                         <div className="card-body d-flex flex-row flex-wrap justify-content-center">
-                            {previewUrl[0].map((preview, index) => <img src={preview} alt={preview} key={index} /> )}
+                            {previewUrl[0].map((preview, index) => <img src={preview} alt={preview} key={index} className="m-1" /> )}
                         </div>
                         <div className="card-footer d-flex flex-column flex-sm-row-reverse justify-content-center justify-content-sm-start">
                             <ButtonUpload upload={handleUpload} class={"w-100 mb-1 mb-sm-0 ml-sm-1"}/>

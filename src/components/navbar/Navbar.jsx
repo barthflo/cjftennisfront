@@ -107,6 +107,7 @@ function Navbar () {
                         <Link className="RespLinksClub" to ="/club/cotisation" onClick={changeOpenMenu}>Cotisations</Link>
                         <Link className="RespLinksClub" to="/club/agenda" onClick={changeOpenMenu}>Agenda</Link>
                         <Link className="RespLinksClub" to="/club/gallery" onClick={changeOpenMenu}>Galerie</Link>
+                        <Link className="RespLinksClub" to="/club/articles" onClick={changeOpenMenu}>Articles</Link>
                     </div>
                 </div>
                 <div className="EnsResp" onClick={changeOpenEnsResp}>Enseignement
