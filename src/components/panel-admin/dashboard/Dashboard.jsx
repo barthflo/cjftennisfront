@@ -10,6 +10,10 @@ import GalleryList from '../galleries.admin/GalleryList';
 import GalleryCreate from '../galleries.admin/GalleryCreate';
 import GalleryUpdate from '../update-cards.admin/update-gallery/UpdateGallery';
 import UpdateUser from '../update-cards.admin/update-user/UpdateUser';
+import UsersList from '../users.admin/UsersList';
+import UsersCreate from '../users.admin/UsersCreate';
+import UsersManage from '../users.admin/UsersManage';
+
 import '../panelAdmin.css';
 import '../../../pages/pages-admin/pages.admin.css';
 
@@ -31,10 +35,26 @@ const Dashboard = () => {
             <div className="page-container d-flex flex-row-reverse">
                 <SidePanel toggleOpen = {toggleOpen} open={isOpen}/>
                 <Switch>
-
-                    <Route exact path='/admin' children={<HomeAdmin className={ enableOpen()} />} />
-                    <Route path='/admin/id=:id' children={<DefaultAdmin component={UpdateUser} className={"update-admin container-fluid px-0 px-sm-2" + enableOpen()} /> } />
-
+                    <Route 
+                        exact path='/admin' 
+                        children={<HomeAdmin className={ enableOpen()} />} 
+                    />
+                    <Route 
+                        path='/admin/id=:id' 
+                        children={<DefaultAdmin component={UpdateUser} className={"update-admin container-fluid px-0 px-sm-2" + enableOpen()} /> } 
+                    />
+                    <Route 
+                        exact path='/admin/users' 
+                        children={<DefaultAdmin component={UsersList} className={"update-admin container-fluid px-0 px-sm-2" + enableOpen()} />} 
+                    />
+                    <Route 
+                        path='/admin/users/create' 
+                        children={<DefaultAdmin component={UsersCreate} className={"update-admin container-fluid px-0 px-sm-2" + enableOpen()} />} 
+                    />
+                    <Route 
+                        path='/admin/users/edit/:id' 
+                        children={<DefaultAdmin component={UsersManage} className={"update-admin container-fluid px-0 px-sm-2" + enableOpen()} />} 
+                    />
                     <Route 
                         path='/admin/edit/video/:id' 
                         children={<DefaultAdmin component={UpdateVideo} className={"update-admin" + enableOpen()} /> }

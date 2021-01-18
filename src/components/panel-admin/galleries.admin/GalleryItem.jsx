@@ -31,7 +31,7 @@ const GalleryItem = ({datas}) => {
                                 onClose();
                             }}
                         >
-                        Oui, je suis sûre!
+                        Oui, je suis sûr!
                         </button>
                     </div>
                     
@@ -80,7 +80,7 @@ const GalleryItem = ({datas}) => {
             }
 
             <div className="card-footer px-0 d-flex flex-column flex-sm-row-reverse">
-                <ButtonUpdate url={`/admin/galleries/edit/${datas.id}`} class="mb-1 mb-sm-0"/>
+                <ButtonUpdate url={`/admin/galleries/edit/${datas.id}`} class="mb-1 mb-sm-0" title="Mettre à jour" />
                 <ButtonDelete className="mr-sm-1" handleDelete={deleteGallery}/>
             </div>
         </div>

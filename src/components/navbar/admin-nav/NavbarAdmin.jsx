@@ -49,13 +49,13 @@ const NavbarAdmin = () => {
             </nav>
             <div className={"user-profile-menu position-fixed py-2 py-sm-1 justify-content-around d-flex flex-wrap flex-sm-nowrap" + (open ? " " : " user-profile-close")}>
                 <div className="d-flex align-items-center justify-content-end w-100 px-3 mb-1 mb-sm-0">
-                    <GoSettings size={"1.3em"} className="mr-2 user-menu-icons" />
-                    <Link to={`/admin/id=${user.id}`} onClick={e => setOpen(false)}><p className="m-0">Modifier les paramètres du compte</p></Link>
+                    <GoSettings size={"1.2em"} className="mr-2 user-menu-icons" />
+                    <Link to={`/admin/id=${user.id}`} onClick={e => setOpen(false)}><p className="m-0 text-right">Modifier les paramètres du compte</p></Link>
                 </div>
                 {user.role === "superadmin" &&
                 <div className="d-flex align-items-center justify-content-end w-100 px-3">
-                    <HiOutlineUserAdd size={"1.3em"} className="mr-2 user-menu-icons" />
-                    <Link to='/admin/user/new' onClick={e => setOpen(false)}><p className="m-0">Gérer les utilisateurs</p></Link>
+                    <HiOutlineUserAdd size={"1.2em"} className="mr-2 user-menu-icons" />
+                    <Link to='/admin/users' onClick={e => setOpen(false)}><p className="m-0 text-right">Gérer les utilisateurs</p></Link>
                 </div>
                 }
             </div>

@@ -8,6 +8,10 @@ const Error = ({status}) => {
         switch (status) {
             case 405 : 
                 return { message : "Vous n'êtes pas autorisé à voir cette page", status : "Erreur 405" }
+            case 500 :
+                return {message : "Une erreur est survenue avec le serveur.", status : "Erreur 500" }
+            case 404 :
+                return { message : "La page demandée est introuvable.", status: "Erreur 404"}
         }
     }
 
@@ -17,7 +21,7 @@ const Error = ({status}) => {
              <div className="card align-items-center justify-content-stretch p-5 h-100 ">
                 <div className="card-header d-flex flex-column align-items-center h-50">
                     <figure style={{width:"100px", height:"100px"}}>
-                        <img src={`${DOMAIN_URL}/upload/logo-cjf.jpeg`} alt="logocjf" className="w-100 h-100" />
+                        <img src={`${DOMAIN_URL}/upload/logo_cjf_tennis.jpg`} alt="logocjf" className="w-100 h-100" />
                     </figure>
                     <h1>{switchStatus().status}</h1>
                 </div>
