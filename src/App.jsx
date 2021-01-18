@@ -1,13 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
-import BannerVideo from './components/banner-video/BannerVideo';
-import IconsInfo from './components/icons-info/IconsInfo';
-import AccessClub from './components/access-club/AccessClub';
-import Teaching_Team from './components/teaching/teaching_team/Teaching_Team';
-import Navbar from './components/navbar/Navbar'
-
-
 import { Switch, BrowserRouter as Router } from 'react-router-dom';
 import ProtectedRoute from './components/protected-route/ProtectedRoute';
 import PublicRoute from './components/public-route/PublicRoute';
@@ -59,7 +52,7 @@ function App() {
           <PublicRoute path="/competition/calendar" component={Calendar} />
           <PublicRoute path="/competition/results" component={Results} />
           <PublicRoute path="/paratennis/tennis-armchair" component={TennisArmchair} />
-          <PublicRoute path="/paratennis/competition-club-league-and-stage" component={CompetitionClubLeagueAndStage} />
+          <PublicRoute path="/paratennis/compet-league-and-stage" component={CompetitionClubLeagueAndStage} />
           <PublicRoute path="/paratennis/tournament" component={Tournament} />
           <PublicRoute path="/paratennis/deaf-and-hard-of-hearing-tennis" component={DeafAndHardOfHearingTennis} />
           <PublicRoute path='/admin/login' component={LoginPage} />
