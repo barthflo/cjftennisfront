@@ -13,7 +13,7 @@ const NavbarAdmin = () => {
 
     const history = useHistory();
     const [open, setOpen] = useState(false);
-    const [user, setUser] = useState(AuthService.getUser())
+    const [user, setUser] = useState([])
 
     const logout = () =>{
         AuthService.logout();
@@ -23,7 +23,7 @@ const NavbarAdmin = () => {
     useEffect(() => {
         Axios.get(`${BACK_URL}/admins/${AuthService.getUser().id}`)
              .then(res => setUser(res.data))
-    }, [AuthService.getUser()])
+    }, [user])
     
     return (
         <header className="NavAdmin position-relative">
@@ -40,7 +40,7 @@ const NavbarAdmin = () => {
                 <div className="d-flex justify-content-around align-items-center m-0 nav-icons">
                     <div onClick = {e => setOpen(!open)} className="user-profile d-flex align-items-center pr-2 border-right">
                         <TiUser color={"white"} size={"1.6em"} className="mr-1"/>
-                        <p className="mb-0 text-light mr-2">{user.name}</p>
+                        {user && <p className="mb-0 text-light mr-2">{user.name}</p>}
                     </div>
                     <div className="logout-icon d-flex justify-content-center">
                         <BiExit color={"white"} size={"1.5em"} className="logout mr-2" onClick={logout}/>

@@ -49,7 +49,6 @@ const UpdateUserForm = ({className, datas, readOnlyToggle}) => {
                                 history.push('/admin/users');
                             }
                             history.push('/admin')
-                        
                         }, 5000);
                     } 
                 })

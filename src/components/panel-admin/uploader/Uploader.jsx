@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import ButtonUpload from '../buttons/ButtonUpload';
 import {DOMAIN_URL} from '../../../http';
 import {GrFormClose} from 'react-icons/gr';
+import {RiFileWarningLine} from 'react-icons/ri'
 import './Uploader.css';
 
-const Uploader = ({handleChangeUpload, handleUpload, uploaded, previewUrl, photos, handleRemove, handleRemovePreview, handleRemoveUploaded}) => {
+const Uploader = ({handleChangeUpload, handleUpload, uploaded, previewUrl, photos, handleRemove, cancel, handleRemoveUploaded, error}) => {
     
     return (
         <div className="pictures-uploader d-flex flex-column align-items-center">
@@ -58,10 +59,20 @@ const Uploader = ({handleChangeUpload, handleUpload, uploaded, previewUrl, photo
                 <div className="preview-container position-fixed">
                     <div className="card p3">
                         <div className="card-body d-flex flex-row flex-wrap justify-content-center">
-                            {previewUrl[0].map((preview, index) => <img src={preview} alt={preview} key={index} className="m-1" /> )}
+                            {previewUrl[0].map((preview, index) => preview !== "Error" ? 
+                                <img src={preview} alt={preview} key={index} className="m-1" /> 
+                                :
+                                <div className="file-size-limit m-1 d-flex flex-column justify-content-center align-items-center position-relative">
+                                    <RiFileWarningLine size={"2em"} color="#b14b32"/>
+                                    <small className="text-center text-danger">Max. 5Mb</small>
+                                </div>
+                                
+                            )}
                         </div>
+                        {(error && error.empty) && <p className="p-3 text-danger">{error.empty}</p>}
                         <div className="card-footer d-flex flex-column flex-sm-row-reverse justify-content-center justify-content-sm-start">
                             <ButtonUpload upload={handleUpload} class={"w-100 mb-1 mb-sm-0 ml-sm-1"}/>
+                            <button className="btn btn-danger btn-sm" onClick={() => cancel()}>Annuler</button>
                         </div>
                     </div>
                     

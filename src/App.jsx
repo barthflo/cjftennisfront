@@ -1,4 +1,4 @@
-import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Switch, BrowserRouter as Router } from 'react-router-dom';
 import ProtectedRoute from './components/protected-route/ProtectedRoute';
