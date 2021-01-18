@@ -13,6 +13,7 @@ Emmanuel AKE - Theo ATLANI - Florent BARTH - Bilal CHERFA - Florent DESMARETS
     "axios": "^0.21.0",
     "bcryptjs": "^2.4.3",
     "bootstrap": "^4.5.3",
+    "generate-password": "^1.6.0",
     "react": "^17.0.1",
     "react-confirm-alert": "^2.6.2",
     "react-dom": "^17.0.1",
