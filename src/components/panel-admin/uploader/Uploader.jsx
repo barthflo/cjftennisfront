@@ -72,7 +72,7 @@ const Uploader = ({handleChangeUpload, handleUpload, uploaded, previewUrl, photo
                         {(error && error.empty) && <p className="p-3 text-danger">{error.empty}</p>}
                         <div className="card-footer d-flex flex-column flex-sm-row-reverse justify-content-center justify-content-sm-start">
                             <ButtonUpload upload={handleUpload} class={"w-100 mb-1 mb-sm-0 ml-sm-1"}/>
-                            <button onClick={() => cancel()}>Annuler</button>
+                            <button className="btn btn-danger btn-sm" onClick={() => cancel()}>Annuler</button>
                         </div>
                     </div>
                     
