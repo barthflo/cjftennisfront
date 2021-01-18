@@ -19,7 +19,6 @@ const UpdateGalleryForm = ({formId, datas}) => {
 
     const handleChangeUpload = (e) => {
         const datas = Array.from(e.target.files).filter(data => data.size < 5000000);
-        console.log(datas);
         let newFiles = [...files];
         newFiles.push(datas);
         setFiles(newFiles);
@@ -27,7 +26,7 @@ const UpdateGalleryForm = ({formId, datas}) => {
         newPrev.push(Object.values(e.target.files).map(val => (val.size < 5000000) ? URL.createObjectURL(val) : "Error"));
         setPreviewUrl(newPrev);
     }
-    console.log(files);
+
     const cancelUpload = () => {
         setPreviewUrl([]);
         setFiles([]);
