@@ -18,21 +18,33 @@ const UpdateGalleryForm = ({formId, datas}) => {
     const history = useHistory();
 
     const handleChangeUpload = (e) => {
+        const datas = Array.from(e.target.files).filter(data => data.size < 5000000);
         let newFiles = [...files];
-        newFiles.push(e.target.files);
+        newFiles.push(datas);
         setFiles(newFiles);
         let newPrev = [...previewUrl];
-        newPrev.push(Object.values(e.target.files).map(val => URL.createObjectURL(val)));
+        newPrev.push(Object.values(e.target.files).map(val => (val.size < 5000000) ? URL.createObjectURL(val) : "Error"));
         setPreviewUrl(newPrev);
     }
-    
+
+    const cancelUpload = () => {
+        setPreviewUrl([]);
+        setFiles([]);
+        setError();
+    }
+
     const upload = (e) => {
         e.preventDefault();
-        UploadService.uploadMultiple(files[0]).then(res => {
-          setFiles([]);
-          setPreviewUrl([]);
-          setUploaded([...uploaded].concat(res));
-        })
+        if (files[0].length === 0){
+            setError({empty: "Une erreur est survenue, veuillez annuler et recommencer"})
+        } else{
+            UploadService.uploadMultiple(files[0]).then(res => {
+                setFiles([]);
+                setPreviewUrl([]);
+                setUploaded([...uploaded].concat(res));
+              })
+        }
+        
     }
 
     const handleRemoveUploaded = (pictureName) => {
@@ -129,7 +141,17 @@ const UpdateGalleryForm = ({formId, datas}) => {
                 </label>
             </div>
             {error && error.errorMessage}
-            <Uploader handleRemoveUploaded={handleRemoveUploaded} handleRemove={handleRemove} handleUpload={upload} handleChangeUpload={handleChangeUpload} uploaded={uploaded} previewUrl={previewUrl} photos={pictures} />
+            <Uploader 
+                handleRemoveUploaded={handleRemoveUploaded} 
+                handleRemove={handleRemove} 
+                handleUpload={upload} 
+                handleChangeUpload={handleChangeUpload} 
+                uploaded={uploaded} 
+                previewUrl={previewUrl} 
+                photos={pictures} 
+                cancel={cancelUpload} 
+                error={error}
+            />
         </form>
     )
 }
