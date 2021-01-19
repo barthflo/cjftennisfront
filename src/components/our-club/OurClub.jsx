@@ -41,7 +41,7 @@ export default function OurClub() {
                     <Link className="link" to="/club/our-infrastructures">Nos infrastructures</Link>
                 </div>
                 {(pictures && pictures.length !== 0) && pictures.map((picture, index) => (
-                    <img className={`our-club-image image-${index}`} src={`${DOMAIN_URL}/upload/${picture}`} alt={`Photo ${index} des infrastructures`} />
+                    <img className={`our-club-image image-${index}`} src={`${DOMAIN_URL}/upload/${picture}`} alt={`Photo ${index+1} des infrastructures`} />
                 ))}
             </div>
         </section>
