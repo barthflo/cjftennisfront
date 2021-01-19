@@ -227,16 +227,8 @@
     }
     
     .NavbarHome{
-        text-decoration: none;
-        color: var(--light-color) ;
         font-size: calc(var(--spacing) *2);
         padding: var(--spacing-medium);
-        background-color: var(--main-color);
-        transform: skew( -10deg);
-    }
-    
-    .NavbarHome:hover{
-        background-color: #497454;
     }
     
     .NavbarClub {

@@ -13,7 +13,7 @@ const NavbarAdmin = () => {
 
     const history = useHistory();
     const [open, setOpen] = useState(false);
-    const [user, setUser] = useState(AuthService.getUser())
+    const [user, setUser] = useState([])
 
     const logout = () =>{
         AuthService.logout();
@@ -23,7 +23,7 @@ const NavbarAdmin = () => {
     useEffect(() => {
         Axios.get(`${BACK_URL}/admins/${AuthService.getUser().id}`)
              .then(res => setUser(res.data))
-    }, [AuthService.getUser()])
+    }, [user])
     
     return (
         <header className="NavAdmin position-relative">
@@ -40,7 +40,7 @@ const NavbarAdmin = () => {
                 <div className="d-flex justify-content-around align-items-center m-0 nav-icons">
                     <div onClick = {e => setOpen(!open)} className="user-profile d-flex align-items-center pr-2 border-right">
                         <TiUser color={"white"} size={"1.6em"} className="mr-1"/>
-                        <p className="mb-0 text-light mr-2">{user.name}</p>
+                        {user && <p className="mb-0 text-light mr-2">{user.name}</p>}
                     </div>
                     <div className="logout-icon d-flex justify-content-center">
                         <BiExit color={"white"} size={"1.5em"} className="logout mr-2" onClick={logout}/>
@@ -49,13 +49,13 @@ const NavbarAdmin = () => {
             </nav>
             <div className={"user-profile-menu position-fixed py-2 py-sm-1 justify-content-around d-flex flex-wrap flex-sm-nowrap" + (open ? " " : " user-profile-close")}>
                 <div className="d-flex align-items-center justify-content-end w-100 px-3 mb-1 mb-sm-0">
-                    <GoSettings size={"1.3em"} className="mr-2 user-menu-icons" />
-                    <Link to={`/admin/id=${user.id}`} onClick={e => setOpen(false)}><p className="m-0">Modifier les paramètres du compte</p></Link>
+                    <GoSettings size={"1.2em"} className="mr-2 user-menu-icons" />
+                    <Link to={`/admin/id=${user.id}`} onClick={e => setOpen(false)}><p className="m-0 text-right">Modifier les paramètres du compte</p></Link>
                 </div>
                 {user.role === "superadmin" &&
                 <div className="d-flex align-items-center justify-content-end w-100 px-3">
-                    <HiOutlineUserAdd size={"1.3em"} className="mr-2 user-menu-icons" />
-                    <Link to='/admin/user/new' onClick={e => setOpen(false)}><p className="m-0">Gérer les utilisateurs</p></Link>
+                    <HiOutlineUserAdd size={"1.2em"} className="mr-2 user-menu-icons" />
+                    <Link to='/admin/users' onClick={e => setOpen(false)}><p className="m-0 text-right">Gérer les utilisateurs</p></Link>
                 </div>
                 }
             </div>

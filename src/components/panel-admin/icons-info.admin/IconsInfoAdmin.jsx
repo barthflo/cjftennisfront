@@ -58,7 +58,7 @@ const IconsInfosAdmin = (props) => {
                     </table>
                 </div>
                 <div className="card-footer d-flex flex-column flex-sm-row px-0 px-sm-3">
-                    <ButtonUpdate url="/admin/edit/icons"/>
+                    <ButtonUpdate url="/admin/edit/icons" title="Mettre à jour"/>
                 </div>
             </section>
         }

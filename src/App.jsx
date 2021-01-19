@@ -1,5 +1,6 @@
-import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+
 import { Switch, BrowserRouter as Router } from 'react-router-dom';
 import ProtectedRoute from './components/protected-route/ProtectedRoute';
 import PublicRoute from './components/public-route/PublicRoute';
@@ -27,6 +28,7 @@ import Tournament from "./pages/paratennis/tournament/Tournament";
 import DeafAndHardOfHearingTennis from "./pages/paratennis/deaf-and-hard-of-hearing-tennis/DeafAndHardOfHearingTennis";
 import ForgotPassword from './pages/password.pages/ForgotPassword';
 import ResetPasswordPage from './pages/password.pages/ResetPasswordPage';
+
 
 function App() {
   return (
