@@ -24,6 +24,7 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+
 }
 
 .president-word{
@@ -39,7 +40,6 @@
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-
     .president{
         padding: 0;
         margin: 10px;
@@ -53,8 +53,8 @@
         padding-top: 30px;
         width: 100%;
         text-align: center;
-
     }
+
     .description{
         margin: 20px;
         text-align:justify;
@@ -64,14 +64,12 @@
         
         font-size: 30px;
     }
-
-
 }
-
 @media screen and (min-width: 415px) and (max-width: 768px) {
     .presidetWord-container{
         padding: 0;
     }
+
     .president{
         padding: 0;
         margin: 10px;
@@ -80,19 +78,19 @@
         justify-content: space-around;
         align-items: center;
     }
+
     .president-word{
         width: 100%;
         padding-top: 20px;
         text-align: center;
     }
+
     .description{
         margin: 20px;
         text-align:justify;
     }
 }
-
 @media screen and (max-width: 414px) {
-
     .president{
         padding-top: 0;
         margin: 10px;
@@ -101,11 +99,11 @@
         justify-content: space-around;
         align-items: center;
     }
+
     .president_image{
         width: 200px;
         height: 250px;
         object-fit: cover;
-
      }
 
     .presidetWord-container{
@@ -122,11 +120,11 @@
         
         font-size: 20px;
     }
+
     .description{
         margin: 20px;
         text-align:justify;
         font-size: 16px;
-    }
-    
+    }  
 }
 

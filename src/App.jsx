@@ -25,6 +25,8 @@ import TennisArmchair from "./pages/paratennis/tennis-armchair/TennisArmchair";
 import CompetitionClubLeagueAndStage from "./pages/paratennis/competition-club-league-and-stage/CompetitionClubLeagueAndStage";
 import Tournament from "./pages/paratennis/tournament/Tournament";
 import DeafAndHardOfHearingTennis from "./pages/paratennis/deaf-and-hard-of-hearing-tennis/DeafAndHardOfHearingTennis";
+import ForgotPassword from './pages/password.pages/ForgotPassword';
+import ResetPasswordPage from './pages/password.pages/ResetPasswordPage';
 
 function App() {
   return (
@@ -48,11 +50,13 @@ function App() {
           <PublicRoute path="/competition/calendar" component={Calendar} />
           <PublicRoute path="/competition/results" component={Results} />
           <PublicRoute path="/paratennis/tennis-armchair" component={TennisArmchair} />
-          <PublicRoute path="/paratennis/competition-club-league-and-stage" component={CompetitionClubLeagueAndStage} />
+          <PublicRoute path="/paratennis/compet-league-and-stage" component={CompetitionClubLeagueAndStage} />
           <PublicRoute path="/paratennis/tournament" component={Tournament} />
           <PublicRoute path="/paratennis/deaf-and-hard-of-hearing-tennis" component={DeafAndHardOfHearingTennis} />
           <PublicRoute path='/admin/login' component={LoginPage} />
+          <PublicRoute path='/admin/forgotten-password' component={ForgotPassword} />
           <ProtectedRoute path='/admin' component={Dashboard}/>
+          <ProtectedRoute path='/reset-password/:token' component={ResetPasswordPage} />
         </Switch>
       </Router>  
     </div>
