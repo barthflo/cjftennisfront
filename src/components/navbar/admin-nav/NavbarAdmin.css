@@ -3,8 +3,9 @@
 }
 
 .NavAdmin p {
-    font-family: var(--secondary-font);
+    font-family: var(--main-font);
     font-weight:600;
+    font-size:1.1em;
 }
 
 .NavAdmin a {
@@ -29,13 +30,27 @@
 .NavAdmin .user-profile-menu{
     right:78px;
     width: calc(100vw - 78px);
-    background-color: var(--light-color);
+    background-color: #458a57;
     border-bottom: 1px solid var(--main-color);
     transition:.5s ease-in-out;
     z-index:1;
+}
+
+.NavAdmin .user-profile-menu p {
+    width:max-content;
+    font-size:1em;
+    color: var(--light);
+    font-weight:400;
+    font-family: var(--main-font);
+}
+
+.NavAdmin .user-menu-icons {
+    color:var(--light);
 }
 
 .user-profile-close{
     transform : translateY(-100%);
     transition: .2s ease-in-out;
 }
+
+@media screen and (min-width: )

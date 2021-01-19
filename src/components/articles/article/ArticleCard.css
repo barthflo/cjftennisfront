@@ -164,6 +164,7 @@
         align-self: center;
         text-align: center;
         margin: var(--spacing-large) 0;
+        font-size: 24px;
     }
     .article .article-info .desc {
         font-size: var(--spacing-medium);
@@ -195,6 +196,7 @@
         align-self: center;
         text-align: center;
         margin: var(--spacing-large) 0;
+        font-size: 24px;
     }
     .article .article-info .desc {
         font-size: var(--spacing-medium);
@@ -226,6 +228,7 @@
         align-self: center;
         text-align: center;
         margin: var(--spacing-large) 0;
+        font-size: 24px;
     }
     .article .article-info .desc {
         font-size: var(--spacing-medium);

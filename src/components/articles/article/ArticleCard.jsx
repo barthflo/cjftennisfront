@@ -1,11 +1,12 @@
 import './ArticleCard.css';
 import { Link } from 'react-router-dom';
+import { DOMAIN_URL } from '../../../http';
 
 export default function ArticleCard(props) {
     const { article, side, category } = props;
     return(
         <section className="article">
-            <img src={article.image_url} alt={article.title} className={side === "left"? "image" : "image image-right"}/>
+            <img src={`${DOMAIN_URL}/upload/${article.image_url}`} alt={article.title} className={side === "left"? "image" : "image image-right"}/>
             <div className={side === "left"? "article-info" : "article-info info-right"}>
                 <h3>{article.title}</h3>
                 <p className="desc">{article.description}</p>
