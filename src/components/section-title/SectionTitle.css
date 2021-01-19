@@ -57,7 +57,7 @@
 
 @media screen and (max-width: 414px) {
     .title-white, .title-gray {
-        font-size: 32px;
+        font-size: 30px;
         margin: calc(var(--spacing-large) * 1.6);
     }
     .title-white::before, .title-gray::before {
