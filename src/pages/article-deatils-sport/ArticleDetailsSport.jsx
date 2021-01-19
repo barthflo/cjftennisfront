@@ -1,7 +1,7 @@
 import './ArticleDetailsSport.css';
 import { useParams } from "react-router-dom";
 import axios from 'axios';
-import { BACK_URL } from '../../http';
+import { BACK_URL, DOMAIN_URL } from '../../http';
 import { useEffect, useState } from 'react';
 import BannerPhoto from "../../components/banner-photo/BannerPhoto";
 import SectionTitle from "../../components/section-title/SectionTitle";
@@ -26,7 +26,7 @@ export default function ArticleDetailsSport(){
             <section className="article-sport-details">
                 <SectionTitle title={articleSportDetails.title} color="white" />
                 <div className="article-sport-info">
-                    <img src={articleSportDetails.image_url} alt={articleSportDetails.title} className="article-club-image" />
+                    <img src={`${DOMAIN_URL}/upload/${articleSportDetails.image_url}`} alt={articleSportDetails.title} className="article-club-image" />
                     <p className="article-sport-desc">{articleSportDetails.description}</p>
                 </div>
                 <p className="article-sport-content">{articleSportDetails.body}</p>

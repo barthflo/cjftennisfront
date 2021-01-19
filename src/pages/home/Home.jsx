@@ -5,12 +5,14 @@ import ArticlesSport from '../../components/articles/articles-sport/ArticlesSpor
 import ArticlesPress from '../../components/articles/articles-press/ArticlesPress';
 import IconsInfo from '../../components/icons-info/IconsInfo';
 import Partner from '../../components/partner/Partner';
+import OurClub from '../../components/our-club/OurClub';
 
 function Home() {
   return (
     <div className="Home">
         <BannerVideo />
         <IconsInfo />
+        <OurClub />
         <ArticlesClub />
         <ArticlesSport />
         <ArticlesPress />
