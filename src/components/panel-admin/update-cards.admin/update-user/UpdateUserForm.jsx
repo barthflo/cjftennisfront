@@ -2,6 +2,8 @@ import React , {useState, useEffect} from 'react';
 import {useForm} from 'react-hook-form';
 import {BACK_URL} from '../../../../http';
 import Axios from 'axios';
+import AuthService from '../../../../services/auth.service'
+import {useHistory} from 'react-router-dom'
 
 
 const UpdateUserForm = ({className, datas, readOnlyToggle}) => {
@@ -9,6 +11,8 @@ const UpdateUserForm = ({className, datas, readOnlyToggle}) => {
     const {register, errors, handleSubmit} = useForm();
     const [admins, setAdmins] = useState([]);
     const [message, setMessage] = useState();
+    const currentUser = AuthService.getUser();
+    const history = useHistory();
 
     useEffect(() => {
         Axios.get(`${BACK_URL}/admins`).then(res => setAdmins(res.data));
@@ -29,7 +33,9 @@ const UpdateUserForm = ({className, datas, readOnlyToggle}) => {
             await Axios.put(`${BACK_URL}/admins/${datas.id}`, data)
                 .then(res =>{
                     if(res.status === 200){
-                        localStorage.setItem('user', JSON.stringify(res.data));
+                        if(currentUser.id === datas.id){
+                            localStorage.setItem('user', JSON.stringify(res.data));
+                        }
                         setMessage(() => {
                             return (
                                 <div className="d-flex justify-content-center">
@@ -37,7 +43,13 @@ const UpdateUserForm = ({className, datas, readOnlyToggle}) => {
                                 </div>
                             )
                         });
-                        setTimeout(() => setMessage(), 5000);
+                        setTimeout(() => {
+                            setMessage()
+                            if(currentUser.id !== datas.id){
+                                history.push('/admin/users');
+                            }
+                            history.push('/admin')
+                        }, 5000);
                     } 
                 })
                 .catch(err => console.error(err)); 
@@ -118,6 +130,25 @@ const UpdateUserForm = ({className, datas, readOnlyToggle}) => {
                     {errors.password && <small className="text-danger">Mot de passe requis</small>}
                 </div>    
             </div>
+            {currentUser.role === "superadmin" &&
+            <div className="form-group row align-items-center justify-content-between">
+                <label htmlFor="role" className="col-form-label col-sm-2">Role:</label>
+                <div className="col-sm-10">
+                    <select 
+                        id="role"
+                        name="role"
+                        type="text" 
+                        disabled={readOnlyToggle && "disabled"}
+                        className={"form-control"} 
+                        defaultValue={datas.role}
+                        ref={register()}
+                    >
+                        <option value="superadmin">SuperAdmin</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
+            </div>
+            }
             {message}
         </form>
     )
