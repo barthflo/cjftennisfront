@@ -18,7 +18,7 @@ export default function ArticleDetailsSport(){
 
     useEffect(() => {
         window.scrollTo(0, 0)
-    }, []);
+    }, [params.id]);
 
     return(
         <div>

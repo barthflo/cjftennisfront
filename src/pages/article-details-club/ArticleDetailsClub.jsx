@@ -14,7 +14,7 @@ export default function ArticleDetailsClub(){
         axios
         .get(`${BACK_URL}/articles/club/${params.id}`)
         .then(res => setArticleClubDetails(res.data))
-    }, []);
+    }, [params.id]);
 
     useEffect(() => {
         window.scrollTo(0, 0)

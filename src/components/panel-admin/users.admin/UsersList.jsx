@@ -32,7 +32,7 @@ const UsersList = () => {
                  setIsLoading(false);
                  setErrors(err);
              })
-    }, [datas]);
+    }, [datas, currentUser.id]);
 
     return (
         <Fragment>

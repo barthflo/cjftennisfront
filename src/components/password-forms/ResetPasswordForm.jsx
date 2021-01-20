@@ -21,7 +21,7 @@ const ResetPasswordForm = ({userId}) => {
                 setUser(res.data);
                 setIsLoading(false);
             })
-    }, []);
+    }, [userId]);
 
     const onSubmit = (data) => {
         Axios.put(`${BACK_URL}/admins/${userId}`, {password: data.password})

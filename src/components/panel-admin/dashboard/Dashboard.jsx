@@ -13,6 +13,7 @@ import UpdateUser from '../update-cards.admin/update-user/UpdateUser';
 import UsersList from '../users.admin/UsersList';
 import UsersCreate from '../users.admin/UsersCreate';
 import UsersManage from '../users.admin/UsersManage';
+import ArchivesAdmin from '../../../pages/pages-admin/archives-admin.page/ArchivesAdminPage';
 
 import '../panelAdmin.css';
 import '../../../pages/pages-admin/pages.admin.css';
@@ -33,7 +34,7 @@ const Dashboard = () => {
         <Fragment>
             <NavBarAdmin />
             <div className="page-container d-flex flex-row-reverse">
-                <SidePanel toggleOpen = {toggleOpen} open={isOpen}/>
+                <SidePanel toggleOpen = {toggleOpen} />
                 <Switch>
                     <Route 
                         exact path='/admin' 
@@ -74,6 +75,10 @@ const Dashboard = () => {
                     <Route 
                         path='/admin/galleries/edit/:id'
                         children = {<DefaultAdmin component={GalleryUpdate} className={"update-admin container-fluid px-0 px-sm-2" + enableOpen()} />} 
+                    />
+                    <Route 
+                        exact path='/admin/archives'
+                        children = {<ArchivesAdmin className={enableOpen()} />} 
                     />
                     <Route path='/admin/paratennis'>Paratennis</Route>
                 </Switch>

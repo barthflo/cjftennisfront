@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import ButtonUpload from '../buttons/ButtonUpload';
 import {DOMAIN_URL} from '../../../http';
 import {GrFormClose} from 'react-icons/gr';

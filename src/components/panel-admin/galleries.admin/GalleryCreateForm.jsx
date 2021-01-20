@@ -37,7 +37,6 @@ const GalleryCreateForm = ({formId}) => {
     }
 
     const onSubmit = data => {
-        console.log(data);
         Axios.post(`${BACK_URL}/club/galleries`, data)
              .then(res => {
                  uploaded.forEach((upload) => {
