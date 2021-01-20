@@ -1,0 +1,108 @@
+.infrastructure-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light-color);
+    width: 24%;
+}
+
+.infrastructure-card .card-image {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    object-position: center;
+    border: 1px solid var(--main-color);
+    transition: .2s ease;
+}
+
+.infrastructure-card .card-image:hover {
+    filter: grayscale(1);
+    cursor: pointer;
+}
+
+.infrastructure-card .card-title-inf {
+    font-size: 28px;
+    color: var(--main-color);
+    font-family: var(--main-font);
+    text-align: center;
+    position: relative;
+    margin-top: 24px;
+    margin-bottom: 32px;
+}
+
+.infrastructure-card .card-title-inf::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 128px;
+    background-color: var(--main-color);
+    bottom: -16px;
+    left: calc(50% - 62px);
+}
+
+.carousel .thumbs-wrapper {
+    display: none;
+}
+
+.infrastructure-card .card-desc-inf {
+    text-align: center;
+    color: var(--dark-color);
+    line-height: 1.5rem;
+    width: 90%;
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1400px) {
+    .infrastructure-card {
+        width: 40%;
+    }
+    .infrastructure-card .card-image {
+        height: 280px;
+    }
+    .infrastructure-card .card-desc-inf {
+        margin-bottom: calc(var(--spacing-large) * 1.5);
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .infrastructure-card {
+        width: 80%;
+    }
+    .infrastructure-card .card-image {
+        height: 340px;
+    }
+    .infrastructure-card .card-desc-inf {
+        margin-bottom: calc(var(--spacing-large) * 1.5);
+    }
+}
+
+@media screen and (min-width: 515px) and (max-width: 767px) {
+    .infrastructure-card {
+        width: 80%;
+    }
+    .infrastructure-card .card-image {
+        height: 280px;
+    }
+    .infrastructure-card .card-desc-inf {
+        margin-bottom: calc(var(--spacing-large) * 1.5);
+    }
+}
+
+@media screen and (max-width: 514px) {
+    .infrastructure-card {
+        width: 90%;
+        align-items: center;
+    }
+    .infrastructure-card .card-image {
+        height: 170px;
+    }
+    .infrastructure-card .card-title-inf {
+        font-size: 24px;
+    }
+    .infrastructure-card .card-desc-inf {
+        width: 100%;
+        margin-bottom: calc(var(--spacing-large) * 1.5);
+        font-size: 14px;
+    }
+}

@@ -1,10 +1,12 @@
 import BannerPhoto from "../../../components/banner-photo/BannerPhoto";
-
+import InfrastructuresList from "../../../components/infrastructures/InfrastructuresList";
+import { DOMAIN_URL } from '../../../http';
 
 function OurInfrastructures() {
   return (
     <div className="OurInfrastructures">
-      <BannerPhoto image="https://www.saintgermainenlaye.fr/fileadmin/_processed_/4/5/csm_gymnase_des_coteaux_5c1f9f8620.jpg" title="Nos Infrastructures" subtitle="Cjf Tennis"/>
+      <BannerPhoto image={`${DOMAIN_URL}/upload/infrastructure_court_exterieur_5.jpg`} title="Nos Infrastructures" subtitle="Cjf Tennis"/>
+      <InfrastructuresList />
     </div>
   );
 }
