@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { BACK_URL, DOMAIN_URL } from '../../../http';
+import './Teaching_team.css'
 
 
 const Teaching_Team = () => {

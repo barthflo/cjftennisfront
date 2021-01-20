@@ -2,7 +2,8 @@ import { TiThListOutline } from "react-icons/ti";
 import BannerPhoto from "../../../components/banner-photo/BannerPhoto";
 import Teaching_Team from "../../../components/teaching/teaching_team/Teaching_Team"
 import './Teaching_Team.css';
-import SectionTitle from "../../../components/section-title/SectionTitle"
+import SectionTitle from "../../../components/section-title/SectionTitle";
+import Teaching_band from "../../../components/teaching/teaching_band/Teaching_band"
 
 function TeamTeaching() {
   return (
