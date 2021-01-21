@@ -18,7 +18,7 @@ const Teaching_Team = () => {
   }, [])
 
   return (
-    <div className="card-group p-4 m-2 align-items-around justify-content-around justify-content-center team-card">
+    <div className="card-group p-3 align-items-around justify-content-around justify-content-center team-card">
       {teachers.map((teacher) =>
         <div className="card d-flex flex-column align-items-center justify-content-center shadow p-5 mb-5 bg-white col-sm-3 card-teacher">
           <div className="card-header">
