@@ -18,7 +18,7 @@
     font-weight: 400;
 }
 
-.home-admin, .update-admin, .create-admin, .gallery-admin {
+.home-admin, .update-admin, .create-admin, .gallery-admin, .archives-admin {
     background: #e6e6e6;
     width:calc(100vw - 78px);
     margin-right:78px;
@@ -30,11 +30,14 @@
     font-weight:400;
     font-size:1.6em;
 }
-@media screen and (min-width : 768px){
-    .home-admin0{
+@media screen and (min-width : 992px){
+    .home-admin0, .home-admin1, .home-admin2{
+        width:calc(100%/3 - 8px) !important;
+    }
+    .home-admin3{
         width:calc(60% - 8px) !important;
     }
-    .home-admin1{
+    .home-admin4{
         width:calc(40% - 8px) !important;
     }
 }

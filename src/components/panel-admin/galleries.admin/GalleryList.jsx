@@ -4,6 +4,7 @@ import Axios from 'axios';
 import GalleryItem from '../../../components/panel-admin/galleries.admin/GalleryItem';
 import RotateLoader from 'react-spinners/RotateLoader';
 import ButtonCreate from '../../../components/panel-admin/buttons/ButtonCreate';
+import _ from 'lodash';
 
 const GalleryList = () => {
 
@@ -14,7 +15,7 @@ const GalleryList = () => {
     useEffect(() => {
         Axios.get(`${BACK_URL}/club/galleries`)
              .then(res => {
-                setDatas(res.data);
+                setDatas(res.data.filter(data => data.is_archived === 0));
                 setIsLoading(false);
              })
              .catch(err => {
@@ -52,9 +53,7 @@ const GalleryList = () => {
                     </div>
                     <ul className="list-group d-flex flex-row flex-wrap justify-content-center">
                         {datas.length!== 0 && 
-                            datas.filter(data => data.modified_at)
-                                 .sort()
-                                 .reverse()
+                            _.orderBy(datas, ['modified_at'], ['desc'])
                                  .map((data, index) => 
                             <li className={"list-group-item m-1 w-100 gallery-admin" + index } key={index}><GalleryItem datas={data}/></li>
                         )}

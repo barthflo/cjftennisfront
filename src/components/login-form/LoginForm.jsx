@@ -20,7 +20,7 @@ const LoginForm = (props) => {
         e.preventDefault();
         AuthService.login(inputs.username, inputs.password)
         .then(res => {
-            if(res.status != 200){
+            if(res.status !== 200){
                 setError(res.data.errorMessage);
             } else{
                 history.push('/admin');

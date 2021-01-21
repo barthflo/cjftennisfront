@@ -43,7 +43,7 @@ const UpdateUser = () => {
             setIsLoading(false);
         }
         
-    }, [admin])
+    }, [admin, params.id])
     
     return (
         <Fragment>
