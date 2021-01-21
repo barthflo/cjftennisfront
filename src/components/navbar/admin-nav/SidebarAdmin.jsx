@@ -18,7 +18,20 @@ const SidebarAdmin = (props) => {
     }, [history.location.pathname])
 
     return (
-        <aside className={"side-bar d-flex flex-row-reverse align-items-start px-2" + (props.open ? ' open' : ' ')}>
+        <aside 
+            className={"side-bar d-flex flex-row-reverse align-items-start px-2" + (props.open ? ' open' : ' ')}
+            style={{
+                height:"calc(100vh - 50px)", 
+                borderLeft:"1px solid var(--main-color)", 
+                borderBottom:"1px solid var(--main-color)", 
+                boxShadow:"1px 5px 5px black",
+                minWidth:"78px",
+                width:"78px",
+                position:"fixed",
+                background:"var(--light-color)",
+                zIndex:"10"
+            }}
+        >
             <div className="side-icons d-flex flex-column align-items-center justify-content-around w-100 h-100">
                 <div className={"d-flex flex-column align-items-center mt-3 mb-2" + (activePage === "/admin" || activePage.includes("admin/edit") ? ' active' : '')}>
                     <Link to='/admin'><FaHome size={"1.7em"} className={(activePage === "/admin" || activePage.includes("admin/edit")) && 'active'} /></Link>
