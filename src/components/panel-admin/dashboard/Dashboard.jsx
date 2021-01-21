@@ -14,6 +14,7 @@ import UsersList from '../users.admin/UsersList';
 import UsersCreate from '../users.admin/UsersCreate';
 import UsersManage from '../users.admin/UsersManage';
 import ArchivesAdmin from '../../../pages/pages-admin/archives-admin.page/ArchivesAdminPage';
+import ArticlesContainer from '../articles.admin/ArticlesContainer';
 
 import '../panelAdmin.css';
 import '../../../pages/pages-admin/pages.admin.css';
@@ -75,6 +76,10 @@ const Dashboard = () => {
                     <Route 
                         path='/admin/galleries/edit/:id'
                         children = {<DefaultAdmin component={GalleryUpdate} className={"update-admin container-fluid px-0 px-sm-2" + enableOpen()} />} 
+                    />
+                    <Route 
+                        exact path='/admin/articles'
+                        children = {<DefaultAdmin component={ArticlesContainer} className={"gallery-admin container-fluid px-0 px-sm-2" + enableOpen()} />} 
                     />
                     <Route 
                         exact path='/admin/archives'

@@ -48,13 +48,13 @@ const ArticlesList = ({title, datas, route, redirect, loading, classCardHeader, 
                 :
                     <Fragment>
                             <p className="text-center text-bold align-self-center pt-3">
-                                {location.pathname.includes("archives") ? "Vous n'avez archivé aucun article" : `Vous n'avez pas d'articles ${title} publiés`}
+                                {location.pathname.includes("archives") ? "Vous n'avez rien d'archivé actuellement" : `Vous n'avez pas d'articles ${title} publiés`}
                             </p>
                             {!location.pathname.includes("archives") &&
                             <Fragment>
                                 <p className="font-italic text-center align-self-center">Créez un article maintenant ou bien <Link to="/admin/archives/articles">voir les articles archivés</Link></p>
                                 <div className="align-self-center">
-                                    <ButtonCreate url={`/admin/galleries/create`} title="Nouvel Article" class={classBtnCreate}/>
+                                    <ButtonCreate url={`/admin/articles/create`} title="Nouvel Article" class={classBtnCreate}/>
                                 </div>
                             </Fragment>
                             }    
