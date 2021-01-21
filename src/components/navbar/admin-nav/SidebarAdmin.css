@@ -10,6 +10,7 @@
     background: var(--light-color);
     z-index:10;
 }
+
 .side-bar.open{
     width:100vw;
     min-width:100vw;
