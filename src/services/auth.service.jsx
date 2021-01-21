@@ -57,4 +57,4 @@ const resetPwAuthenticated = async (token) => {
     })
 }
 
-export default { login, logout, getUser, userAuthenticated, resetPwAuthenticated}
+export default { login, logout, getUser, userAuthenticated, resetPwAuthenticated} // eslint-disable-line

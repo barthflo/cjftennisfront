@@ -9,7 +9,7 @@ const ProtectedRoute = ({component : Component, ...rest}) => {
     const [loading, setLoading] = useState(true);
     const token = rest.computedMatch.params.token;
 
-    useEffect(async () => {
+    useEffect(async () => { // eslint-disable-line
         if(token){
             await AuthService.resetPwAuthenticated(token)
                     .then(res => {
