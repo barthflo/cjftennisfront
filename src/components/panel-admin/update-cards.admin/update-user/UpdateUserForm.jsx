@@ -102,7 +102,7 @@ const UpdateUserForm = ({className, datas, readOnlyToggle}) => {
                         defaultValue={datas.email}
                         ref={register({
                                 required : true,
-                                pattern : /^\w+[\w-\.]*\@\w+((-\w+)|(\w*))\.[a-z]{2,3}$/,
+                                pattern : /^\w+[\w-\.]*\@\w+((-\w+)|(\w*))\.[a-z]{2,3}$/, // eslint-disable-line
                                 validate : value => {
                                     if(value !== datas.email){
                                         return admins.filter(admin => admin.email === value).length === 0 

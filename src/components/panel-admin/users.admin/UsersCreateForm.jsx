@@ -68,7 +68,7 @@ const UsersCreateForm = ({formId, admins}) => {
                     defaultValue=""
                     ref={register({
                             required : true,
-                            pattern : /^\w+[\w-\.]*\@\w+((-\w+)|(\w*))\.[a-z]{2,3}$/,
+                            pattern : /^\w+[\w-\.]*\@\w+((-\w+)|(\w*))\.[a-z]{2,3}$/, // eslint-disable-line
                             validate : value => admins.filter(admin => admin.email === value).length === 0
                         }
                     )}
