@@ -2,11 +2,55 @@
     box-shadow: 1px 1px 5px black;
 }
 
+.NavAdmin p {
+    font-family: var(--main-font);
+    font-weight:600;
+    font-size:1.1em;
+}
+
+.NavAdmin a {
+    color:unset;
+}
+
+.NavAdmin a:hover {
+    color:var(--main-color) !important;
+    text-decoration:none;
+}
+
 .NavAdmin .logout-icon{
     min-width: 78px;
 }
+
 .NavAdmin .logout:hover, .NavAdmin .user-profile:hover, .NavAdmin .user-profile:hover p, .NavAdmin .user-profile:hover path {
     color:lightgray !important;
     cursor: pointer;
-    transition:.2s ease-in;
+    transition:.5s ease-in-out;
 }
+
+.NavAdmin .user-profile-menu{
+    right:78px;
+    width: calc(100vw - 78px);
+    background-color: #458a57;
+    border-bottom: 1px solid var(--main-color);
+    transition:.5s ease-in-out;
+    z-index:1;
+}
+
+.NavAdmin .user-profile-menu p {
+    width:max-content;
+    font-size:1em;
+    color: var(--light);
+    font-weight:400;
+    font-family: var(--main-font);
+}
+
+.NavAdmin .user-menu-icons {
+    color:var(--light);
+}
+
+.user-profile-close{
+    transform : translateY(-100%);
+    transition: .2s ease-in-out;
+}
+
+@media screen and (min-width: )

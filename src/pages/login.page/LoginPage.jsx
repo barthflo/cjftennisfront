@@ -5,6 +5,7 @@ import AuthService from '../../services/auth.service';
 import {Redirect} from 'react-router-dom';
 
 const LoginPage = (props) => {
+
     return (
         <Fragment>
             {AuthService.getUser() ?

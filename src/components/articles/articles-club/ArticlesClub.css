@@ -1,0 +1,19 @@
+.club-article {
+    background-color: var(--light-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.club-article-none {
+    display: none;
+}
+
+.no-article{
+    font-family: var(--secondary-font);
+    font-size: 28px;
+    color: var(--main-color);
+    text-align: center;
+}

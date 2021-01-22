@@ -1,12 +1,18 @@
 .side-bar{
     height: calc(100vh - 50px);
     border-left: 1px solid var(--main-color);
+    border-bottom: 1px solid var(--main-color);
     box-shadow: 1px 5px 5px black;
+    min-width:78px;
     width:78px;
     transition:.5s ease-in-out;
+    position:fixed;
+    background: var(--light-color);
+    z-index:10;
 }
 .side-bar.open{
     width:100vw;
+    min-width:100vw;
     transition:.5s ease-in-out;
 }
 
@@ -22,11 +28,12 @@
 }
 
 .active{
-    color:#38c75c;
+    color:#458a57;
 }
 
 @media screen and (min-width : 576px){
     .side-bar.open{
         width:300px;
+        min-width:300px;
     }
 }

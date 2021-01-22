@@ -4,14 +4,15 @@
     align-items: center;
     flex-wrap: wrap;
     width: 90%;
-    min-height: 35vh;
     margin: 0 auto;
+    margin-bottom: 80px;
 }
 
 .article .image {
-    width: 480px;
-    height: 320px;
+    width: 380px;
+    height: 240px;
     object-fit: cover;
+    object-position: center;
 }
 
 .article .image-right {
@@ -24,7 +25,7 @@
 
 .article .article-info {
     max-width: 56%;
-    height: 320px;
+    height: 256px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -35,7 +36,6 @@
     font-family: var(--secondary-font);
     font-size: 28px;
     color: var(--main-color);
-    text-align: center;
 }
 
 .article .article-info .desc {
@@ -67,44 +67,50 @@
 }
 
 @media screen and (min-width: 1286px) and (max-width: 1406px) {
+    .article .article-info {
+        height: auto;
+    }
     .article .article-info .desc {
         font-size: 18px;
     }
     .article .image {
-        width: 440px;
-        height: 300px;
+        width: 360px;
+        height: 220px;
         object-fit: cover;
     }
 }
 
-@media screen and (min-width: 1061px) and (max-width: 1285px) {
+@media screen and (min-width: 1121px) and (max-width: 1285px) {
     .article .article-info {
-        height: 260px;
+        height: auto;
     }
     .article .article-info .desc {
         font-size: 16px;
     }
     .article .image {
-        width: 400px;
-        height: 260px;
+        width: 360px;
+        height: 220px;
         object-fit: cover;
     }
 }
 
-@media screen and (min-width: 769px) and (max-width: 1060px) {
+@media screen and (min-width: 769px) and (max-width: 1120px) {
     .article .article-info {
         min-width: 90%;
+        height: auto;
     }
     .article .article-info h3 {
         align-self: center;
-        margin-top: var(--spacing-medium);
+        text-align: center;
+        margin: var(--spacing-large) 0;
     }
     .article .article-info .desc {
         font-size: 18px;
+        margin-bottom: var(--spacing-large);
     }
     .article .image {
-        width: 400px;
-        height: 260px;
+        width: 360px;
+        height: 220px;
         object-fit: cover;
     }
     .article .article-info a.link {
@@ -121,17 +127,20 @@
 @media screen and (min-width: 516px) and (max-width: 768px) {
     .article .article-info {
         min-width: 90%;
+        height: auto;
     }
     .article .article-info h3 {
         align-self: center;
-        margin-top: var(--spacing-medium);
+        text-align: center;
+        margin: var(--spacing-large) 0;
     }
     .article .article-info .desc {
         font-size: var(--spacing-medium);
+        margin-bottom: var(--spacing-large);
     }
     .article .image {
-        width: 400px;
-        height: 260px;
+        width: 360px;
+        height: 220px;
         object-fit: cover;
     }
     .article .article-info a.link {
@@ -146,24 +155,24 @@
 }
 
 @media screen and (min-width: 461px) and (max-width: 515px) {
-    .article {
-        margin-bottom: calc(var(--spacing-large) * 2);
-    }
     .article .article-info {
         min-width: 90%;
         justify-content: flex-start;
+        height: auto;
     }
     .article .article-info h3 {
         align-self: center;
-        margin-top: var(--spacing-large);
+        text-align: center;
+        margin: var(--spacing-large) 0;
+        font-size: 24px;
     }
     .article .article-info .desc {
         font-size: var(--spacing-medium);
-        margin: var(--spacing-large) 0;
+        margin-bottom: var(--spacing-large);
     }
     .article .image {
-        width: 400px;
-        height: 260px;
+        width: 360px;
+        height: 220px;
         object-fit: cover;
     }
     .article .article-info a.link {
@@ -178,20 +187,20 @@
 }
 
 @media screen and (min-width: 431px) and (max-width: 460px) {
-    .article {
-        margin-bottom: calc(var(--spacing-large) * 4);
-    }
     .article .article-info {
         min-width: 90%;
         justify-content: flex-start;
+        height: auto;
     }
     .article .article-info h3 {
         align-self: center;
-        margin-top: var(--spacing-large);
+        text-align: center;
+        margin: var(--spacing-large) 0;
+        font-size: 24px;
     }
     .article .article-info .desc {
         font-size: var(--spacing-medium);
-        margin: var(--spacing-large) 0;
+        margin-bottom: var(--spacing-large);
     }
     .article .image {
         width: 360px;
@@ -210,24 +219,24 @@
 }
 
 @media screen and (max-width: 430px) {
-    .article {
-        margin-bottom: calc(var(--spacing-large) * 6);
-    }
     .article .article-info {
         min-width: 90%;
         justify-content: flex-start;
+        height: auto;
     }
     .article .article-info h3 {
         align-self: center;
-        margin-top: var(--spacing-large);
+        text-align: center;
+        margin: var(--spacing-large) 0;
+        font-size: 24px;
     }
     .article .article-info .desc {
         font-size: var(--spacing-medium);
-        margin: var(--spacing-large) 0;
+        margin-bottom: var(--spacing-large);
     }
     .article .image {
-        width: 360px;
-        height: 220px;
+        width: 80%;
+        height: 160px;
         object-fit: cover;
     }
     .article .article-info a.link {

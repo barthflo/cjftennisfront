@@ -1,14 +1,11 @@
-.section-title {
-    margin-top: -2%;
-}
-
 .title-white, .title-gray {
-    font-family: var(--main-font);
-    font-size: 40px;
     text-align: center;
+    margin-bottom: 80px;
     position: relative;
+    font-size: 40px;
+    padding-bottom: var(--spacing);
     color: var(--main-color);
-    z-index: 5;
+    font-family: var(--main-font);
 }
 
 .title-white::before, .title-gray::before {
@@ -60,7 +57,7 @@
 
 @media screen and (max-width: 414px) {
     .title-white, .title-gray {
-        font-size: 32px;
+        font-size: 30px;
         margin: calc(var(--spacing-large) * 1.6);
     }
     .title-white::before, .title-gray::before {

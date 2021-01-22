@@ -1,0 +1,26 @@
+.teaching_team {
+    background: white;
+    width:100vw;
+} 
+
+picture-teacher-team {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+}
+
+.name-text {
+    color: var(--main-color);;
+}
+
+.card-team {
+    border-spacing: 10px;
+}
+
+.text-speciality {
+    font-size: 16px;
+}
+
+.card-teacher {
+    padding: 10px;
+}

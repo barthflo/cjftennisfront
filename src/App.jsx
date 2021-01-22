@@ -1,5 +1,6 @@
-import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+
 import { Switch, BrowserRouter as Router } from 'react-router-dom';
 import ProtectedRoute from './components/protected-route/ProtectedRoute';
 import PublicRoute from './components/public-route/PublicRoute';
@@ -11,6 +12,9 @@ import OurInfrastructures from "./pages/club/our-infrastructures/OurInfrastructu
 import Cotisation from "./pages/club/cotisation/Cotisation";
 import Agenda from "./pages/club/agenda/Agenda";
 import Gallery from "./pages/club/galerie/Gallery";
+import Articles from './pages/club/articles/Articles';
+import ArticleDetailsClub from './pages/article-details-club/ArticleDetailsClub';
+import ArticleDetailsSport from './pages/article-deatils-sport/ArticleDetailsSport';
 import TeamTeaching from "./pages/enseignement/team-teaching/TeamTeaching";
 import LessonForChildren from "./pages/enseignement/lesson-for-children/LessonForChildren";
 import LessonForAdult from "./pages/enseignement/lesson-for-adult/LessonForAdult";
@@ -22,6 +26,9 @@ import TennisArmchair from "./pages/paratennis/tennis-armchair/TennisArmchair";
 import CompetitionClubLeagueAndStage from "./pages/paratennis/competition-club-league-and-stage/CompetitionClubLeagueAndStage";
 import Tournament from "./pages/paratennis/tournament/Tournament";
 import DeafAndHardOfHearingTennis from "./pages/paratennis/deaf-and-hard-of-hearing-tennis/DeafAndHardOfHearingTennis";
+import ForgotPassword from './pages/password.pages/ForgotPassword';
+import ResetPasswordPage from './pages/password.pages/ResetPasswordPage';
+
 
 function App() {
   return (
@@ -34,6 +41,9 @@ function App() {
           <PublicRoute path="/club/cotisation" component={Cotisation} />
           <PublicRoute path="/club/agenda" component={Agenda} />
           <PublicRoute path="/club/gallery" component={Gallery} />
+          <PublicRoute exact path="/club/articles" component={Articles} />
+          <PublicRoute path="/club/articles/article_club/id=:id" component={ArticleDetailsClub} />
+          <PublicRoute path="/club/articles/article_sport/id=:id" component={ArticleDetailsSport} />
           <PublicRoute path="/enseignement/team-teaching" component={TeamTeaching} />
           <PublicRoute path="/enseignement/lesson-for-children" component={LessonForChildren} />
           <PublicRoute path="/enseignement/lesson-for-adult" component={LessonForAdult} />
@@ -42,11 +52,13 @@ function App() {
           <PublicRoute path="/competition/calendar" component={Calendar} />
           <PublicRoute path="/competition/results" component={Results} />
           <PublicRoute path="/paratennis/tennis-armchair" component={TennisArmchair} />
-          <PublicRoute path="/paratennis/competition-club-league-and-stage" component={CompetitionClubLeagueAndStage} />
+          <PublicRoute path="/paratennis/compet-league-and-stage" component={CompetitionClubLeagueAndStage} />
           <PublicRoute path="/paratennis/tournament" component={Tournament} />
           <PublicRoute path="/paratennis/deaf-and-hard-of-hearing-tennis" component={DeafAndHardOfHearingTennis} />
           <PublicRoute path='/admin/login' component={LoginPage} />
+          <PublicRoute path='/admin/forgotten-password' component={ForgotPassword} />
           <ProtectedRoute path='/admin' component={Dashboard}/>
+          <ProtectedRoute path='/reset-password/:token' component={ResetPasswordPage} />
         </Switch>
       </Router>  
     </div>
