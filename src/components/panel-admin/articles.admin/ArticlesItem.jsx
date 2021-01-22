@@ -62,7 +62,7 @@ const ArticlesItem = ({datas, route}) => {
                     <div className="form-check">
                         <input 
                             className="form-check-input" 
-                            type="checkbox" 
+                            type="button" 
                             name="archive" 
                             defaultChecked={datas.is_archived} 
                             id="article-archive" 

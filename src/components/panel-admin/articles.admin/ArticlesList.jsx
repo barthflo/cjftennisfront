@@ -19,12 +19,12 @@ const ArticlesList = ({title, datas, route, redirect, loading, classCardHeader, 
             : 
             <section className={"articles-list card h-100" + (!location.pathname.includes("archives") ? " border-0" : " border")}>
                {!location.pathname.includes("archives") ?
-                <div className={"card-header d-flex flex-wrap justify-content-between align-items-baseline px-0 px-sm-3 " + classCardHeader }>
+                <div className={"card-header bg-none d-flex flex-wrap justify-content-between align-items-baseline px-0 px-sm-3 " + classCardHeader }>
                     <h2 className="text-center">{title}</h2>
                     <small className="text-center font-italic">Vos derniers articles</small>
                 </div>
                 :
-                <div className="card-header" style={{minHeight:"unset"}}>
+                <div className="card-header bg-none" style={{minHeight:"unset"}}>
                     <h3>{title}</h3>
                 </div>
                 }
