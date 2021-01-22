@@ -1,5 +1,5 @@
 import {DOMAIN_URL, BACK_URL} from '../../../http'
-import {Link} from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
 import Axios from 'axios'
 import {confirmAlert} from 'react-confirm-alert'
 import {RiCloseLine} from 'react-icons/ri'
@@ -11,6 +11,8 @@ const ArticlesItem = ({datas, route}) => {
     const day = datas.modified_at.substring(8,10);
     const hours = datas.modified_at.substring(11,13);
     const minutes = datas.modified_at.substring(14, 16);
+    const {location} = useHistory()
+    const urlarticles = location.pathname.includes("articles")
 
     const handleSubmit =(e) => {
         e.preventDefault()
@@ -45,30 +47,30 @@ const ArticlesItem = ({datas, route}) => {
 
     return (
         <article className="article-item-container py-3 border-bottom">
-            <div className="article-item-header row align-items-start">
-                <div className="col-sm-9 col-lg-12 mb-2 d-flex flex-column justify-content-start">
-                    <h3 >{datas.title}</h3>
+            <div className={"article-item-header " + (urlarticles ? "d-flex flex-column flex-sm-row justify-content-sm-around" : "row align-items-start")}>
+                <div className={"mb-2 d-flex flex-column justify-content-start " + (urlarticles ? "w-100 justify-content-center" : "col-sm-9 col-lg-12") }>
+                    <h3><Link to={`/admin/articles/edit/${datas.id}`} className={"text-dark" + (urlarticles && " title-article")}>{datas.title}</Link></h3>
                     <small>Dernières modifications le {day}/{month}/{year} à {hours}:{minutes}</small>
                 </div>
-                <figure className="img-container col-sm-3 col-lg-12 p-0">
+                <figure className={"img-container p-0 col-sm-3 " + (urlarticles ? "" : "col-lg-12 ")}>
                     <img src={`${DOMAIN_URL}/upload/${datas.image_url}`} alt={`Article ${datas.title} - ${datas.image_url}`}/>
                 </figure>
             </div>
             <div className="article-item-body">
-                <p>{datas.description.substring(0,150)}... <Link className="font-italic" to={`/admin/articles/edit/${datas.id}`}>Voir plus</Link></p>
+                <p>{urlarticles ? datas.description.substring(0,250) : datas.description.substring(0,150)}... <Link className="font-italic" to={`/admin/articles/edit/${datas.id}`}>Voir plus</Link></p>
             </div>
             <div className="article-item-footer">
-                <form className="form-control">
-                    <div className="form-check">
+                <form >
+                    <div className="form-group">
                         <input 
-                            className="form-check-input" 
+                            className="form-control" 
                             type="button" 
                             name="archive" 
-                            defaultChecked={datas.is_archived} 
+                            defaultValue={"Archiver"} 
                             id="article-archive" 
                             onClick={handleSubmit}
                         />
-                        <label className="form-check-label" htmlFor="article-archive">Archiver</label>
+                        <label className="d-none" htmlFor="article-archive">Archiver</label>
                     </div>
                 </form>
             </div> 

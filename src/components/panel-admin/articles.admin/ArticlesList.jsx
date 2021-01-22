@@ -19,7 +19,7 @@ const ArticlesList = ({title, datas, route, redirect, loading, classCardHeader, 
             : 
             <section className={"articles-list card h-100" + (!location.pathname.includes("archives") ? " border-0" : " border")}>
                {!location.pathname.includes("archives") ?
-                <div className={"card-header bg-none d-flex flex-wrap justify-content-between align-items-baseline px-0 px-sm-3 " + classCardHeader }>
+                <div className={"card-header d-flex flex-wrap justify-content-between align-items-baseline px-0 px-sm-3 " + classCardHeader }>
                     <h2 className="text-center">{title}</h2>
                     <small className="text-center font-italic">Vos derniers articles</small>
                 </div>
@@ -50,9 +50,9 @@ const ArticlesList = ({title, datas, route, redirect, loading, classCardHeader, 
                             <p className="text-center text-bold align-self-center pt-3">
                                 {location.pathname.includes("archives") ? "Vous n'avez rien d'archivé actuellement" : `Vous n'avez pas d'articles ${title} publiés`}
                             </p>
-                            {!location.pathname.includes("archives") &&
+                            {(!location.pathname.includes("archives")) &&
                             <Fragment>
-                                <p className="font-italic text-center align-self-center">Créez un article maintenant ou bien <Link to="/admin/archives/articles">voir les articles archivés</Link></p>
+                                <p className="font-italic text-center align-self-center">Créez un article maintenant ou bien <Link to="/admin/archives/articles" className="see-articles">voir les articles archivés</Link></p>
                                 <div className="align-self-center">
                                     <ButtonCreate url={`/admin/articles/create`} title="Nouvel Article" class={classBtnCreate}/>
                                 </div>

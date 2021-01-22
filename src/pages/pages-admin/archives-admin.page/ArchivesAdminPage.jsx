@@ -38,8 +38,7 @@ const ArchivesAdminPage = (props) => {
     useEffect(() => {
         Axios.get(`${BACK_URL}/articles/press`)
              .then(res => {
-                setPressArticles(res.data.filter(data=> data.is_archived === 1)
-                                        .filter(data=>data.modified_at))
+                setPressArticles(res.data.filter(data=> data.is_archived === 1))
                 setPressIsLoading(false);
                 })
              .catch(err => console.log(err));
@@ -48,8 +47,7 @@ const ArchivesAdminPage = (props) => {
     useEffect(() => {
         Axios.get(`${BACK_URL}/club/galleries`)
              .then(res => {
-                setGalleries(res.data.filter(data=> data.is_archived === 1)
-                                        .filter(data=>data.modified_at))
+                setGalleries(res.data.filter(data=> data.is_archived === 1))
                 setGalleriesLoading(false);
                 })
              .catch(err => console.log(err));
