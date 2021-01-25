@@ -18,8 +18,8 @@ const Teaching_Team = () => {
 
   return (
     <div className="card-group p-4 m-2 justify-content-around justify-content-center team-card">
-      {teachers.map((teacher) =>
-        <div className="card d-flex flex-column align-items-center justify-content-center shadow p-5 mb-5 bg-white col-sm-3 card-teacher">
+      {teachers.map((teacher, index) =>
+        <div key={index} className="card d-flex flex-column align-items-center justify-content-center shadow p-5 mb-5 bg-white col-sm-3 card-teacher">
           <div className="card-header">
             <img src={`${DOMAIN_URL}/upload/${teacher.picture_url}`} className="card-img-top picture-teacher-team rounded-circle border border-warning border border-3" alt={teacher.firstname} />
           </div>

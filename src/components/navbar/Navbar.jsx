@@ -151,7 +151,7 @@ function Navbar () {
                         <div className="resp-nav-name">
                             <div>
                                 <div className="tennis-ball"></div>
-                                <div className="shadow"></div>
+                                <div className="shadow-ball"></div>
                             </div>
                             Accueil
                         </div>
@@ -166,7 +166,7 @@ function Navbar () {
                         <div className="resp-nav-name">
                             <div>
                                 <div className="tennis-ball"></div>
-                                <div className="shadow"></div>
+                                <div className="shadow-ball"></div>
                             </div>
                             Club
                         </div>
@@ -196,7 +196,7 @@ function Navbar () {
                         <div className="resp-nav-name">
                             <div>
                                 <div className="tennis-ball"></div>
-                                <div className="shadow"></div>
+                                <div className="shadow-ball"></div>
                             </div>
                             Enseignement
                         </div>
@@ -220,7 +220,7 @@ function Navbar () {
                         <div className="resp-nav-name">
                             <div>
                                 <div className="tennis-ball"></div>
-                                <div className="shadow"></div>
+                                <div className="shadow-ball"></div>
                             </div>
                             Compétitions
                         </div>
@@ -246,7 +246,7 @@ function Navbar () {
                         <div className="resp-nav-name">
                             <div>
                                 <div className="tennis-ball"></div>
-                                <div className="shadow"></div>
+                                <div className="shadow-ball"></div>
                             </div>
                             Paratennis
                         </div>

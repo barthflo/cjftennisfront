@@ -34,8 +34,8 @@ export default function Articles(){
                         <div className="input-filter-articles">
                             <form className="form-articles-filter">
                                 <label className="label-articles-filter">Sélectionner une catégorie :</label>
-                                <select className="select-articles-filter" value={articleCategory} onChange={handleChangeCategory}>
-                                    <option selected value="club">Club</option>
+                                <select className="select-articles-filter" defaultValue={articleCategory} onChange={handleChangeCategory}>
+                                    <option value="club">Club</option>
                                     <option value="sport">Sport</option>
                                     <option value="press">Presse</option>
                                 </select>
