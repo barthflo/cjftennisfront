@@ -15,6 +15,7 @@ import UsersCreate from '../users.admin/UsersCreate';
 import UsersManage from '../users.admin/UsersManage';
 import ArchivesAdmin from '../../../pages/pages-admin/archives-admin.page/ArchivesAdminPage';
 import ArticlesContainer from '../articles.admin/ArticlesContainer';
+import ArticlesCreate from '../articles.admin/ArticlesCreate';
 
 import '../panelAdmin.css';
 import '../../../pages/pages-admin/pages.admin.css';
@@ -85,10 +86,10 @@ const Dashboard = () => {
                         path='/admin/articles/:category/create'
                         children = {<DefaultAdmin component={ArticlesCreate} className={"articles-admin container-fluid px-0 px-sm-2" + enableOpen()} />} 
                     />
-                    <Route 
+                    {/* <Route 
                         path='/admin/articles/:category/edit/:id'
                         children = {<DefaultAdmin component={ArticlesUpdate} className={"articles-admin container-fluid px-0 px-sm-2" + enableOpen()} />} 
-                    />
+                    /> */}
                     <Route 
                         exact path='/admin/archives'
                         children = {<ArchivesAdmin className={enableOpen()} />} 

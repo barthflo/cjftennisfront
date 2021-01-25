@@ -68,7 +68,7 @@ const ArticlesContainer = () => {
                 <Fragment>
                     <section className="list-group m-1 p-3 bg-light d-flex flex-column justify-content-center align-items-center">
                         <p className="font-italic mb-2 mb-sm-1 text-center">Ajoutez un nouvel article {select === "press" ? "presse" : select}!</p>
-                        <ButtonCreate url={`/admin/articles/create`} title="Nouvel Article" class="btn-sm"/>
+                        <ButtonCreate url={`/admin/articles/${select}/create`} title="Nouvel Article" class="btn-sm"/>
                     </section>
                     <ul className="list-group d-flex flex-row flex-wrap justify-content-center">
                         {datas.length!== 0 && 

@@ -12,6 +12,8 @@ const Error = ({status}) => {
                 return {message : "Une erreur est survenue avec le serveur.", status : "Erreur 500" }
             case 404 :
                 return { message : "La page demandée est introuvable.", status: "Erreur 404"}
+            case 400 :
+                return {message : "Erreur dans la requête", status: "Erreur 400"}
             default :
                 return {message : "Erreur", status: "Erreur"}
         }

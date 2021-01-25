@@ -49,7 +49,7 @@ const ArticlesItem = ({datas, route}) => {
         <article className="article-item-container py-3 border-bottom">
             <div className={"article-item-header " + (urlarticles ? "d-flex flex-column flex-sm-row justify-content-sm-around" : "row align-items-start")}>
                 <div className={"mb-2 d-flex flex-column justify-content-start " + (urlarticles ? "w-100 justify-content-center" : "col-sm-9 col-lg-12") }>
-                    <h3><Link to={`/admin/articles/edit/${datas.id}`} className={"text-dark" + (urlarticles && " title-article")}>{datas.title}</Link></h3>
+                    <h3 className="mr-2"><Link to={`/admin/articles/edit/${datas.id}`} className={"text-dark" + (urlarticles && " title-article")}>{datas.title}</Link></h3>
                     <small>Dernières modifications le {day}/{month}/{year} à {hours}:{minutes}</small>
                 </div>
                 <figure className={"img-container p-0 col-sm-3 " + (urlarticles ? "" : "col-lg-12 ")}>
