@@ -4,8 +4,6 @@ import {DOMAIN_URL} from '../../http';
 import {useState, useEffect} from 'react';
 import { BsFillLockFill } from 'react-icons/bs';
 import { ImCross } from 'react-icons/im'
-import { act } from 'react-dom/test-utils';
-
 
 function Navbar () {
 
