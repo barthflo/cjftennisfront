@@ -56,7 +56,7 @@
     align-items: center;
 }
 
-.ball {
+.tennis-ball {
     width: 20px;
     height: 20px;
     background-color: var(--main-color);
@@ -78,7 +78,7 @@
 	}
 }
 
-.ball:before {
+.tennis-ball::before {
     content: '';
     position: absolute;
     width: 100%;
@@ -90,7 +90,7 @@
     left: -65%;
 }
 
-.ball:after {
+.tennis-ball::after {
     content: '';
     position: absolute;
     width: 100%;
