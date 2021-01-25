@@ -12,7 +12,7 @@ function TeamTeaching() {
       <section className="teaching_team">
         <SectionTitle title='Les Formateurs' />
         <Teaching_Team className="formateurs" />
-        <SectionTitle title='Les Assistants Formateurs' className="assistants" />
+        <SectionTitle title='Les Assistants Formateurs' className="assistants_formateurs" />
         <Assistant_Teaching_Team />
       </section>
     </main>
