@@ -14,11 +14,11 @@ export default function ArticleDetailsSport(){
         axios
         .get(`${BACK_URL}/articles/sport/${params.id}`)
         .then(res => setArticleSportDetails(res.data))
-    }, []);
+    }, [params.id]);
 
     useEffect(() => {
         window.scrollTo(0, 0)
-    }, [params.id]);
+    }, []); 
 
     return(
         <div>

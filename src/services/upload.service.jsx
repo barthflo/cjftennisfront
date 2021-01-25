@@ -43,4 +43,4 @@ const uploadMultiple = async (files) => {
     }
 }
 
-export default {upload, uploadMultiple}
+export default {upload, uploadMultiple} // eslint-disable-line

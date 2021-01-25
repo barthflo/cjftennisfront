@@ -29,7 +29,7 @@ export default function OurClub() {
             setPictures(pics);
         });
         setLoading(true);
-    }, []);
+    }, []); // eslint-disable-line
 
     return isLoading ? (
         <section className="our-club">
