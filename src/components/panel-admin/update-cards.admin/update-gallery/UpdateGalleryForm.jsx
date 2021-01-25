@@ -61,9 +61,8 @@ const UpdateGalleryForm = ({formId, datas}) => {
     }
 
     const onSubmit = data => {
-        console.log(data);
         Axios.put(`${BACK_URL}/club/galleries/${datas.id}`, data)
-             .then(res => console.log(res))
+             .then(res => console.log(res.status))
              .catch(err => {
                  console.log(err);
                  setError(err);
@@ -71,7 +70,7 @@ const UpdateGalleryForm = ({formId, datas}) => {
         if(uploaded.length !== 0) {
             uploaded.forEach((upload) => {
                 Axios.post(`${BACK_URL}/club/galleries/photos`, {name : upload.fileName, gallery_id : datas.id })
-                    .then(res => console.log(res))
+                    .then(res => console.log(res.status))
                     .catch(err => {
                         console.log(err);
                         setError(err);

@@ -34,7 +34,7 @@ const UpdateVideo = () => {
         fetchData();
         const timer = setTimeout(() => setUploadedFile({...uploadedFile, successMessage: null}), 3000);
         return () => clearTimeout(timer);
-    }, [uploadedFile.successMessage]);
+    }, [uploadedFile.successMessage]); // eslint-disable-line
     
     const handleChange = (e) => {
         setData({...data, [e.target.name] : e.target.value});

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from 'react'
+import React, { useState, useEffect } from 'react'
 import {Route, Redirect} from 'react-router-dom';
 import AuthService from '../../services/auth.service';
 
@@ -9,7 +9,7 @@ const ProtectedRoute = ({component : Component, ...rest}) => {
     const [loading, setLoading] = useState(true);
     const token = rest.computedMatch.params.token;
 
-    useEffect(async () => {
+    useEffect(async () => { // eslint-disable-line
         if(token){
             await AuthService.resetPwAuthenticated(token)
                     .then(res => {
@@ -31,7 +31,7 @@ const ProtectedRoute = ({component : Component, ...rest}) => {
                     .catch(err => console.log(err));
         }
         setLoading(false);
-    },[])
+    },[token])
  
     return (
         <Route

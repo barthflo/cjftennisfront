@@ -12,7 +12,7 @@ export default function InfrastructureCard(props) {
                 <Carousel showStatus={false} infiniteLoop={true}>
                     {infrastructure.pictures.map((picture, index) => (
                         <div>
-                            <img src={`${DOMAIN_URL}/upload/${picture}`} alt={`Photo ${index+1}`} className="card-image" />
+                            <img src={`${DOMAIN_URL}/upload/${picture}`} alt={`Infrastructure ${index+1}`} className="card-image" />
                         </div>
                     ))}
                 </Carousel>

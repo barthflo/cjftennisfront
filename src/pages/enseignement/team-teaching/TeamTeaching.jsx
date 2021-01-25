@@ -1,6 +1,5 @@
-import { TiThListOutline } from "react-icons/ti";
 import BannerPhoto from "../../../components/banner-photo/BannerPhoto";
-import Teaching_Team from "../../../components/teaching/teaching_team/Teaching_Team"
+import TeachingTeam from "../../../components/teaching/teaching_team/Teaching_Team"
 import './Teaching_Team.css';
 import SectionTitle from "../../../components/section-title/SectionTitle";
 
@@ -11,6 +10,8 @@ function TeamTeaching() {
       <section className="teaching_team">
         <SectionTitle title='Les Formateurs'/>
         <Teaching_Team />
+      <SectionTitle title='Les Formateurs'/>
+      <TeachingTeam />
       </section>
 
     </main>

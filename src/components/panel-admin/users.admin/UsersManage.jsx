@@ -30,7 +30,7 @@ const UsersManage = () => {
                     })
             }
             fetchUser();
-    }, [admin])
+    }, [params.id]) 
 
     return (
         <Fragment>

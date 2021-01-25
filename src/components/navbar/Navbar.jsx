@@ -11,25 +11,54 @@ function Navbar () {
     const [openClub, setOpenClub]= useState(false) 
     const changeOpenClub=()=>setOpenClub(true)
     const changeCloseClub =() =>setOpenClub(false)
+
     const [openEns, setOpenEns]= useState(false) 
     const changeOpenEns=()=>setOpenEns(true)
     const changeCloseEns =() =>setOpenEns(false)
+
     const [openComp, setOpenComp]= useState(false) 
     const changeOpenComp=()=>setOpenComp(true)
     const changeCloseComp =() =>setOpenComp(false)
+
     const [openPara, setOpenPara]= useState(false) 
     const changeOpenPara=()=>setOpenPara(true)
     const changeClosePara =() =>setOpenPara(false)
+
     const [openMenu, setOpenMenu]= useState(false)
     const changeOpenMenu=() =>setOpenMenu(!openMenu)
+
     const [openClubResp, setOpenClubResp]=useState(false)
-    const changeOpenClubResp=() => setOpenClubResp(!openClubResp)
+    const changeOpenClubResp=() => {
+        setOpenClubResp(!openClubResp);
+        setOpenEnsResp(false);
+        setOpenCompResp(false);
+        setOpenParaResp(false);
+    }
+
     const [openEnsResp, setOpenEnsResp]=useState(false)
-    const changeOpenEnsResp=() => setOpenEnsResp(!openEnsResp)
+    const changeOpenEnsResp=() => {
+        setOpenEnsResp(!openEnsResp);
+        setOpenClubResp(false);
+        setOpenCompResp(false);
+        setOpenParaResp(false);
+    }
+
     const [openCompResp, setOpenCompResp]=useState(false)
-    const changeOpenCompResp=() => setOpenCompResp(!openCompResp)
+    const changeOpenCompResp=() => {
+        setOpenCompResp(!openCompResp);
+        setOpenClubResp(false);
+        setOpenEnsResp(false);
+        setOpenParaResp(false);
+    }
+
     const [openParaResp, setOpenParaResp]=useState(false)
-    const changeOpenParaResp=() => setOpenParaResp(!openParaResp)
+    const changeOpenParaResp=() => {
+        setOpenParaResp(!openParaResp);
+        setOpenClubResp(false);
+        setOpenEnsResp(false);
+        setOpenCompResp(false);
+    }
+
     const [logo, setLogo]=useState(false);
     const changeLogo =() =>{
         if(window.scrollY>= 50) {
@@ -39,25 +68,12 @@ function Navbar () {
         }
     }
     window.addEventListener('scroll', changeLogo);
+    
     const history = useHistory()
     const[activePage, setActivePage] = useState(history.location.pathname)
     useEffect(() => {
         setActivePage(history.location.pathname);
     }, [history.location.pathname])
-
-    const[scroll, setScroll]= useState(false)
-    const changeScroll=() => setScroll(!scroll)
-    
-    if(openMenu === true){
-        window.addEventListener("scroll", function (e){
-	
-            window.scrollTo(0,0);
-            
-        });
-        
-    }
-    
-
 
     return (
         <div className="Navbar" id="Navbar">
@@ -106,25 +122,27 @@ function Navbar () {
                         <div className={openPara? "para-open" : "para-close"}>
                             <Link className="NavLinks" to="/paratennis/tennis-armchair" >Tennis Fauteuil</Link>
                             <hr/>
-                            <Link className="NavLinks" to="/paratennis/compet-league-and-stage" >Compétitions Club Ligue et Stages</Link>
+                            <Link className="NavLinks" to="/paratennis/compet-league-and-stage" >Compétitions et Stages</Link>
                             <hr/>
                             <Link className="NavLinks" to="/paratennis/tournament" >Tournois</Link>
                             <hr/>
-                            <Link className="NavLinks" to="/paratennis/deaf-and-hard-of-hearing-tennis">Tennis Sourd et Malentendant</Link>
+                            <Link className="NavLinks" to="/paratennis/deaf-and-hard-of-hearing-tennis">Sourd et Malentendant</Link>
                         </div>
                     </div>
                     <Link className="NavbarAdmin" to="/admin" target="_blank" ><BsFillLockFill className="LockIcon"/></Link>
                 </div>
             </div>
+
+            {/* MENU RESPONSIVE */}
             <div className="NavbarResponsive">
                 <div className="LogoContainer">
                     <Link to="/"><img className="LogoResp" src={`${DOMAIN_URL}/upload/logo_cjf_tennis.jpg`} alt="logo"/></Link>
                 </div>      
-                <a className="NavbarMenu-Burger" id="#Burger" href="#" onClick={changeOpenMenu} >
+                <div className="NavbarMenu-Burger" id="#Burger" onClick={changeOpenMenu} >
                     <span></span>
                     <span></span>
                     <span></span>
-                </a>
+                </div>
             </div>
             <div className={openMenu? "menu-open" : "menu-close"}>
                 <div className="CrossContainer"  onClick={changeOpenMenu} to="/"><ImCross className="Cross"/></div>
@@ -143,6 +161,7 @@ function Navbar () {
                         <Link className="RespLinksClub" to="/club/gallery" onClick={changeOpenMenu}>Galerie</Link>
                         <hr/>
                         <Link className="RespLinksClub" to="/club/articles" onClick={changeOpenMenu}>Articles</Link>
+                        <hr/>
                     </div>
                 </div>
                 <div className="EnsResp" onClick={changeOpenEnsResp}>Enseignement
@@ -174,11 +193,11 @@ function Navbar () {
                         <hr/>
                         <Link className="RespLinksPara" to="/paratennis/tennis-armchair" onClick={changeOpenMenu}>Tennis Fauteuil</Link>
                         <hr/>
-                        <Link className="RespLinksPara" to="/paratennis/competition-club-league-and-stage" onClick={changeOpenMenu}>Compétitions Club Ligue et Stages</Link>
+                        <Link className="RespLinksPara" to="/paratennis/competition-club-league-and-stage" onClick={changeOpenMenu}>Compétitions et Stages</Link>
                         <hr/>
                         <Link className="RespLinksPara" to="/paratennis/tournament" onClick={changeOpenMenu}>Tournois</Link>
                         <hr/>
-                        <Link className="RespLinksPara" to="/paratennis/deaf-and-hard-of-hearing-tennis" onClick={changeOpenMenu}>Tennis Sourd et Malentendant</Link>
+                        <Link className="RespLinksPara" to="/paratennis/deaf-and-hard-of-hearing-tennis" onClick={changeOpenMenu}>Sourd et Malentendant</Link>
                         <hr/>
                     </div>
                 </div>
@@ -187,6 +206,6 @@ function Navbar () {
         </div>
     )
 }
-   
+
 export default Navbar;
     

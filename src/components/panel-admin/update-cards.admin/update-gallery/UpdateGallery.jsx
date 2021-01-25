@@ -27,7 +27,7 @@ const UpdateGallery = () => {
                 console.log(err);
                 setErrors(err.errorMessage)
             })
-    }, []);
+    }, [id]); 
 
     const deleteGallery = (e) => {
         confirmAlert({

@@ -29,7 +29,7 @@ export default function OurClub() {
             setPictures(pics);
         });
         setLoading(true);
-    }, []);
+    }, []); // eslint-disable-line
 
     return isLoading ? (
         <section className="our-club">
@@ -41,7 +41,7 @@ export default function OurClub() {
                     <Link className="link" to="/club/our-infrastructures">Nos infrastructures</Link>
                 </div>
                 {(pictures && pictures.length !== 0) && pictures.map((picture, index) => (
-                    <img className={`our-club-image image-${index}`} src={`${DOMAIN_URL}/upload/${picture}`} alt={`Photo ${index+1} des infrastructures`} />
+                    <img key={index} className={`our-club-image image-${index}`} src={`${DOMAIN_URL}/upload/${picture}`} alt={`Infrastructures ${index+1}`} />
                 ))}
             </div>
         </section>
