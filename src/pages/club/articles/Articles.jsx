@@ -20,6 +20,10 @@ export default function Articles(){
         setArticleCategory(e.target.value);
     }
 
+    useEffect(() => {
+    window.scrollTo(0, 0)
+    }, []);
+
     return(
         <div className="articles-filter">
             <BannerPhoto image="https://www.bellevigny.fr/wp-content/uploads/2016/06/presse.jpg" title="Articles" subtitle="CJF Tennis"/>
