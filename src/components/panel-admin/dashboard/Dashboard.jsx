@@ -79,7 +79,15 @@ const Dashboard = () => {
                     />
                     <Route 
                         exact path='/admin/articles'
-                        children = {<DefaultAdmin component={ArticlesContainer} className={"gallery-admin container-fluid px-0 px-sm-2" + enableOpen()} />} 
+                        children = {<DefaultAdmin component={ArticlesContainer} className={"articles-admin container-fluid px-0 px-sm-2" + enableOpen()} />} 
+                    />
+                    <Route 
+                        path='/admin/articles/:category/create'
+                        children = {<DefaultAdmin component={ArticlesCreate} className={"articles-admin container-fluid px-0 px-sm-2" + enableOpen()} />} 
+                    />
+                    <Route 
+                        path='/admin/articles/:category/edit/:id'
+                        children = {<DefaultAdmin component={ArticlesUpdate} className={"articles-admin container-fluid px-0 px-sm-2" + enableOpen()} />} 
                     />
                     <Route 
                         exact path='/admin/archives'

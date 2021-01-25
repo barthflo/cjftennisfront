@@ -18,7 +18,7 @@
     font-weight: 400;
 }
 
-.home-admin, .update-admin, .create-admin, .gallery-admin, .archives-admin {
+.home-admin, .update-admin, .create-admin, .gallery-admin, .archives-admin, .articles-admin {
     background: #e6e6e6;
     width:calc(100vw - 78px);
     margin-right:78px;

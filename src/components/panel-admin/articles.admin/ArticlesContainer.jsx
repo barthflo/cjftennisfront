@@ -61,7 +61,7 @@ const ArticlesContainer = () => {
                         <p className="font-italic mb-0 text-center">Créez un article {select === "press" ? "presse" : select} maintenant!</p>
                     </div>
                     <div className="card-body d-flex flex-column justify-content-center align-items-center">
-                        <ButtonCreate url={`/admin/articles/create`} title="Nouvel Article"/>
+                        <ButtonCreate url={`/admin/articles/${select}/create`} title="Nouvel Article"/>
                     </div>
                 </section>
                 :
