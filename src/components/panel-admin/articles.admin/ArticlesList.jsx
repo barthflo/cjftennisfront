@@ -25,14 +25,14 @@ const ArticlesList = ({title, datas, route, redirect, loading, classCardHeader, 
                 </div>
                 :
                 <div className="card-header bg-none" style={{minHeight:"unset"}}>
-                    <h3>{title}</h3>
+                    <h3 style={{fontSize:"1.5em"}}>{title}</h3>
                 </div>
                 }
                 <div className={"card-body d-flex flex-column justify-content-start align-items-start px-0 px-sm-3 " + classCardBody }>
                 {datas && datas.length !== 0 ? 
                     location.pathname.includes("archives") ?
                     <table className="table table-striped mb-0">
-                        <thead>
+                        <thead className="thead-light">
                             <tr style={{color:"var(--light-color)", background : "var(--main-color"}}>
                                 <th scope="col">#</th>
                                 <th scope="col">Titre</th>
