@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { BACK_URL, DOMAIN_URL } from '../../../http';
+import './Teaching_team.css'
 
 
 const Teaching_Team = () => {
@@ -21,13 +22,13 @@ const Teaching_Team = () => {
       {teachers.map((teacher, index) =>
         <div key={index} className="card d-flex flex-column align-items-center justify-content-center shadow p-5 mb-5 bg-white col-sm-3 card-teacher">
           <div className="card-header">
-            <img src={`${DOMAIN_URL}/upload/${teacher.picture_url}`} className="card-img-top picture-teacher-team rounded-circle border border-warning border border-3" alt={teacher.firstname} />
+            <img src={`${ DOMAIN_URL }/upload/${ teacher.picture_url }`} className="card-img-top picture-teacher-team rounded-circle border border-3" alt={teacher.firstname} />
           </div>
           <div className="card-body align-items-center justify-content-center">
+            <h4 className="card-title name-text p-3 text-center">{ teacher.firstname } {" "} { teacher.lastname }</h4>
+            <p className="card-text font-weight-bold text-speciality text-center">{ teacher.speciality }</p>
+            <p className="card-text font-italic text-justify text-center font-weight-light">"{ teacher.description }"</p>
           </div>
-          <h4 className="card-title name-text p-3">{teacher.firstname}</h4>
-          <p className="card-text font-weight-bold text-speciality">{teacher.speciality}</p>
-          <p className="card-text font-italic text-justify text-center font-weight-light">"{teacher.description}"</p>
         </div>
       )}
     </div>
