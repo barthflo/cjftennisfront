@@ -6,10 +6,10 @@ import ArchivesItem from '../archives.admin/ArchivesItem'
 import {Link, useHistory} from 'react-router-dom'
 import './Articles.Admin.css'
 
-const ArticlesList = ({title, datas, route, redirect, loading, classCardHeader, classCardBody, classCardFooter, classBtnCreate}) => {
+const ArticlesList = ({title, category, datas, route, redirect, loading, classCardHeader, classCardBody, classCardFooter, classBtnCreate}) => {
     
     const {location}= useHistory();
-
+    
     return (
         <Fragment>
             {loading ? 
@@ -44,7 +44,7 @@ const ArticlesList = ({title, datas, route, redirect, loading, classCardHeader, 
                         </tbody>
                     </table>
                     :
-                    datas.slice(0,2).map((data, index) => <ArticlesItem datas={data} route={route} key={index}/>)  
+                    datas.slice(0,2).map((data, index) => <ArticlesItem category={category} datas={data} route={route} key={index}/>)  
                 :
                     <Fragment>
                             <p className="text-center text-bold align-self-center pt-3">
@@ -52,7 +52,7 @@ const ArticlesList = ({title, datas, route, redirect, loading, classCardHeader, 
                             </p>
                             {(!location.pathname.includes("archives")) &&
                             <Fragment>
-                                <p className="font-italic text-center align-self-center">Créez un article maintenant ou bien <Link to="/admin/archives/articles" className="see-articles">voir les articles archivés</Link></p>
+                                <p className="font-italic text-center align-self-center">Créez un article maintenant ou bien <Link to="/admin/archives" className="see-articles">voir les articles archivés</Link></p>
                                 <div className="align-self-center">
                                     <ButtonCreate url={`/admin/articles/create`} title="Nouvel Article" class={classBtnCreate}/>
                                 </div>

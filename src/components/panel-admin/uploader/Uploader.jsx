@@ -6,7 +6,7 @@ import {RiFileWarningLine} from 'react-icons/ri'
 import './Uploader.css';
 
 const Uploader = ({handleChangeUpload, handleUpload, uploaded, previewUrl, photos, handleRemove, cancel, handleRemoveUploaded, error, singleUpload}) => {
-    
+
     return (
         <div className="pictures-uploader d-flex flex-column align-items-center">
             <div className = "input-group align-items-center justify-content-center">

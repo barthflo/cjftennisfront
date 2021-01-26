@@ -1,4 +1,5 @@
 import {useState, useEffect, Fragment} from 'react'
+import {useHistory} from 'react-router-dom'
 import Error from '../errors/Error'
 import ButtonCreate from '../buttons/ButtonCreate'
 import ArticlesItem from './ArticlesItem'
@@ -8,11 +9,13 @@ import Axios from 'axios'
 import _ from 'lodash'
 
 const ArticlesContainer = () => {
-
+    
+    const {location} = useHistory();
     const [errors, setErrors] = useState();
     const [isLoading, setIsLoading] = useState(true);
     const [datas, setDatas] = useState([]);
     const [select, setSelect] = useState('club')
+    const [deleteMessage, setDeleteMessage] = useState(null);
 
     useEffect(() => {
         const fetchArticles = () => {
@@ -28,7 +31,24 @@ const ArticlesContainer = () => {
                 })
         }
         fetchArticles();
-    }, [select])
+        
+    }, [select, location, datas])
+
+    useEffect(() => {
+        if(location.state){
+            setDeleteMessage(() => {
+                return (
+                    <div className="d-flex justify-content-center">
+                        <p className="text-success font-italic font-bold">L'article a bien été {(location.state.messageConfirmDelete) ? "supprimé" : location.state.messageConfirmUpdate}!</p>
+                    </div>
+                )
+            });
+        }
+        const timer = setTimeout(() => {
+            setDeleteMessage(null)
+        }, 5000)
+        return () => clearTimeout(timer)
+    }, [location.state])
 
     return(
         <Fragment>
@@ -45,6 +65,7 @@ const ArticlesContainer = () => {
                 {datas.length === 0 ? null : 
                     <p className="font-italic pl-2 mb-1">{datas.length} {datas.length === 1 ? `article` : "articles"} en ligne</p>
                 }
+                {deleteMessage !== null && deleteMessage}
             </div>
             {errors && <Error status={errors}/>}
             {isLoading ? 
@@ -75,7 +96,7 @@ const ArticlesContainer = () => {
                             _.orderBy(datas, ['modified_at'], ['desc'])
                                     .map((data, index) => 
                                     <li className={"list-group-item m-1 w-100 gallery-admin" + index } key={index}>
-                                        <ArticlesItem datas={data} />
+                                        <ArticlesItem datas={data} category={select} />
                                     </li>
                         )}
                     </ul>

@@ -7,15 +7,39 @@
 }
 
 .page-container h2 {
-    font-family: var(--secondary-font);
     font-weight:600;
     color:var(--main-color);
     font-size:1.5em;
 }
 
-.page-container p {
+.page-container small, .page-container p , .page-container h2{
     font-family: var(--secondary-font);
+}
+
+.page-container p {
     font-weight: 400;
+}
+
+.page-container .text-success {
+    color:var(--main-color) !important;
+    font-family:var(--main-font) !important;
+    font-style:italic;
+}
+
+.page-container .text-danger {
+    color:rgb(177, 75, 50) !important;
+    font-family:var(--main-font) !important;
+    font-style:italic;
+}
+
+.page-container .form-control{
+    color: #3d3f42cc;
+    font-family:var(--secondary-font);
+    font-style:italic;
+}
+
+.page-container .form-control[readonly]{
+    background:#e9efec8f;
 }
 
 .home-admin, .update-admin, .create-admin, .gallery-admin, .archives-admin, .articles-admin {

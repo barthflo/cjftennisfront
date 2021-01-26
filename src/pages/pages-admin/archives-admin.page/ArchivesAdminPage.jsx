@@ -56,9 +56,9 @@ const ArchivesAdminPage = (props) => {
     const components=[
         <ArchivesContainer title="Articles" children={
             <Fragment>
-                <ArticlesList route="/articles/club/" redirect="/admin/articles/edit/" title="Club" datas={_.orderBy(clubArticles, ['modified_at'], ['desc'])} loading={clubIsLoading} classCardHeader="py-0"/>
-                <ArticlesList route="/articles/sport/" redirect="/admin/articles/edit/" title="Sport" datas={_.orderBy(sportArticles, ['modified_at'], ['desc'])} loading={sportIsLoading} classCardHeader="py-0"/>
-                <ArticlesList route="/articles/press/" redirect="/admin/articles/edit/" title="Presse" datas={_.orderBy(pressArticles, ['modified_at'], ['desc'])} loading={pressIsLoading} classCardHeader="py-0"/>
+                <ArticlesList route="/articles/club/" redirect="/admin/articles/club/edit/" title="Club" datas={_.orderBy(clubArticles, ['modified_at'], ['desc'])} loading={clubIsLoading} classCardHeader="py-0"/>
+                <ArticlesList route="/articles/sport/" redirect="/admin/articles/sport/edit/" title="Sport" datas={_.orderBy(sportArticles, ['modified_at'], ['desc'])} loading={sportIsLoading} classCardHeader="py-0"/>
+                <ArticlesList route="/articles/press/" redirect="/admin/articles/press/edit/" title="Presse" datas={_.orderBy(pressArticles, ['modified_at'], ['desc'])} loading={pressIsLoading} classCardHeader="py-0"/>
             </Fragment>} 
         />,
         <ArchivesContainer title= "Galeries" children={

@@ -20,7 +20,7 @@ const Error = ({status}) => {
     }
 
     return (
-        <section className="d-flex justify-content-center align-items-center" style={{width:"100%", height:"100%"}}>
+        <div className="d-flex justify-content-center align-items-center" style={{width:"100%", height:"100%"}}>
             {switchStatus && 
              <div className="card align-items-center justify-content-stretch p-5 h-100 ">
                 <div className="card-header d-flex flex-column align-items-center h-50">
@@ -35,7 +35,7 @@ const Error = ({status}) => {
                 </div>
              </div>
             }
-        </section>
+        </div>
     )
 }
 
