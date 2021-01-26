@@ -21,6 +21,10 @@ export default function Articles(){
         setArticleCategory(e.target.value);
     }
 
+    useEffect(() => {
+    window.scrollTo(0, 0)
+    }, []);
+
     return(
         <div className="articles-filter">
             <BannerPhoto image="https://www.bellevigny.fr/wp-content/uploads/2016/06/presse.jpg" title="Articles" subtitle="CJF Tennis"/>
@@ -31,8 +35,8 @@ export default function Articles(){
                         <div className="input-filter-articles">
                             <form className="form-articles-filter">
                                 <label className="label-articles-filter">Sélectionner une catégorie :</label>
-                                <select className="select-articles-filter" value={articleCategory} onChange={handleChangeCategory}>
-                                    <option selected value="club">Club</option>
+                                <select className="select-articles-filter" defaultValue={articleCategory} onChange={handleChangeCategory}>
+                                    <option value="club">Club</option>
                                     <option value="sport">Sport</option>
                                     <option value="press">Presse</option>
                                 </select>
