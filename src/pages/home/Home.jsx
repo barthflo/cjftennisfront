@@ -6,8 +6,13 @@ import ArticlesPress from '../../components/articles/articles-press/ArticlesPres
 import IconsInfo from '../../components/icons-info/IconsInfo';
 import Partner from '../../components/partner/Partner';
 import OurClub from '../../components/our-club/OurClub';
+import { useEffect } from 'react';
 
 function Home() {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, []);
+
   return (
     <div className="Home">
         <BannerVideo />

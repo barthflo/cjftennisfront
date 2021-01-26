@@ -5,7 +5,6 @@ import {useState, useEffect} from 'react';
 import { BsFillLockFill } from 'react-icons/bs';
 import { ImCross } from 'react-icons/im'
 
-
 function Navbar () {
 
     const [openClub, setOpenClub]= useState(false) 
@@ -60,7 +59,7 @@ function Navbar () {
     }
 
     const [logo, setLogo]=useState(false);
-    const changeLogo =() =>{
+    const changeLogo = () =>{
         if(window.scrollY>= 50) {
             setLogo(true)
         }else{
@@ -146,8 +145,35 @@ function Navbar () {
             </div>
             <div className={openMenu? "menu-open" : "menu-close"}>
                 <div className="CrossContainer"  onClick={changeOpenMenu} to="/"><ImCross className="Cross"/></div>
-                <Link className="HomeResponsive" to="/" onClick={changeOpenMenu}>Accueil</Link>
-                <div className="ClubResp" onClick={changeOpenClubResp} >Club
+                <Link className="HomeResponsive" to="/" onClick={changeOpenMenu}>
+                    {!activePage.charAt(1) ? 
+                        (
+                        <div className="resp-nav-name">
+                            <div>
+                                <div className="tennis-ball"></div>
+                                <div className="shadow-ball"></div>
+                            </div>
+                            Accueil
+                        </div>
+                        )
+                        :
+                        <div>Accueil</div>
+                    }
+                </Link>
+                <div className="ClubResp" onClick={changeOpenClubResp} >
+                    {activePage.includes('club') ? 
+                        (
+                        <div className="resp-nav-name">
+                            <div>
+                                <div className="tennis-ball"></div>
+                                <div className="shadow-ball"></div>
+                            </div>
+                            Club
+                        </div>
+                        )
+                        :
+                        <div>Club</div>
+                    }
                     <div className={openClubResp? "RespLinksClubContainerOpen" : "RespLinksClubContainerClose"}>
                         <hr/>
                         <Link className="RespLinksClub" to="/club/about-us" onClick={changeOpenMenu}>Qui sommes-nous ?</Link>
@@ -164,7 +190,20 @@ function Navbar () {
                         <hr/>
                     </div>
                 </div>
-                <div className="EnsResp" onClick={changeOpenEnsResp}>Enseignement
+                <div className="EnsResp" onClick={changeOpenEnsResp}>
+                    {activePage.includes('teaching') ? 
+                        (
+                        <div className="resp-nav-name">
+                            <div>
+                                <div className="tennis-ball"></div>
+                                <div className="shadow-ball"></div>
+                            </div>
+                            Enseignement
+                        </div>
+                        )
+                        :
+                        <div>Enseignement</div>
+                    }
                     <div className={openEnsResp? "RespLinksEnsContainerOpen" : "RespLinksEnsContainerClose"}>
                         <hr/>
                         <Link className="RespLinksEns" to="/enseignement/team-teaching" onClick={changeOpenMenu}>Équipe Enseignante</Link>
@@ -175,7 +214,20 @@ function Navbar () {
                         <hr/>
                     </div>
                 </div>
-                <div className="CompResp" onClick={changeOpenCompResp}>Compétitions
+                <div className="CompResp" onClick={changeOpenCompResp}>
+                    {activePage.includes('competition') ? 
+                        (
+                        <div className="resp-nav-name">
+                            <div>
+                                <div className="tennis-ball"></div>
+                                <div className="shadow-ball"></div>
+                            </div>
+                            Compétitions
+                        </div>
+                        )
+                        :
+                        <div>Compétitions</div>
+                    }
                     <div className={openCompResp? "RespLinksCompContainerOpen" : "RespLinksCompContainerClose"}>
                         <hr/>
                         <Link className="RespLinksComp" to="/competition/teams" onClick={changeOpenMenu}>Équipes</Link>
@@ -188,7 +240,20 @@ function Navbar () {
                         <hr/>
                     </div>
                 </div>
-                <div className="ParaResp" onClick={changeOpenParaResp}>ParaTennis
+                <div className="ParaResp" onClick={changeOpenParaResp}>
+                    {activePage.includes('paratennis') ? 
+                        (
+                        <div className="resp-nav-name">
+                            <div>
+                                <div className="tennis-ball"></div>
+                                <div className="shadow-ball"></div>
+                            </div>
+                            Paratennis
+                        </div>
+                        )
+                        :
+                        <div>Paratennis</div>
+                    }
                     <div className={openParaResp? "RespLinksParaContainerOpen" : "RespLinksParaContainerClose"}>
                         <hr/>
                         <Link className="RespLinksPara" to="/paratennis/tennis-armchair" onClick={changeOpenMenu}>Tennis Fauteuil</Link>
