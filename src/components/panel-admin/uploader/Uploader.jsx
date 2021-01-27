@@ -81,7 +81,13 @@ const Uploader = ({handleChangeUpload, handleUpload, uploaded, previewUrl, photo
                                 </div>
                                 )
                                 :
+                                previewUrl !== "Error" ?
                                 <img src={previewUrl} alt={previewUrl}/>
+                                :
+                                <div className="file-size-limit m-1 d-flex flex-column justify-content-center align-items-center position-relative">
+                                    <RiFileWarningLine size={"2em"} color="#b14b32"/>
+                                    <small className="text-center text-danger">Max. 5Mb</small>
+                                </div>
                             }
                             
                         </div>

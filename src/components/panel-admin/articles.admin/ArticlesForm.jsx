@@ -44,7 +44,7 @@ const ArticlesForm = ({formId, currentUrl, category, article}) => {
 
     const handleChangeUpload = (e) => {
         setFile(e.target.files[0]);
-        setPreviewUrl(URL.createObjectURL(e.target.files[0]));
+        setPreviewUrl((e.target.files[0].size < 5000000) ? URL.createObjectURL(e.target.files[0]) : "Error");
     }
 
     const upload = (e) => {
@@ -54,6 +54,12 @@ const ArticlesForm = ({formId, currentUrl, category, article}) => {
           setPreviewUrl([]);
           setUploaded(res);
         })
+    }
+
+    const cancelUpload = () => {
+        setPreviewUrl([]);
+        setFile([]);
+        setErrorImage();
     }
 
     const handleRemoveUploaded = () => {
@@ -89,7 +95,7 @@ const ArticlesForm = ({formId, currentUrl, category, article}) => {
                     })
             }
             putArticle();
-            
+
             history.push({
                 pathname : '/admin/articles',
                 state :  {messageConfirmUpdate : "mis à jour"} 
@@ -150,6 +156,7 @@ const ArticlesForm = ({formId, currentUrl, category, article}) => {
                         handleChangeUpload={handleChangeUpload} 
                         uploaded = {uploaded}
                         previewUrl={previewUrl}
+                        cancel={cancelUpload}
                     />
                     {errorImage && <small className="invalid-feedback">{errorImage}</small>}
                 </div>
