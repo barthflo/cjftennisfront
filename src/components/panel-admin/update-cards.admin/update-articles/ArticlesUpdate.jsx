@@ -83,7 +83,7 @@ const ArticlesUpdate = () => {
                     <Error status={error} />
                 </section>
             :
-                <div>
+                <div className="w-100">
                     <section className="mx-4 mt-2 mb-4 px-sm-3 d-flex flex-column article-update-infos">
                         <h1 className="text-capitalize">Mise à jour {article.title} </h1>
                         <p className="text-capitalize mb-1 pb-1"> Catégorie : {category}</p>
