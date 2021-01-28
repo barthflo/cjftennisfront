@@ -17,7 +17,8 @@ import ArchivesAdmin from '../../../pages/pages-admin/archives-admin.page/Archiv
 import ArticlesContainer from '../articles.admin/ArticlesContainer';
 import ArticlesCreate from '../articles.admin/ArticlesCreate';
 import ArticlesUpdate from '../update-cards.admin/update-articles/ArticlesUpdate';
-
+import 'antd/dist/antd.css'
+import 'moment/locale/fr'
 import '../panelAdmin.css';
 import '../../../pages/pages-admin/pages.admin.css';
 
@@ -33,6 +34,7 @@ const Dashboard = () => {
         }
         return ' '
     }
+
     return(
         <Fragment>
             <NavBarAdmin />

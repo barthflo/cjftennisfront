@@ -10,23 +10,35 @@ const GalleryList = () => {
 
     const [datas, setDatas] = useState([]);
     const [errors, setErrors] = useState('');
-    const [isLoading, setIsLoading] = useState(true)
+    const [isLoading, setIsLoading] = useState(true);
+    const [selectCategory, setSelectCategory] = useState('all')
+    const categories = [
+        ["all", "Toutes"],
+        ["animations", "Animations"],
+        ["school", "Ecole de Tennis"],
+        ["team_young", "Equipes Jeunes"],
+        ["team_adult", "Equipes Adultes"],
+        ["paratennis", "Paratennis"],
+        ["history", "Histoire du Club"]
+    ]
 
     useEffect(() => {
         Axios.get(`${BACK_URL}/club/galleries`)
              .then(res => {
-                setDatas(res.data.filter(data => data.is_archived === 0));
+                setDatas(res.data.filter(data => data.is_archived === 0)
+                                 .filter(data => (selectCategory === "all") ? data : data.category === selectCategory)
+                    );
                 setIsLoading(false);
              })
              .catch(err => {
                  setIsLoading(false);
                  setErrors(err);
              })
-    }, [datas]);
+    }, [datas, selectCategory]);
     
     return (
         <Fragment>
-            <h1 className="ml-4 mt-2 mb-4 pl-sm-3">Vos Galeries d'Images</h1>
+            <h1 className="ml-4 mt-2 pl-sm-3">Vos Galeries d'Images</h1>
             {errors && <h2 className="text-center">Une erreur est survenue avec le serveur. Veuillez nous excuser pour la gêne occasionnée.</h2>}
             {isLoading ? 
             <section className="loader-container d-flex justify-content-center align-items-center" style={{minHeight:"100px"}}>
@@ -34,6 +46,19 @@ const GalleryList = () => {
             </section>
             :
             <Fragment>
+                <section className="mx-4 mb-4 pl-sm-3">
+                    <form className="form-group mb-1">
+                        <label className="d-none">Sélectionner une catégorie :</label>
+                        <select className="form-control" defaultValue={selectCategory} onChange={(e) => setSelectCategory(e.target.value)}>
+                            {categories.map((category, index) =>
+                                <option value={category[0]} key={index}>{category[1]}</option>
+                            )}
+                        </select>
+                    </form>
+                    {datas.length === 0 ? null : 
+                    <p className="font-italic pl-2 mb-1">{datas.length} {datas.length === 1 ? "gallerie" : "galleries"} en ligne</p>
+                    }
+                </section>
                 {datas.length === 0 
                 ?
                 <section className="card py-3 px-4">

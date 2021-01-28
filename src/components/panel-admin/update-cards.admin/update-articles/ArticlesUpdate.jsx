@@ -10,7 +10,6 @@ import RotateLoader from 'react-spinners/RotateLoader'
 import ArticlesForm from '../../articles.admin/ArticlesForm'
 import {confirmAlert} from 'react-confirm-alert'
 import moment from 'moment'
-import 'moment/locale/fr'
 import './ArticlesUpdate.css'
 
 const ArticlesUpdate = () => {

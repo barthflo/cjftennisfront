@@ -7,10 +7,12 @@ Emmanuel AKE - Theo ATLANI - Florent BARTH - Bilal CHERFA - Florent DESMARETS
 
 ## Dependencies to install
 
+    "@material-ui/core": "^4.11.3",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "@tinymce/tinymce-react": "^3.9.0",
+    "antd": "^4.11.2",
     "axios": "^0.21.0",
     "bcryptjs": "^2.4.3",
     "bootstrap": "^4.5.3",
