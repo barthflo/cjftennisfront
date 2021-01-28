@@ -27,6 +27,10 @@ body {
   --spacing-large: calc(var(--spacing)* 4);
 }
 
+.card-header{
+  background:none;
+}
+
 @media screen and (min-width: 769px) and (max-width: 1024px) {}
 
 @media screen and (min-width: 415px) and (max-width: 768px) {}

@@ -1,0 +1,10 @@
+.article-update-infos p {
+    color:var(--main-color);
+    border-bottom : 1px solid var(--light);
+    font-weight:600 !important;
+}
+
+.article-update-infos small {
+    font-family:var(--secondary-font);
+    color: var(--dark-color);
+}

@@ -5,6 +5,7 @@ import axios from 'axios';
 import { BACK_URL } from '../../../http';
 import { useEffect, useState } from 'react';
 import ArticleCard from "../../../components/articles/article/ArticleCard";
+import _ from 'lodash'
 
 export default function Articles(){
     const [articleFilter, setArticleFilter] = useState([]);
@@ -13,8 +14,8 @@ export default function Articles(){
     useEffect(() => {
         axios
         .get(`${BACK_URL}/articles/${articleCategory}`)
-        .then(res => setArticleFilter(res.data))
-    }, [articleCategory]);
+        .then(res => setArticleFilter(res.data.filter(data => data.is_archived === 0)))
+    }, [articleCategory, articleFilter]);
 
     const handleChangeCategory = (e) => {
         setArticleCategory(e.target.value);
@@ -44,7 +45,7 @@ export default function Articles(){
                     </div>
                     {articleFilter.length !== 0?
                     <div className="content-article-filter">
-                        {articleFilter.map((article) => (
+                        {_.orderBy(articleFilter, ['modified_at'], ['desc']).map((article) => (
                             <ArticleCard article={article} side="left" category={articleCategory} key={article.id} />
                         ))}
                     </div> 

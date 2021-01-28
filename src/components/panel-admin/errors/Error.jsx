@@ -12,13 +12,15 @@ const Error = ({status}) => {
                 return {message : "Une erreur est survenue avec le serveur.", status : "Erreur 500" }
             case 404 :
                 return { message : "La page demandée est introuvable.", status: "Erreur 404"}
+            case 400 :
+                return {message : "Erreur dans la requête", status: "Erreur 400"}
             default :
                 return {message : "Erreur", status: "Erreur"}
         }
     }
 
     return (
-        <section className="d-flex justify-content-center align-items-center" style={{width:"100%", height:"100%"}}>
+        <div className="d-flex justify-content-center align-items-center" style={{width:"100%", height:"100%"}}>
             {switchStatus && 
              <div className="card align-items-center justify-content-stretch p-5 h-100 ">
                 <div className="card-header d-flex flex-column align-items-center h-50">
@@ -33,7 +35,7 @@ const Error = ({status}) => {
                 </div>
              </div>
             }
-        </section>
+        </div>
     )
 }
 

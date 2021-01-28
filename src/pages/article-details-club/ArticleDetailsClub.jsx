@@ -29,7 +29,7 @@ export default function ArticleDetailsClub(){
                     <img src={`${DOMAIN_URL}/upload/${articleClubDetails.image_url}`} alt={articleClubDetails.title} className="article-club-image" />
                     <p className="article-club-desc">{articleClubDetails.description}</p>
                 </div>
-                <p className="article-club-content">{articleClubDetails.body}</p>
+                <div className="article-club-content" dangerouslySetInnerHTML={{__html : articleClubDetails.body }}></div>
             </section>
         </div>
     );
