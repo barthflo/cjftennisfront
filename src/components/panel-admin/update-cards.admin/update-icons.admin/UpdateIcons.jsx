@@ -1,5 +1,7 @@
 import React, {Fragment, useState, useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
+import {useForm} from 'react-hook-form';
+import Error from '../../errors/Error';
 import RotateLoader from 'react-spinners/RotateLoader';
 import Axios from 'axios';
 import {BACK_URL} from '../../../../http';
@@ -11,7 +13,8 @@ const UpdateIcons = () => {
     const history = useHistory();
     const [datas, setDatas] = useState([]);
     const [ isLoading, setIsLoading] = useState(true);
-    const [errors, setErrors] = useState('');
+    const [error, setError] = useState(null);
+    const {register, errors, handleSubmit} = useForm();
 
     useEffect (() => {
         Axios.get(`${BACK_URL}/home/icons`)
@@ -21,28 +24,26 @@ const UpdateIcons = () => {
              })
              .catch(err => {
                  console.log(err);
-                 setErrors(err);
+                 if(err.response){
+                    setError(err.response.status);
+                    setIsLoading(false);
+                }
              })
     },[])
 
-    const handleChange = (e => {
-        let newArr = [...datas];
-        newArr[e.target.name].body = e.target.value;
-        setDatas(newArr);
-        }
-    )
     
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        datas.map((data, index) => 
-            Axios.put(`${BACK_URL}/home/icons/${data.id}`, datas[index])
+    const onSubmit = (data) => {
+        datas.map((item, index) => 
+            Axios.put(`${BACK_URL}/home/icons/${item.id}`, {body : data[index]})
                  .then(res => {
-                    console.log(res);
+                    console.log(res.status);
                     history.push('/admin');
                  })
                  .catch(err => {
                     console.log(err);
-                    setErrors(err);
+                    if(err.response){
+                        setError(err.response.status);
+                    }
                  })
         );
     }
@@ -51,25 +52,30 @@ const UpdateIcons = () => {
             <h1 className="text-center text-sm-left ml-sm-5 pl-sm-3 mb-3">Icônes Accueil</h1>
             <div className="card">
                 <div className="card-body">
-                    <form id="UpdateIcons" className="d-flex flex-column justify-content-center align-items-center" onSubmit={handleSubmit}>
+                    <form id="UpdateIcons" className="d-flex flex-column justify-content-center align-items-center" onSubmit={handleSubmit(onSubmit)}>
                     <Fragment> 
-                        {errors && errors.errorMessage }   
-                        {isLoading ? 
+                        {error ? <Error status={error} /> :  
+                        isLoading ? 
                             <RotateLoader size={10} color={"#345C3E"} /> 
                         : 
                         datas.map((data, index) => {
                             return (
                                 <Fragment>
-                                <div className="form-group d-flex flex-row align-items-center w-100">
+                                <div className="form-group d-flex flex-row align-items-center w-100" key={index}>
                                     <label className="mb-0 pr-4" htmlFor={`content${data.id}`}><strong>#{data.id}</strong></label>
-                                    <input 
-                                        className = "form-control"
-                                        name={index}
-                                        type="text"
-                                        id={`content${data.id}`}
-                                        value={data.body} 
-                                        onChange={handleChange}
-                                    />
+                                    <div className="w-100">
+                                        <input 
+                                            className={"form-control" + (errors[index] ? " is-invalid" : " ")} 
+                                            name={index}
+                                            type="text"
+                                            id={`content${data.id}`}
+                                            defaultValue={data.body} 
+                                            ref={register({
+                                                required : true
+                                            })}
+                                        />
+                                        {errors[index] && errors[index].type=== "required" ? <div className="invalid-feedback">Contenu obligatoire</div>  : null}
+                                    </div>
                                 </div>
                                 </Fragment>
                             )

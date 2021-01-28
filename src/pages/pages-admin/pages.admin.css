@@ -14,10 +14,10 @@
     .home-admin0, .home-admin1, .home-admin2{
         width:calc(100%/3 - 8px) !important;
     }
-    .home-admin3{
+    .home-admin3, .home-admin6{
         width:calc(60% - 8px) !important;
     }
-    .home-admin4{
+    .home-admin4, .home-admin5{
         width:calc(40% - 8px) !important;
     }
 }

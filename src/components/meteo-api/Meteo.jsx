@@ -1,12 +1,27 @@
 import { useEffect, useState } from 'react';
+import { BACK_URL } from '../../http';
 import './Meteo.css';
 
 export default function Meteo() {
   const [meteo, setMeteo] = useState([]);
   const [meteoDesc, setMeteoDesc] = useState([]);
 
+  const [weatherApi, setWeatherApi] = useState();
+
   useEffect(() => {
-    fetch(`https://api.weatherbit.io/v2.0/current?city=Saran&country=fr&key=92ec111973f445a98af6f77beab72cb9`)
+    fetch(`${BACK_URL}/secrets/weatherKey`)
+        .then(res => res.json())
+        .then(data => {
+          setWeatherApi(data.weatherKey);
+        })
+        .catch(err => {
+            console.error(err);
+        });
+  }, []);
+
+  useEffect(() => {
+    if(weatherApi){
+      fetch(`https://api.weatherbit.io/v2.0/current?city=Saran&country=fr&key=${weatherApi}`)
         .then(res => res.json())
         .then(data => {
           setMeteo(data.data[0]);
@@ -15,7 +30,8 @@ export default function Meteo() {
         .catch(err => {
             console.error(err);
         });
-  }, []);
+    }
+  }, [weatherApi]);
 
   return (
     <section className="meteo">

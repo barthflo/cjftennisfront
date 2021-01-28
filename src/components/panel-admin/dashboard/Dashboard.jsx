@@ -6,6 +6,9 @@ import HomeAdmin from '../../../pages/pages-admin/home-admin.page/HomeAdminPage'
 import DefaultAdmin from '../../../pages/pages-admin/default-admin.page/DefaultAdminPage';
 import UpdateVideo from '../update-cards.admin/update-video/UpdateVideo';
 import UpdateIcons from '../update-cards.admin/update-icons.admin/UpdateIcons';
+import UpdateOpening from '../update-cards.admin/update-access-openings/UpdateOpening';
+import AccessCreate from '../access-openings.admin/AccessCreate';
+import UpdateAccess from '../update-cards.admin/update-access-openings/UpdateAccess';
 import GalleryList from '../galleries.admin/GalleryList';
 import GalleryCreate from '../galleries.admin/GalleryCreate';
 import GalleryUpdate from '../update-cards.admin/update-gallery/UpdateGallery';
@@ -66,8 +69,20 @@ const Dashboard = () => {
                         children={<DefaultAdmin component={UpdateVideo} className={"update-admin" + enableOpen()} /> }
                     />
                     <Route 
-                        path='/admin/edit/icons' 
+                        path='/admin/icons/edit' 
                         children={<DefaultAdmin component={UpdateIcons} className={"update-admin container-fluid px-0 px-sm-2" + enableOpen()}/> } 
+                    />
+                    <Route 
+                        path='/admin/opening/edit' 
+                        children={<DefaultAdmin component={UpdateOpening} className={"update-admin container-fluid px-0 px-sm-2" + enableOpen()}/> } 
+                    />
+                    <Route 
+                        path='/admin/access/create' 
+                        children={<DefaultAdmin component={AccessCreate} className={"update-admin container-fluid px-0 px-sm-2" + enableOpen()}/> } 
+                    />
+                    <Route 
+                        path='/admin/access/edit' 
+                        children={<DefaultAdmin component={UpdateAccess} className={"update-admin container-fluid px-0 px-sm-2" + enableOpen()}/> } 
                     />
                     <Route 
                         exact path='/admin/galleries'
