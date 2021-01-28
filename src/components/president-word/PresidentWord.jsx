@@ -23,7 +23,7 @@ export default function PresidentWord() {
                     <img className="president_image" src={`${DOMAIN_URL}/upload/${presidentWord.picture_url}`} alt={presidentWord.lastname}/>    
                     <div className="president-word"> 
                         <h2 className="president-name">{presidentWord.firstname}{" "}{presidentWord.lastname} <br/> Présidente du CJF Tennis</h2>
-                        <p className="description"> "{presidentWord.description}." </p>
+                        <p className="description"> <span className="president-title">{presidentWord.title}</span><br/><br/>"{presidentWord.description}" </p>
                     </div>
                </div>              
         </div>
