@@ -10,7 +10,6 @@ import RotateLoader from 'react-spinners/RotateLoader'
 import ArticlesForm from '../../articles.admin/ArticlesForm'
 import {confirmAlert} from 'react-confirm-alert'
 import moment from 'moment'
-import 'moment/locale/fr'
 import './ArticlesUpdate.css'
 
 const ArticlesUpdate = () => {
@@ -84,7 +83,7 @@ const ArticlesUpdate = () => {
                     <Error status={error} />
                 </section>
             :
-                <div>
+                <div className="w-100">
                     <section className="mx-4 mt-2 mb-4 px-sm-3 d-flex flex-column article-update-infos">
                         <h1 className="text-capitalize">Mise à jour {article.title} </h1>
                         <p className="text-capitalize mb-1 pb-1"> Catégorie : {category}</p>
