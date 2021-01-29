@@ -1,4 +1,57 @@
-.closed{
+.page-container{
+    margin-top:50px;
+}
+
+.page-container h1{
+    font-family: var(--main-font);
+}
+
+.page-container h2 {
+    font-weight:600;
+    color:var(--main-color);
+    font-size:1.5em;
+}
+
+.page-container small, .page-container p , .page-container h2{
+    font-family: var(--secondary-font);
+}
+
+.page-container p {
+    font-weight: 400;
+}
+
+.page-container .text-success {
+    color:var(--main-color) !important;
+    font-family:var(--main-font) !important;
+    font-style:italic;
+}
+
+.page-container .text-danger {
+    color:rgb(177, 75, 50) !important;
+    font-family:var(--main-font) !important;
+    font-style:italic;
+}
+
+.page-container .form-control{
+    color: #3d3f42cc;
+    font-family:var(--secondary-font);
+    font-style:italic;
+}
+
+.page-container .form-control[readonly]{
+    background:#e9efec8f;
+}
+
+.page-container .ant-picker:hover{
+    border-color:#ced4da ;
+}
+
+.page-container .form-control:focus, .page-container .ant-picker:focus, .page-container .ant-picker-focused {
+    border-color: var(--main-color);
+    box-shadow: 0 0 0 0.2rem rgb(3 140 9 / 25%);
+}
+
+.closed {
     opacity:0;
     transition: .5s ease-in-out;
     width:calc(100vw - 300px) !important;
@@ -8,6 +61,7 @@
 .opened{
     transition: .5s ease-in-out;
 }
+
 
 @media screen and (min-width : 576px){
     .closed{

@@ -1,7 +1,17 @@
 .teaching_team {
-    background: white;
-    width:100vw;
+    padding: 60px;
+    min-height:200px;
+    background-color:white;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    flex-direction: column; 
+    margin: 0px;
 } 
+
+.assistants {
+    background-color: white;
+}
 
 picture-teacher-team {
     height: 200px;

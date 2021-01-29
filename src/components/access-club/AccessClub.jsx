@@ -21,7 +21,7 @@ export default function AccessClub(){
             })
         };
         fetchAccess();
-    }, [])
+    }, [infoAccess])
 
     useEffect(() => {
         const fetchBus = () => {
@@ -33,7 +33,7 @@ export default function AccessClub(){
         })
         };
         fetchBus();
-    }, [])
+    }, [busAccess])
 
     return(
         <section className="access-container">

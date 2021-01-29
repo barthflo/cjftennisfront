@@ -14,11 +14,11 @@ export default function ArticleDetailsSport(){
         axios
         .get(`${BACK_URL}/articles/sport/${params.id}`)
         .then(res => setArticleSportDetails(res.data))
-    }, []);
+    }, [params.id]);
 
     useEffect(() => {
         window.scrollTo(0, 0)
-    }, [params.id]);
+    }, []); 
 
     return(
         <div>
@@ -29,7 +29,7 @@ export default function ArticleDetailsSport(){
                     <img src={`${DOMAIN_URL}/upload/${articleSportDetails.image_url}`} alt={articleSportDetails.title} className="article-club-image" />
                     <p className="article-sport-desc">{articleSportDetails.description}</p>
                 </div>
-                <p className="article-sport-content">{articleSportDetails.body}</p>
+                <div className="article-club-content" dangerouslySetInnerHTML={{__html : articleSportDetails.body }}></div>
             </section>
         </div>
     );

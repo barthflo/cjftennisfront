@@ -9,7 +9,6 @@ import UpdateUserForm from './UpdateUserForm'
 import ButtonSave from '../../buttons/ButtonSave'
 import {FiEdit2} from 'react-icons/fi';
 import {RiCloseLine} from 'react-icons/ri';
-import './UpdateUser.css'
 
 const UpdateUser = () => {
 

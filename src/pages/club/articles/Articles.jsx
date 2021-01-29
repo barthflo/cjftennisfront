@@ -5,6 +5,7 @@ import axios from 'axios';
 import { BACK_URL } from '../../../http';
 import { useEffect, useState } from 'react';
 import ArticleCard from "../../../components/articles/article/ArticleCard";
+import _ from 'lodash'
 
 export default function Articles(){
     const [articleFilter, setArticleFilter] = useState([]);
@@ -13,12 +14,16 @@ export default function Articles(){
     useEffect(() => {
         axios
         .get(`${BACK_URL}/articles/${articleCategory}`)
-        .then(res => setArticleFilter(res.data))
-    }, [articleCategory]);
+        .then(res => setArticleFilter(res.data.filter(data => data.is_archived === 0)))
+    }, [articleCategory, articleFilter]);
 
     const handleChangeCategory = (e) => {
         setArticleCategory(e.target.value);
     }
+
+    useEffect(() => {
+    window.scrollTo(0, 0)
+    }, []);
 
     return(
         <div className="articles-filter">
@@ -30,8 +35,8 @@ export default function Articles(){
                         <div className="input-filter-articles">
                             <form className="form-articles-filter">
                                 <label className="label-articles-filter">Sélectionner une catégorie :</label>
-                                <select className="select-articles-filter" value={articleCategory} onChange={handleChangeCategory}>
-                                    <option selected value="club">Club</option>
+                                <select className="select-articles-filter" defaultValue={articleCategory} onChange={handleChangeCategory}>
+                                    <option value="club">Club</option>
                                     <option value="sport">Sport</option>
                                     <option value="press">Presse</option>
                                 </select>
@@ -40,7 +45,7 @@ export default function Articles(){
                     </div>
                     {articleFilter.length !== 0?
                     <div className="content-article-filter">
-                        {articleFilter.map((article) => (
+                        {_.orderBy(articleFilter, ['modified_at'], ['desc']).map((article) => (
                             <ArticleCard article={article} side="left" category={articleCategory} key={article.id} />
                         ))}
                     </div> 

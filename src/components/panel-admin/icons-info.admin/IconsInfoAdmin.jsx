@@ -3,12 +3,13 @@ import RotateLoader from 'react-spinners/RotateLoader';
 import {BACK_URL} from '../../../http';
 import Axios from 'axios';
 import ButtonUpdate from '../buttons/ButtonUpdate';
+import Error from '../errors/Error'
 
 const IconsInfosAdmin = (props) => {
 
     const [datas, setDatas] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-    const [errors, setErrors] = useState('');
+    const [errors, setErrors] = useState(null);
 
     useEffect(() => {
         const fetchData = () => {
@@ -19,7 +20,7 @@ const IconsInfosAdmin = (props) => {
                  })
                  .catch(err => {
                     console.log(err);
-                    setErrors(err);
+                    setErrors(err.response.status);
                  })
         }
         fetchData();
@@ -27,8 +28,9 @@ const IconsInfosAdmin = (props) => {
 
     return (
         <Fragment>
-        {errors && errors.errorMessage}
-        {isLoading ? 
+        {errors ? <Error status={errors} />
+        :
+        isLoading ? 
             <section className="loader-container d-flex justify-content-center align-items-center" style={{minHeight:"100px"}}>
                 <RotateLoader size={10} color={"#345C3E"} /> 
             </section>
@@ -58,7 +60,7 @@ const IconsInfosAdmin = (props) => {
                     </table>
                 </div>
                 <div className="card-footer d-flex flex-column flex-sm-row px-0 px-sm-3">
-                    <ButtonUpdate url="/admin/edit/icons" title="Mettre à jour"/>
+                    <ButtonUpdate url="/admin/icons/edit" title="Mettre à jour"/>
                 </div>
             </section>
         }

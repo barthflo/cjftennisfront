@@ -32,6 +32,7 @@
     border: var(--spacing) var(--main-color) solid;
     border-radius: 5px;
     box-shadow:1px 1px 5px;
+    z-index: 2;
 }
 
 .preview-container .card-body{
