@@ -31,6 +31,7 @@ const uploadMultiple = async (files) => {
             'Content-Type' : 'multipart/form-data'
             }
         });
+        console.log(res);
         return res.data;
     }
     catch(err){
