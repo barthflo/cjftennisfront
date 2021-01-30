@@ -1,6 +1,8 @@
 import {useState, useEffect} from 'react';
 import BannerVideoAdmin from '../../../components/panel-admin/banner-video.admin/BannerVideoAdmin';
 import IconsInfosAdmin from '../../../components/panel-admin/icons-info.admin/IconsInfoAdmin';
+import ContactAndOpeningAdmin from '../../../components/panel-admin/access-openings.admin/ContactAndOpeningAdmin';
+import AccessAdmin from '../../../components/panel-admin/access-openings.admin/AccessAdmin'
 import ArticlesList from '../../../components/panel-admin/articles.admin/ArticlesList';
 import Axios from 'axios'
 import {BACK_URL} from '../../../http';
@@ -43,11 +45,37 @@ const HomeAdminPage = (props) => {
     }, [pressArticles])
     
     const components = [
-        <ArticlesList title="Vie du Club" route="/articles/club" datas={_.orderBy(clubArticles, ['modified_at'], ['desc'])} loading={clubIsLoading} classCardBody="pt-0" classBtnCreate="btn-sm" />,
-        <ArticlesList title="Vie Sportive" route="/articles/sport" datas={_.orderBy(sportArticles, ['modified_at'], ['desc'])} loading={sportIsLoading} classCardBody="pt-0" classBtnCreate="btn-sm"  />,
-        <ArticlesList title="Presse" route="/articles/press" datas={_.orderBy(pressArticles, ['modified_at'], ['desc'])} loading={pressIsLoading} classCardBody="pt-0" classBtnCreate="btn-sm" />,
+        <ArticlesList 
+            title="Vie du Club" 
+            route="/articles/club"
+            category="club"
+            datas={_.orderBy(clubArticles, ['modified_at'], ['desc'])} 
+            loading={clubIsLoading} 
+            classCardBody="pt-0" 
+            classBtnCreate="btn-sm" 
+        />,
+        <ArticlesList 
+            title="Vie Sportive" 
+            route="/articles/sport" 
+            category="sport"
+            datas={_.orderBy(sportArticles, ['modified_at'], ['desc'])} 
+            loading={sportIsLoading} 
+            classCardBody="pt-0" 
+            classBtnCreate="btn-sm"  
+        />,
+        <ArticlesList 
+            title="Presse" 
+            route="/articles/press" 
+            category="press"
+            datas={_.orderBy(pressArticles, ['modified_at'], ['desc'])} 
+            loading={pressIsLoading} 
+            classCardBody="pt-0" 
+            classBtnCreate="btn-sm" 
+        />,
+        <ContactAndOpeningAdmin />,
         <BannerVideoAdmin />,
         <IconsInfosAdmin />,
+        <AccessAdmin />,
     ]
     
     return (

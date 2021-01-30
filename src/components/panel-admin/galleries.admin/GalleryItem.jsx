@@ -5,9 +5,9 @@ import ButtonDelete from '../buttons/ButtonDelete';
 import {confirmAlert} from 'react-confirm-alert';
 import {useHistory} from 'react-router-dom';
 import Axios from 'axios';
-
+import moment from 'moment';
 import 'react-confirm-alert/src/react-confirm-alert.css';
-import './GalleryItem.css'
+import './GalleryItem.css';
 
 const GalleryItem = ({datas}) => {
 
@@ -46,8 +46,7 @@ const GalleryItem = ({datas}) => {
             <div className="card-header px-0">
                 <h2>{datas.name}</h2>
                 <p className="mb-0 font-italic">{datas.description}</p>
-                <p className="mb-0 font-italic"><small>{datas.date}</small></p>
-                {datas.is_archived ? <p className="mb-0 font-italic"><small>Archivée</small></p> : ''}
+                <p className="mb-0 font-italic"><small>Date de l'évènement : {moment(datas.date).format('ll')}</small></p>
             </div>
             {datas.photos && 
             <div className="card-body px-0 d-flex flex-wrap">

@@ -1,10 +1,13 @@
 import React, {useState} from 'react'
 import {useHistory} from 'react-router-dom'
-import { useForm } from 'react-hook-form'
+import { useForm , Controller} from 'react-hook-form'
 import Axios from 'axios'
 import {BACK_URL} from '../../../../http'
 import UploadService from '../../../../services/upload.service'
 import Uploader from '../../uploader/Uploader'
+import {DatePicker} from 'antd' 
+import moment from 'moment'
+import locale from 'antd/es/date-picker/locale/fr_FR'
 
 const UpdateGalleryForm = ({formId, datas}) => {
     
@@ -14,7 +17,7 @@ const UpdateGalleryForm = ({formId, datas}) => {
     const [pictures, setPictures]= useState(datas.photos);
     const [removePictures, setRemovePictures] = useState([]);
     const [error, setError] = useState();
-    const {register, errors, handleSubmit} = useForm();
+    const {register, errors, handleSubmit, control} = useForm();
     const history = useHistory();
 
     const handleChangeUpload = (e) => {
@@ -117,13 +120,16 @@ const UpdateGalleryForm = ({formId, datas}) => {
             </div>
             <div className="form-group">
                 <label htmlFor="date">Date:</label>
-                <input 
-                    type="text" 
-                    className="form-control"
-                    ref={register}
+                <Controller
+                    as={
+                        <DatePicker/>
+                    }
                     name="date"
-                    id="date"
-                    defaultValue={datas.date}
+                    control={control}
+                    defaultValue={moment(datas.date)}
+                    format="DD/MM/YYYY"
+                    locale={locale}
+                    className="form-control"
                 />
             </div>
             <div className="form-group">

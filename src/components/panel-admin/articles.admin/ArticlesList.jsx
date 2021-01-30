@@ -6,10 +6,10 @@ import ArchivesItem from '../archives.admin/ArchivesItem'
 import {Link, useHistory} from 'react-router-dom'
 import './Articles.Admin.css'
 
-const ArticlesList = ({title, datas, route, redirect, loading, classCardHeader, classCardBody, classCardFooter, classBtnCreate}) => {
+const ArticlesList = ({title, category, datas, route, redirect, loading, classCardHeader, classCardBody, classCardFooter, classBtnCreate}) => {
     
     const {location}= useHistory();
-
+    
     return (
         <Fragment>
             {loading ? 
@@ -24,15 +24,15 @@ const ArticlesList = ({title, datas, route, redirect, loading, classCardHeader, 
                     <small className="text-center font-italic">Vos derniers articles</small>
                 </div>
                 :
-                <div className="card-header" style={{minHeight:"unset"}}>
-                    <h3>{title}</h3>
+                <div className="card-header bg-none" style={{minHeight:"unset"}}>
+                    <h3 style={{fontSize:"1.5em"}}>{title}</h3>
                 </div>
                 }
                 <div className={"card-body d-flex flex-column justify-content-start align-items-start px-0 px-sm-3 " + classCardBody }>
                 {datas && datas.length !== 0 ? 
                     location.pathname.includes("archives") ?
                     <table className="table table-striped mb-0">
-                        <thead>
+                        <thead className="thead-light">
                             <tr style={{color:"var(--light-color)", background : "var(--main-color"}}>
                                 <th scope="col">#</th>
                                 <th scope="col">Titre</th>
@@ -44,15 +44,15 @@ const ArticlesList = ({title, datas, route, redirect, loading, classCardHeader, 
                         </tbody>
                     </table>
                     :
-                    datas.slice(0,2).map((data, index) => <ArticlesItem datas={data} route={route} key={index}/>)  
+                    datas.slice(0,2).map((data, index) => <ArticlesItem category={category} datas={data} route={route} key={index}/>)  
                 :
                     <Fragment>
                             <p className="text-center text-bold align-self-center pt-3">
                                 {location.pathname.includes("archives") ? "Vous n'avez rien d'archivé actuellement" : `Vous n'avez pas d'articles ${title} publiés`}
                             </p>
-                            {!location.pathname.includes("archives") &&
+                            {(!location.pathname.includes("archives")) &&
                             <Fragment>
-                                <p className="font-italic text-center align-self-center">Créez un article maintenant ou bien <Link to="/admin/archives/articles">voir les articles archivés</Link></p>
+                                <p className="font-italic text-center align-self-center">Créez un article maintenant ou bien <Link to="/admin/archives" className="see-articles">voir les articles archivés</Link></p>
                                 <div className="align-self-center">
                                     <ButtonCreate url={`/admin/articles/create`} title="Nouvel Article" class={classBtnCreate}/>
                                 </div>
