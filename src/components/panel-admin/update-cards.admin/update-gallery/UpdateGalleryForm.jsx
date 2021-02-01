@@ -42,6 +42,7 @@ const UpdateGalleryForm = ({formId, datas}) => {
             setError({empty: "Une erreur est survenue, veuillez annuler et recommencer"})
         } else{
             UploadService.uploadMultiple(files[0]).then(res => {
+                console.log(res);
                 setFiles([]);
                 setPreviewUrl([]);
                 setUploaded([...uploaded].concat(res));
@@ -64,6 +65,7 @@ const UpdateGalleryForm = ({formId, datas}) => {
     }
 
     const onSubmit = data => {
+        data.date = moment(data.date._d).format('YYYY-MM-DD HH:mm:ss')
         Axios.put(`${BACK_URL}/club/galleries/${datas.id}`, data)
              .then(res => console.log(res.status))
              .catch(err => {

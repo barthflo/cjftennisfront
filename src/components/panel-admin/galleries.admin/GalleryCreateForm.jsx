@@ -48,7 +48,7 @@ const GalleryCreateForm = ({formId}) => {
     }
 
     const onSubmit = data => {
-        data.date = moment(data.date._d).format()
+        data.date = moment(data.date._d).format('YYYY-MM-DD HH:mm:ss')
         Axios.post(`${BACK_URL}/club/galleries`, data)
              .then(res => {
                  uploaded.forEach((upload) => {
